@@ -1,0 +1,37 @@
+:root {
+  /* === Fontes === */
+  --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* === Cores principais === */
+  --color-primary: #E53935;
+  --color-secondary: #FFCA28;
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+
+  /* === Cores de texto e links === */
+  --color-text: #333333;
+  --color-muted: #666666;
+  --color-link: #E53935;
+  --color-link-hover: #c62828;
+
+  /* === Fundo === */
+  --bg-color: #fefefe;
+  --bg-soft: #fff6f5;
+  --bg-highlight: #fff8e1;
+
+  /* === Estados e Ações === */
+  --color-accent: #29a19c;
+  --color-accent-light: #70d6d6;
+  --color-error: #d32f2f;
+  --color-success: #2e7d32;
+  --color-warning: #f57c00;
+
+  /* === Bordas e sombras === */
+  --color-border: #e0e0e0;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
