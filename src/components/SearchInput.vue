@@ -4,7 +4,7 @@
       type="text"
       placeholder="Pesquisar..."
       class="search-input"
-      @input="$emit('search', $event.target.value)"
+      @input="$emit('search', $event.target)"
       aria-label="Campo de pesquisa"
     />
   </div>
