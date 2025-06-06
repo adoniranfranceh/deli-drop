@@ -10,14 +10,14 @@
 
       <section class="showcase">
         <h2>Restaurantes em destaque</h2>
-        <FeaturedRestaurants />
+        <FeaturedProducts />
       </section>
     </main>
   </div>  
 </template>
 
 <script setup>
-import FeaturedRestaurants from '@/components/FeaturedRestaurants.vue'
+import FeaturedProducts from '@/components/FeaturedProducts.vue'
 import Button from '../components/Button.vue';
 </script>
 
