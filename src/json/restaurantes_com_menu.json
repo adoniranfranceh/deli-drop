@@ -1,0 +1,949 @@
+[
+  {
+    "id": 1,
+    "name": "Pizzaria Bella",
+    "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png",
+    "menu": [
+      {
+        "id": 1,
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.comidaereceitas.com.br/wp-content/uploads/2019/08/pizza_fritadeira-780x520.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "id": 3,
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      },
+      {
+        "id": 1,
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.comidaereceitas.com.br/wp-content/uploads/2019/08/pizza_fritadeira-780x520.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "id": 3,
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sushi Yama",
+    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg",
+    "menu": [
+      {
+        "id": 4,
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "id": 6,
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Hamburgueria Top",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbG9kWf9tjiOh5M9i6bERaIWLmMu5r5twNcg&s",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Veggie Time",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAins4nYG1Z8tGwVD0iZXSpdWx2rsKoIO_yQ&s",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Doces da Vó",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3cMCDvOZmRUQYjEwiMvPfGXnWa2_P3aqfIQ&s",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Taco Loco",
+    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-mexicano-com-design-plano_23-2149433478.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "China Box",
+    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-chines-com-desenho-de-caixa-de-comida_23-2148465080.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Churrasquinho BR",
+    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-churrasco-com-design-plano_23-2148487451.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Padoca Central",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW2vNFBzP7h_w7WsQARapeiC0HHECD2r3w6Q&s",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Café do Bairro",
+    "logo": "https://img.freepik.com/vetores-premium/logotipo-do-cafe-design-de-logotipo-de-cafe-moderno_564974-197.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "La Pasta",
+    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-italiano-em-desenho-plano_23-2148477011.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Dogão Express",
+    "logo": "https://img.freepik.com/vetores-premium/logotipo-de-hot-dog-de-estilo-vintage_441769-122.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Temaki House",
+    "logo": "https://img.freepik.com/vetores-gratis/modelo-de-logotipo-de-temaki-com-design-plano_23-2148476760.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Açaiteria Raiz",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Pastel Mania",
+    "logo": "https://static.ifood-static.com.br/image/upload/t_high/logosgde/a8d38990-5b79-43c3-8b80-73d48f96ddc1/202008231507_Uw1y_i.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Food Truck 77",
+    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-food-truck-com-design-plano_23-2148460642.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Espetinhos da Vila",
+    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-churrasco-em-estilo-vintage_23-2148461093.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Donuts & Cia",
+    "logo": "https://img.freepik.com/vetores-gratis/design-de-logotipo-de-donuts_23-2148477335.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Sucos Tropicais",
+    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-suco-com-design-plano_23-2148455880.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Lanches da Tarde",
+    "logo": "https://img.freepik.com/vetores-gratis/logotipo-do-fast-food-lanches_23-2148455882.jpg",
+    "menu": [
+      {
+        "name": "Prato Especial",
+        "eta": 30,
+        "category": "Principal",
+        "price": 34.99,
+        "description": "Prato especial da casa, feito com ingredientes frescos.",
+        "ingredients": [
+          "Ingrediente 1",
+          "Ingrediente 2",
+          "Ingrediente 3"
+        ],
+        "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+      },
+      {
+        "name": "Bebida Refrescante",
+        "eta": 10,
+        "category": "Bebida",
+        "price": 9.99,
+        "description": "Bebida gelada para acompanhar sua refeição.",
+        "ingredients": [
+          "Água",
+          "Frutas"
+        ],
+        "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+      },
+      {
+        "name": "Sobremesa Doce",
+        "eta": 15,
+        "category": "Sobremesa",
+        "price": 14.99,
+        "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
+        "ingredients": [
+          "Açúcar",
+          "Chocolate",
+          "Creme"
+        ],
+        "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+      }
+    ]
+  }
+]
