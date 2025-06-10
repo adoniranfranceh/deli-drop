@@ -47,6 +47,7 @@ const closeMenu = () => (menuOpen.value = false)
     position: fixed;
     background-color: #ffffff;
     box-shadow: var(--shadow-md);
+    z-index: 1000;
   }
 
   #spacer {
