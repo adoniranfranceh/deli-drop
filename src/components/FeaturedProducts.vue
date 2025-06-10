@@ -1,46 +1,25 @@
 <template>
-  <div class="restaurants-container">
-    <div
-      class="restaurant-card"
-      v-for="restaurant in restaurants"
-      :key="restaurant.id"
-      @click="openModal(restaurant)"
-    >
-      <img :src="restaurant.image" :alt="restaurant.name" class="restaurant-image" />
-      <div class="restaurant-info">
-        <h3>{{ restaurant.name }}</h3>
-        <p>{{ restaurant.eta }} min • {{ restaurant.category }}</p>
-      </div>
-    </div>
-
-    <ProductModel
-      v-if="selectedProduct"
-      :product="selectedProduct"
-      @close="closeModal"
+  <div class="products-container">
+    <CardProduct
+      v-for="product in products"
+      :key="product.id"
+      :product="product"
+      @selected-product="openModal"
+    />
+    <ProductModalManager
+      ref="modalMananger"
+      @add-to-cart="$emit('add-to-cart', $event)"
+      :products="products"
     />
   </div>
 </template>
 
 <script setup>
-import ProductModel from '@/components/ProductModel.vue'
-import { ref, onMounted, watch } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-const router = useRouter()
-const route = useRoute()
+import { ref } from 'vue'
+import ProductModalManager from '@/components/ProductModalManager.vue'
+import CardProduct from '@/components/CardProduct.vue'
 
-const selectedProduct = ref(null)
-
-function openModal(product) {
-  router.push({ query: { productId: product.id } })
-  selectedProduct.value = product
-}
-
-function closeModal() {
-  selectedProduct.value = null
-  router.push({ query: {} })
-}
-
-const restaurants = [
+const products = [
   {
     id: 1,
     name: 'Pizzaria La Vera',
@@ -72,66 +51,31 @@ const restaurants = [
     image: 'https://d3sn2rlrwxy0ce.cloudfront.net/BK_Taste_1.0_new_2025-01-08-161052_ajor.png?mtime=20250108161053&focal=none',
   },
 ]
-const restaurantMap = new Map()
-restaurants.forEach(r => restaurantMap.set(r.id, r))
 
-onMounted(() => {
-  const idFromURL = route.query.productId
-  if(idFromURL) {
-    const product = restaurantMap.get(Number(idFromURL))
-    if (product) selectedProduct.value = product
-  }
-})
+const modalMananger = ref(null)
 
-watch(() => route.query.productId, (newId) => {
-  if (newId) {
-    const product = restaurants.get(r => r.id === Number(newId))
-    if (product) selectedProduct.value = product
-  } else {
-    selectedProduct.value = null
-  }
-})
-
+function openModal(product) {
+  modalMananger.value?.openModal(product)
+}
 </script>
 
 <style scoped>
-.restaurants-container {
+.products-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   margin-top: 2rem;
+  grid-template-columns: repeat(1, 1fr);
 }
 
-.restaurant-card {
-  background: var(--color-white);
-  border-radius: 1rem;
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.3s;
-  border: 1px solid var(--color-border);
-}
-.restaurant-card:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-lg);
+@media (min-width: 600px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.restaurant-image {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-
-.restaurant-info {
-  padding: 1rem;
-}
-.restaurant-info h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--color-text);
-}
-.restaurant-info p {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-  color: var(--color-muted);
+@media (min-width: 900px) {
+  .products-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 </style>
