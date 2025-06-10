@@ -10,6 +10,12 @@ const routes = [
     path: '/buscar',
     name: 'Search',
     component: () => import('@/views/Search.vue')
+  },
+  {
+    path: '/restaurante/:id',
+    name: 'RestaurantDetails',
+    component: () => import('@/views/RestaurantDetails.vue'),
+    props: true
   }
 ]
 
