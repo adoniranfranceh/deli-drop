@@ -1,18 +1,16 @@
 <template>
   <div>
-    <slot @open="openModal" />
-
     <ProductModal
       v-if="selectedProduct"
       :product="selectedProduct"
       @close="closeModal"
-      @add-to-cart="$emit('add-to-cart', $event)"
+      @add-to-cart="addtoCart($event)"
     />
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted, watch, defineEmits } from 'vue';
 import ProductModal from '@/components/ProductModal.vue';
 import { useRoute, useRouter } from 'vue-router';
 
