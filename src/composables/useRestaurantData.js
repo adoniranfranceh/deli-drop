@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 import ColorThief from 'colorthief'
-import { darkenColor, setDefaultStyles, getComputedColor } from '@/utils/colors'
+import { darkenColor, getComputedColor } from '@/utils/colors'
+import { setDefaultStyles } from '@/utils/theme'
 import data_restaurants from '@/json/restaurantes_com_menu.json'
 
 export function useRestaurantData(router) {
