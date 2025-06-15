@@ -48,19 +48,24 @@ const decreaseQuantity = () => {
   transition: all 0.2s ease;
 }
 
+.label-quantity {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
 .btn {
-  width: 2rem;
-  font-size: 1.40rem;
-  font-weight: bold ;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.4rem;
   border: 1px solid var(--color-border);
-  background-color: var(--color-);
-  border-radius: 0.5rem;
+  background-color: var(--color-white);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: var(--color-text);
   transition: all 0.2s ease;
-  color: var(--color-primary);
 }
 
 .btn:disabled {
