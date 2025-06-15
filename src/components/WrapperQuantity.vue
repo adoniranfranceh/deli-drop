@@ -1,19 +1,42 @@
 <template>
-  <div class="quantity-wrapper">  
+  <div class="quantity-wrapper">
+    <span class="label-quantity">Quantidade:</span>
+
     <button
+      class="btn"
       @click="decreaseQuantity"
       :disabled="modelValue <= 1"
-      class="btn"
     >−</button>
 
     <span class="value">{{ modelValue }}</span>
 
     <button
-      @click="increaseQuantity"
       class="btn"
+      @click="increaseQuantity"
     >+</button>
   </div>
 </template>
+
+<script setup>
+const props = defineProps({
+  modelValue: {
+    type: Number,
+    required: true
+  }
+})
+
+const emit = defineEmits(['update:modelValue'])
+
+const increaseQuantity = () => {
+  emit('update:modelValue', props.modelValue + 1)
+}
+
+const decreaseQuantity = () => {
+  if (props.modelValue > 1) {
+    emit('update:modelValue', props.modelValue - 1)
+  }
+}
+</script>
 
 <style scoped>
 .quantity-wrapper {
