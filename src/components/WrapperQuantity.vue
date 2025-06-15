@@ -70,23 +70,14 @@ const decreaseQuantity = () => {
 
 .value {
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--color-text);
+  margin: 0 10px;
+}
+
+@media (max-width: 1000px) {
+  .label-quantity {
+    display: none;
+  }
 }
 </style>
-
-<script setup>
-const props = defineProps({
-  modelValue: {
-    type: Number,
-    required: true
-  }
-})
-const emit = defineEmits(['update:modelValue']);
-
-const increaseQuantity = () => emit('update:modelValue', props.modelValue + 1);
-
-const decreaseQuantity = () => {
-  if(props.modelValue > 1) emit('update:modelValue', props.modelValue - 1);
-};
-</script>
