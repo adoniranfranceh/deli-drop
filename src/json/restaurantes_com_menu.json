@@ -3,25 +3,28 @@
     "id": 1,
     "name": "Pizzaria Bella",
     "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "id": 1,
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.comidaereceitas.com.br/wp-content/uploads/2019/08/pizza_fritadeira-780x520.jpg"
       },
       {
         "id": 2,
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -35,6 +38,8 @@
         "id": 3,
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -49,20 +54,20 @@
         "id": 1,
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.comidaereceitas.com.br/wp-content/uploads/2019/08/pizza_fritadeira-780x520.jpg"
       },
       {
         "id": 2,
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -76,6 +81,8 @@
         "id": 3,
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -92,25 +99,28 @@
     "id": 2,
     "name": "Sushi Yama",
     "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "id": 4,
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "id": 5,
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -124,6 +134,8 @@
         "id": 6,
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -140,23 +152,26 @@
     "id": 3,
     "name": "Hamburgueria Top",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbG9kWf9tjiOh5M9i6bERaIWLmMu5r5twNcg&s",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -169,6 +184,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -185,23 +202,26 @@
     "id": 4,
     "name": "Veggie Time",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAins4nYG1Z8tGwVD0iZXSpdWx2rsKoIO_yQ&s",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -214,6 +234,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -230,23 +252,26 @@
     "id": 5,
     "name": "Doces da Vó",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3cMCDvOZmRUQYjEwiMvPfGXnWa2_P3aqfIQ&s",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -259,6 +284,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -275,23 +302,26 @@
     "id": 6,
     "name": "Taco Loco",
     "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-mexicano-com-design-plano_23-2149433478.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -304,6 +334,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -320,23 +352,26 @@
     "id": 7,
     "name": "China Box",
     "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-chines-com-desenho-de-caixa-de-comida_23-2148465080.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -349,6 +384,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -365,23 +402,26 @@
     "id": 8,
     "name": "Churrasquinho BR",
     "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-churrasco-com-design-plano_23-2148487451.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -394,6 +434,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -410,23 +452,26 @@
     "id": 9,
     "name": "Padoca Central",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW2vNFBzP7h_w7WsQARapeiC0HHECD2r3w6Q&s",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -439,6 +484,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -455,23 +502,26 @@
     "id": 10,
     "name": "Café do Bairro",
     "logo": "https://img.freepik.com/vetores-premium/logotipo-do-cafe-design-de-logotipo-de-cafe-moderno_564974-197.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -484,6 +534,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -500,23 +552,26 @@
     "id": 11,
     "name": "La Pasta",
     "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-italiano-em-desenho-plano_23-2148477011.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -529,6 +584,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -545,23 +602,26 @@
     "id": 12,
     "name": "Dogão Express",
     "logo": "https://img.freepik.com/vetores-premium/logotipo-de-hot-dog-de-estilo-vintage_441769-122.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -574,6 +634,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -590,23 +652,26 @@
     "id": 13,
     "name": "Temaki House",
     "logo": "https://img.freepik.com/vetores-gratis/modelo-de-logotipo-de-temaki-com-design-plano_23-2148476760.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -619,6 +684,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -635,23 +702,26 @@
     "id": 14,
     "name": "Açaiteria Raiz",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -664,6 +734,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -680,23 +752,26 @@
     "id": 15,
     "name": "Pastel Mania",
     "logo": "https://static.ifood-static.com.br/image/upload/t_high/logosgde/a8d38990-5b79-43c3-8b80-73d48f96ddc1/202008231507_Uw1y_i.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -709,6 +784,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -725,23 +802,26 @@
     "id": 16,
     "name": "Food Truck 77",
     "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-food-truck-com-design-plano_23-2148460642.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -754,6 +834,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -770,23 +852,26 @@
     "id": 17,
     "name": "Espetinhos da Vila",
     "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-churrasco-em-estilo-vintage_23-2148461093.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -799,6 +884,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -815,23 +902,26 @@
     "id": 18,
     "name": "Donuts & Cia",
     "logo": "https://img.freepik.com/vetores-gratis/design-de-logotipo-de-donuts_23-2148477335.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -844,6 +934,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -860,23 +952,26 @@
     "id": 19,
     "name": "Sucos Tropicais",
     "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-suco-com-design-plano_23-2148455880.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -889,6 +984,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
@@ -905,23 +1002,26 @@
     "id": 20,
     "name": "Lanches da Tarde",
     "logo": "https://img.freepik.com/vetores-gratis/logotipo-do-fast-food-lanches_23-2148455882.jpg",
+    "rating": 4.3,
+    "delivery_duration": "25-30",
+    "description": "Pizzas artesanais com ingredientes importados",
     "menu": [
       {
         "name": "Prato Especial",
         "eta": 30,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Principal",
         "price": 34.99,
         "description": "Prato especial da casa, feito com ingredientes frescos.",
-        "ingredients": [
-          "Ingrediente 1",
-          "Ingrediente 2",
-          "Ingrediente 3"
-        ],
+        "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
         "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
       },
       {
         "name": "Bebida Refrescante",
         "eta": 10,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Bebida",
         "price": 9.99,
         "description": "Bebida gelada para acompanhar sua refeição.",
@@ -934,6 +1034,8 @@
       {
         "name": "Sobremesa Doce",
         "eta": 15,
+        "duration": "5-10",
+        "rating": 4.3,
         "category": "Sobremesa",
         "price": 14.99,
         "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
