@@ -37,6 +37,13 @@ function closeModal() {
 
 defineExpose({ openModal })
 
+const emit = defineEmits('add-to-cart')
+
+function addtoCart(event) {
+  emit('add-to-cart', event)
+  closeModal()
+}
+
 const productMap = new Map();
 props.products.forEach(product => {
   productMap.set(product.id, product);
