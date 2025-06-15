@@ -1,38 +1,76 @@
 <template>
   <div class="modal-overlay" @click.self="$emit('close')">
     <div class="modal-content">
-      <CloseButton @close="$emit('close')" />
-      <h2>{{ product.name }}</h2>
-      <p>Categoria: {{ product.category }}</p>
+      <div class="image-wrapper">
+        <CloseButton @close="$emit('close')" />
+        <img :src="product.image" :alt="product.name" class="modal-image" />
+      </div>
 
       <div class="product-details">
-        <img :src="product.image" class="modal-image" />
-
         <div class="about-product"> 
-          <p class="product-description">{{ product.description }}</p>
-          <div class="product-price">
-            R$ {{ (product.price * quantity).toFixed(2).replace('.', ',') }}
-          </div>
-
-          <Ingredients :ingredients="product.ingredients" />
-
-          <div class="comment-content">
-            <label for="comment">Algum comentário?</label>
-            <textarea id="comment" rows="7" placeholder="Ex: sem cebola, sem maionese..."></textarea>
-          </div>
+          <h2>{{ product.name }}</h2>
+          <div class="product-price">R$ {{ totalPrice }}</div>
         </div>
-      </div>
-      
-      <div class="add-wrapper">
-        <WrapperQuantity v-model="quantity" />
-        <button class="add-button" @click="$emit('add-to-cart', { product, quantity })">
-          Adicionar ao carrinho
-          R$ {{ totalPrice }}
-        </button>
+
+        <div class="info">
+          <div class="header-wrapper">
+            <p>{{ product.description }}</p>
+            <Rating v-if="product.rating" :rating="product.rating" />
+          </div>
+          <DeliveryDuration :duration="product.duration" />
+        </div>
+
+        <hr />
+
+        <Ingredients :ingredients="product.ingredients" />
+
+        <div class="comment-content">
+          <label for="comment">Algum comentário?</label>
+          <textarea
+            id="comment"
+            rows="5"
+            placeholder="Ex: sem cebola, sem maionese..."
+          ></textarea>
+        </div>
+
+        <hr />
+
+        <div class="add-wrapper">
+          <WrapperQuantity v-model="quantity" />
+          <Button
+            :text="'Adicionar R$ ' + totalPrice"
+            iconLeft="ph:shopping-bag-open-thin"
+            @click="$emit('add-to-cart', { product, quantity })"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref, computed } from 'vue'
+import CloseButton from './CloseButton.vue'
+import WrapperQuantity from './WrapperQuantity.vue'
+import Ingredients from './Ingredients.vue'
+import Button from './ui/Button.vue'
+import Rating from './ui/Rating.vue'
+import DeliveryDuration from './ui/DeliveryDuration.vue'
+import { FloatToMoney } from '../utils/money'
+
+const quantity = ref(1)
+
+const props = defineProps({
+  product: {
+    type: Object,
+    required: true
+  }
+})
+
+const totalPrice = computed(() =>
+  FloatToMoney(props.product.price * quantity.value)
+)
+</script>
 
 <style scoped>
 .modal-overlay {
@@ -48,22 +86,20 @@
 .modal-content {
   display: flex;
   flex-direction: column;
-  text-align: center;
-  background: white;
+  background: #fff;
   max-width: 1200px;
-  width: 100%;
-  height: 65%;
-  padding: 1rem;
-  border-radius: 1rem;
+  width: 800px;
+  height: 90%;
+  border-radius: 10px;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
   animation: slideUp 0.3s ease;
 }
 
 .modal-content h2 {
+  color: var(--color-primary);
   font-size: 1.5rem;
-  margin-bottom: 0.2rem;
-  text-align: center;
+  margin-bottom: 0;
 }
 
 .modal-content p {
@@ -74,72 +110,74 @@
 }
 
 .product-details {
+  padding: 1.5rem;
+}
+
+.header-wrapper {
   display: flex;
-  height: 125vw;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .modal-image {
-  flex: 1;
-  width: 400px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
+  display: block;
   object-fit: cover;
-  border-radius: 0.5rem;
+}
+
+.image-wrapper {
+  height: 40%;
+  position: relative;
 }
 
 .about-product {
-  flex: 1;
-  margin-left: 1rem;
-}
-
-.product-description {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 1rem;
-  line-height: 1.5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .comment-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 2rem;
-  margin-left: 1rem;
-  flex: 1;
+  margin: 2rem 0;
+}
+
+.comment-content label {
+  font-weight: 700;
 }
 
 .comment-content textarea {
-  width: 97%;
-  padding: 0.4rem;
+  width: 100%;
   border: 1px solid var(--color-border);
   border-radius: 0.5rem;
   margin-top: 1rem;
   resize: none;
+
+}
+
+.comment-content textarea::placeholder {
+  padding: 0.5rem;
 }
 
 .add-wrapper {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 0.5rem;
-  z-index: 2;
-}
-
-.add-button {
-  width: 40%;
-  height: 3.5rem;
-  padding: 0.8rem;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
+  margin: 1.5rem 0;
 }
 
 .product-price {
-  font-size: 1rem;
-  color: #28a745;
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.25rem;
+}
+
+hr {
+  border-top: 1px solid var(--color-border);
+  margin: 1.5rem 0;
 }
 
 @keyframes slideUp {
@@ -155,54 +193,26 @@
   .modal-content {
     width: 100%;
     height: 100%;
-    max-width: none;
     border-radius: 0;
-    flex-wrap: wrap;
-  }
-
-  .add-wrapper {
-    align-items: center;
-  }
-
-  .add-wrapper .add-button {
-    width: 100%;
   }
 
   .modal-image {
+    height: 270px;
+  }
+
+  .add-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .comment-content textarea {
     width: 100%;
-    height: 200px;
   }
 
   .about-product {
-    margin-left: 0;
-  }
-
-  .product-details {
     flex-direction: column;
-  }
-
-  .comment-content {
-    margin-left: 0;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 }
 </style>
-
-<script setup>
-import { ref, computed } from 'vue';
-import CloseButton from './CloseButton.vue';
-import WrapperQuantity from './WrapperQuantity.vue';
-import Ingredients from './Ingredients.vue';
-
-const quantity = ref(1);
-
-const props = defineProps({
-  product: {
-    type: Object,
-    required: true
-  }
-});
-
-const totalPrice = computed(() => {
-  return (props.product.price * quantity.value).toFixed(2).replace('.', ',');
-});
-</script>
