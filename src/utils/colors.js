@@ -20,12 +20,3 @@ export function getComputedColor(cssVarName) {
     .getPropertyValue(cssVarName)
     .trim();
 }
-
-export function setDefaultStyles(bgColor, darkenColorFn = darkenColor) {
-  console.log('Setando overlay:', bgColor);
-  document.documentElement.style.setProperty('--color-restaurant', bgColor);
-  document.documentElement.style.setProperty(
-    '--color-restaurant-hover',
-    darkenColorFn(bgColor, 20)
-  );
-}

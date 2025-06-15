@@ -1,12 +1,15 @@
+@import "@fontsource/inter";
+
 :root {
   /* === Fontes === */
-  --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
   /* === Cores principais === */
   --color-primary: #E53935;
+  --color-primary-hover: #c62828;
   --color-secondary: #FFCA28;
   --color-white: #ffffff;
   --color-black: #1a1a1a;
