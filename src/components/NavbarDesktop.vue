@@ -35,17 +35,21 @@ nav a:hover {
   font-family: 'Inter', sans-serif;
   color: var(--color-text);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
   padding: 1rem 2rem;
   background-color: white;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
+
 .logo {
   height: 4rem;
+  margin-right: 25%;
+  position: absolute;
+  left: 10px;
 }
 
 .active {
