@@ -18,6 +18,10 @@ const appDownloadLink = 'https://play.google.com/store/apps/details?id=seu.app'
 </script>
 
 <style scoped>
+nav {
+  margin: 20px;
+}
+
 nav a {
   margin-left: 1.5rem;
   text-decoration: none;
