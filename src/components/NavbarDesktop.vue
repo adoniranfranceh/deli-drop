@@ -57,7 +57,7 @@ nav a:hover {
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 840px) {
   #container-nav-desktop {
     display: none;
   }
