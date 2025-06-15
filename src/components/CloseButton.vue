@@ -1,53 +1,52 @@
 <template>
-  <div class="close-button-container">
-    <button class="close-button-desktop" @click="$emit('close')">x</button>
-    <button class="close-button-mobile" @click="$emit('close')"><</button>
-  </div>
+  <Icon
+    icon="solar:close-circle-bold"
+    class="close-button desktop"
+    @click="$emit('close')"
+  />
+  <Icon
+    icon="material-symbols-light:arrow-circle-left"
+    class="close-button mobile"
+    @click="$emit('close')"
+  />
 </template>
 
 <script setup>
-defineEmits(['close']);
+import { Icon } from '@iconify/vue'
+
+defineEmits(['close'])
 </script>
 
 <style scoped>
-.close-button-container {
-  display: flex;
-  justify-content: flex-end;
-}
-.close-button-desktop {
-  display: flex;
-  justify-content: flex-end;
-  width: 10%;
-  padding: 0.5rem;
-  color: var(--color-error);
+.close-button {
+  position: absolute;
+  top: 12px;
+  width: 42px;
+  height: 42px;
+  color: rgb(255 255 255 / 0.9);
   background: none;
   border: none;
-  font-size: 1.5rem;
   cursor: pointer;
 }
 
-.close-button-mobile {
+.close-button.desktop {
+  right: 12px;
+}
+
+.close-button.mobile {
   display: none;
 }
 
 @media (max-width: 768px) {
-  .close-button-container {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .close-button-desktop {
+  .close-button.desktop {
     display: none;
   }
 
-  .close-button-mobile {
+  .close-button.mobile {
     display: block;
-    width: 10%;
-    padding: 0.5rem;
-    color: var(--color-error);
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
+    left: 12px;
+    width: 50px;
+    height: 50px;
   }
 }
 </style>
