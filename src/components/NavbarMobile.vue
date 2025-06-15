@@ -35,7 +35,7 @@ const closeMenu = () => (menuOpen.value = false)
   display: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 840px) {
   #container-nav-desktop {
     display: none;
   }
