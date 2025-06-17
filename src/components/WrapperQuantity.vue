@@ -1,6 +1,6 @@
 <template>
   <div class="quantity-wrapper">
-    <span class="label-quantity">Quantidade:</span>
+    <span v-if="!noLabel" class="label-quantity">Quantidade:</span>
 
     <button
       class="btn"
@@ -22,6 +22,9 @@ const props = defineProps({
   modelValue: {
     type: Number,
     required: true
+  },
+  noLabel: {
+    type: Boolean,
   }
 })
 
@@ -54,8 +57,8 @@ const decreaseQuantity = () => {
 }
 
 .btn {
-  width: 3rem;
-  height: 3rem;
+  width: 2.2rem;
+  height: 2.2rem;
   font-size: 1.4rem;
   border: 1px solid var(--color-border);
   background-color: var(--color-white);
