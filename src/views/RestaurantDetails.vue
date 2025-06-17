@@ -26,23 +26,14 @@
           <Location location="Entrega disponível" />
         </div>
       </header>
-
-      <hr />
-
+  
       <div class="products">
-        <div v-for="category in restaurant.categories" :key="category.id" class="category-section">
-          <h2>{{ category.name }}</h2>
-          <div v-for="product in category.products" :key="product.id" class="product-card">
-            <div class="products">
-              <FeaturedProducts
-                :products="category.products"
-                @add-to-cart="addToCart"
-                :showInRestaurant="true"
-                :bgColor="bgColorSetted"
-              />
-            </div>
-          </div>
-        </div>
+        <FeaturedProducts
+          :products="restaurant.menu"
+          @add-to-cart="addToCart"
+          :showInRestaurant="true"
+          :bgColor="bgColorSetted"
+        />
       </div>
     </div>
   </div>
