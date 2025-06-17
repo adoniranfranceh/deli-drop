@@ -20,122 +20,129 @@
 
       <div class="product-footer">
         <strong class="product-price">R$ {{ FloatToMoney(product.price) }}</strong>
-        <Button
-          text="Adicionar"
-          @click.stop="$emit('add-to-cart', { product })"
-        />
+          <Button
+            text="Adicionar"
+            @click.stop="cartStore.addCart({ product, quantity: 1 }, restaurantStore.restaurantInfo)"
+          />
+        </div>
       </div>
     </div>
-  </div>
-</template>
+  </template>
 
-<script setup>
-import InfoProduct from './ui/InfoProduct.vue'
-import Button from './ui/Button.vue'
-import { FloatToMoney } from '../utils/money'
+  <script setup>
+  import InfoProduct from './ui/InfoProduct.vue'
+  import Button from './ui/Button.vue'
+  import { FloatToMoney } from '../utils/money'
+  import { useCartStore } from '../stores/cartStore'
+  import { useRoute } from 'vue-router'
+  import { useRestaurantStore } from '../stores/useRestaurantStore'
+  const restaurantStore = useRestaurantStore()
 
-defineProps({
-  product: {
-    type: Object,
-    required: true,
-  },
-  showInRestaurant: {
-    type: Boolean,
-    default: false,
-  },
-})
-</script>
+  const cartStore = useCartStore()
+  const route = useRoute()
 
-<style scoped>
-.product-card {
-  background: var(--color-white);
-  border-radius: 1rem;
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.3s;
-  border: 1px solid var(--color-border);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
+  defineProps({
+    product: {
+      type: Object,
+      required: true,
+    },
+    showInRestaurant: {
+      type: Boolean,
+      default: false,
+    },
+  })
+  </script>
 
-.product-card:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-lg);
-}
-
-.product-card:hover h3 {
-  color: var(--color-primary);
-}
-
-.image-wrapper {
-  position: relative;
-}
-
-.product-stamp {
-  background: var(--color-primary);
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  border-radius: 9999px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--color-white);
-  padding: 4px 20px;
-}
-
-.product-image {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-
-.product-info {
-  padding: 2rem;
-}
-
-.product-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.product-header h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--color-text);
-}
-
-.product-header p {
-  font-size: 1rem;
-  color: var(--color-muted);
-  font-weight: 600;
-  line-height: 1.6;
-}
-
-.product-description {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-}
-
-.product-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.product-price {
-  font-size: 25px;
-}
-
-@media (max-width: 758px) {
-  .product-info {
-    padding: 1rem;
+  <style scoped>
+  .product-card {
+    background: var(--color-white);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.3s;
+    border: 1px solid var(--color-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
   }
-}
-</style>
+
+  .product-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .product-card:hover h3 {
+    color: var(--color-primary);
+  }
+
+  .image-wrapper {
+    position: relative;
+  }
+
+  .product-stamp {
+    background: var(--color-primary);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--color-white);
+    padding: 4px 20px;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+
+  .product-info {
+    padding: 2rem;
+  }
+
+  .product-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--color-text);
+  }
+
+  .product-header p {
+    font-size: 1rem;
+    color: var(--color-muted);
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  .product-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+
+  .product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .product-price {
+    font-size: 25px;
+  }
+
+  @media (max-width: 758px) {
+    .product-info {
+      padding: 1rem;
+    }
+  }
+  </style>
