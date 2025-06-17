@@ -3,17 +3,18 @@ import ColorThief from 'colorthief'
 import { darkenColor, getComputedColor } from '@/utils/colors'
 import { setDefaultStyles } from '@/utils/theme'
 import data_restaurants from '@/json/restaurantes_com_menu.json'
+import { useRestaurantStore } from '../stores/useRestaurantStore'
 
 export function useRestaurantData(router) {
   const restaurant = ref(null)
   const bgColor = ref('black')
   const backgroundImage = ref(null)
+  const restaurantStore = useRestaurantStore()
 
   const restaurantMap = new Map()
   data_restaurants.forEach(r => restaurantMap.set(r.id, r))
 
   function loadRestaurantData(id) {
-    console.log('olaaaaaaaaaaa')
     const restaurantData = restaurantMap.get(id)
     restaurant.value = restaurantData
 
@@ -37,6 +38,14 @@ export function useRestaurantData(router) {
       const dominantColor = colorThief.getColor(img) || [0, 0, 0]
       bgColor.value = `rgb(${dominantColor.join(',')})`
       setDefaultStyles(bgColor.value)
+
+      restaurantStore.setRestaurant({
+        id: restaurantData.id,
+        name: restaurantData.name,
+        deliveryDuration: restaurantData.delivery_duration,
+        logo: restaurantData.logo,
+        color: bgColor.value
+      })
     }
 
     img.onerror = () => {
@@ -44,9 +53,16 @@ export function useRestaurantData(router) {
       bgColor.value = fallback
 
       const hoverColor = darkenColor(fallback, 20)
-      document.documentElement.style.setProperty('--color-restaurant-hover', hoverColor)
+      document.documentElement.style.setProperty('--color-primary-hover', hoverColor)
 
       setDefaultStyles(bgColor.value)
+      restaurantStore.setRestaurant({
+        id: restaurantData.id,
+        name: restaurantData.name,
+        deliveryDuration: restaurantData.delivery_duration,
+        logo: restaurantData.logo,
+        color: bgColor.value
+      })
     }
   }
 
