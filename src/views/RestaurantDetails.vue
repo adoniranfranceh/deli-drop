@@ -23,60 +23,59 @@
         <div class="restaurant-rating">
           <Rating :rating="restaurant.rating" />
           <DeliveryDuration :duration="restaurant.delivery_duration"/>
-          <span>
-            <Icon icon="system-uicons:location" style="width: 20px; height: 20px;" />
-            Entrega disponível
-          </span>
+          <Location location="Entrega disponível" />
         </div>
       </header>
-  
+
+      <hr />
+
       <div class="products">
-        <FeaturedProducts
-          :products="restaurant.menu"
-          @add-to-cart="addToCart"
-          :showInRestaurant="true"
-          :bgColor="bgColorSetted"
-        />
+        <div v-for="category in restaurant.categories" :key="category.id" class="category-section">
+          <h2>{{ category.name }}</h2>
+          <div v-for="product in category.products" :key="product.id" class="product-card">
+            <div class="products">
+              <FeaturedProducts
+                :products="category.products"
+                @add-to-cart="addToCart"
+                :showInRestaurant="true"
+                :bgColor="bgColorSetted"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <footer class="cart-bar" v-if="cart.length">
-      <img :src="restaurant.logo" alt="" class="logo-cart" />
-      <p>{{ cart.length }} {{ cart.length > 1 ? 'Drops' : 'Drop' }} na sua sacola</p>
-      <button @click="goToCart" aria-label="Ver sacola com itens adicionados">Ver sacola</button>
-    </footer>
   </div>
 </template>
 
 <script setup>
 import { onMounted, watchEffect, ref } from 'vue'
-import { useRoute, useRouter, onBeforeRouteLeave } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useRestaurantData } from '@/composables/useRestaurantData'
 import FeaturedProducts from '../components/FeaturedProducts.vue'
-import { Icon } from '@iconify/vue'
 import DeliveryDuration from '../components/ui/DeliveryDuration.vue'
 import Rating from '../components/ui/Rating.vue'
+import { useCartStore } from '../stores/cartStore'
+import Location from '../components/ui/Location.vue'
+import { useRestaurantStore } from '../stores/useRestaurantStore'
 
 const route = useRoute()
 const router = useRouter()
 
+const cartStore = useCartStore()
+const restaurantStore = useRestaurantStore()
 const { restaurant, bgColor, backgroundImage, loadRestaurantData } = useRestaurantData(router)
+
 const bgColorSetted = bgColor
 
 const cart = ref([])
 
 function addToCart(item) {
-  cart.value.push(...Array(item.quantity).fill(item.product))
-  localStorage.setItem('cart', JSON.stringify(cart.value))
+  console.log('item', item)
+  cartStore.addCart(item, restaurantStore.restaurantInfo)
 }
 
-function goToCart() {
-  router.push('/sacola')
-}
-
-onMounted(() => {
-  const storedCart = localStorage.getItem('cart')
-  if (storedCart) cart.value = JSON.parse(storedCart)
+onMounted(restaurant, (value) => {
   loadRestaurantData(Number(route.params.id))
 })
 
@@ -85,11 +84,11 @@ watchEffect(() => {
   if (id) loadRestaurantData(id)
 })
 
-onBeforeRouteLeave((to, from, next) => {
-  document.documentElement.style.setProperty('--color-primary', '#E53935')
-  document.documentElement.style.setProperty('--color-primary-hover', '#c62828')
-  next()
-})
+// onBeforeRouteLeave((to, from, next) => {
+//   document.documentElement.style.setProperty('--color-restaurant', '#E53935')
+//   document.documentElement.style.setProperty('--color-restaurant-hover', '#c62828')
+//   next()
+// })
 </script>
 
 <style>
@@ -115,7 +114,7 @@ onBeforeRouteLeave((to, from, next) => {
 .overlay {
   position: absolute;
   inset: 0;
-  background-color: color-mix(in srgb, var(--color-primary-hover) 70%, transparent);
+  background-color: color-mix(in srgb, var(--color-restaurant-hover) 70%, transparent);
 }
 
 .restaurant-header {
@@ -132,7 +131,7 @@ onBeforeRouteLeave((to, from, next) => {
     margin-top: 5rem;
     display: flex;
     align-items: center;
-    color: var(--color-primary);
+    color: var(--color-restaurant);
   }
 
   p {
@@ -191,7 +190,7 @@ onBeforeRouteLeave((to, from, next) => {
 }
 
 button {
-  background-color: var(--color-primary);
+  background-color: var(--color-restaurant);
   color: white;
   border: none;
   border-radius: 6px;
@@ -204,33 +203,5 @@ button {
 
 button:hover {
   background-color: var(--color-link-hover);
-}
-
-.cart-bar {
-  position: fixed;
-  bottom: 10px;
-  left: 1;
-  right: 10px;
-  background-color: var(--color-primary);
-  color: white;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: var(--shadow-lg);
-  z-index: 100;
-  border-radius: 1rem;
-  max-width: 400px;
-
-  img {
-    margin: 0 15px;
-  }
-}
-
-.logo-cart {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
 }
 </style>
