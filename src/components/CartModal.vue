@@ -360,7 +360,7 @@ hr {
 @media (max-width: 768px) {
   .modal-content {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     border-radius: 0;
     margin: 0;
     overflow-y: auto;
