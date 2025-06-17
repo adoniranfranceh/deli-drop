@@ -49,7 +49,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import CloseButton from './CloseButton.vue'
 import WrapperQuantity from './WrapperQuantity.vue'
 import Ingredients from './Ingredients.vue'
@@ -57,6 +57,7 @@ import Button from './ui/Button.vue'
 import Rating from './ui/Rating.vue'
 import DeliveryDuration from './ui/DeliveryDuration.vue'
 import { FloatToMoney } from '../utils/money'
+import { useUIStore } from '@/stores/uiStore'
 
 const quantity = ref(1)
 
@@ -70,6 +71,17 @@ const props = defineProps({
 const totalPrice = computed(() =>
   FloatToMoney(props.product.price * quantity.value)
 )
+
+
+const ui = useUIStore()
+
+onMounted(() => {
+  ui.openModal()
+})
+
+onUnmounted(() => {
+  ui.closeModal()
+})
 </script>
 
 <style scoped>
@@ -201,7 +213,6 @@ hr {
   }
 
   .add-wrapper {
-    flex-direction: column;
     gap: 1rem;
   }
 
