@@ -10,7 +10,7 @@
  
   defineProps({
     rating: {
-      type: String,
+      type: Number,
       required: true
     }
   })
