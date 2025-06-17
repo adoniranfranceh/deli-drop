@@ -12,8 +12,11 @@
     "@fontsource/inter": "^5.2.6",
     "@iconify/vue": "^5.0.0",
     "colorthief": "^2.6.0",
+    "pinia": "^3.0.3",
+    "sweetalert2": "^11.22.0",
     "vue": "^3.5.13",
-    "vue-router": "4"
+    "vue-router": "4",
+    "vue-sweetalert2": "^5.0.11"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.3",
