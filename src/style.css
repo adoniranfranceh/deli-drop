@@ -26,7 +26,8 @@ h1 {
   line-height: 1.1;
 }
 
-hr { border-top: 1px solid var(--color-border);
+hr { 
+  border-top: 1px solid var(--color-border);
   margin: 0;
   width: 100%;
   box-sizing: border-box;
@@ -80,10 +81,8 @@ button:focus-visible {
   border: 1px solid red;
 }
 
-@media (max-width: 768px) {
-  body.modal-open {
-    overflow: hidden;
-  }
+body.modal-open {
+  overflow: hidden;
 }
 
 @media (prefers-color-scheme: light) {

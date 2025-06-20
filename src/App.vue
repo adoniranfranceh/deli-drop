@@ -18,7 +18,7 @@ import { useUIStore } from '@/stores/uiStore'
 const ui = useUIStore()
 
 watch(() => ui.isMobileModalOpen, (isOpen) => {
-  const isMobile = window.innerWidth <= 768
+  const isMobile = window.innerWidth <= 1000
   if (isMobile && isOpen) {
     document.body.classList.add('modal-open')
   } else {
