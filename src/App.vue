@@ -1,6 +1,6 @@
 <template>
   <div id="layout">
-    <NavBar />
+    <Navbar />
     <main id="container">
       <router-view />
       <CartBar />
@@ -9,8 +9,9 @@
 </template>
 
 <script setup>
-import NavBar from '@/components/Navbar.vue'
-import CartBar from './components/CartBar.vue';
+import Navbar from '@/components/navigation/Navbar.vue'
+import CartBar from '@/components/cart/CartBar.vue';
+
 
 import { watch } from 'vue'
 import { useUIStore } from '@/stores/uiStore'

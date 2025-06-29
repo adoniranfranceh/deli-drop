@@ -63,6 +63,12 @@ function handleClick(event) {
   transform: scale(1.05);
 }
 
+.cta-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 span {
   display: flex;
   align-items: center;
@@ -88,6 +94,10 @@ span {
 @media (max-width: 600px) {
   .cta-button {
     padding: 0.7rem 1rem;
+  }
+
+  span {
+    font-size: 14px;
   }
 }
 </style>
