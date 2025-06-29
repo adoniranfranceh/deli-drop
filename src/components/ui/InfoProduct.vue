@@ -10,10 +10,9 @@
 </template>
 
 <script setup>
-import { Icon } from '@iconify/vue';
-import Chip from './Chip.vue';
-import Rating from './Rating.vue';
-import DeliveryDuration from './DeliveryDuration.vue';
+import Chip from '@/components/ui/Chip.vue';
+import Rating from '@/components/ui/Rating.vue';
+import DeliveryDuration from '@/components/ui/DeliveryDuration.vue';
 
 defineProps({
   product: {
