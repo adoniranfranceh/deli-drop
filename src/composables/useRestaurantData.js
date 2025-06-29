@@ -1,9 +1,9 @@
 import { ref } from 'vue'
 import ColorThief from 'colorthief'
-import { darkenColor, getComputedColor } from '@/utils/colors'
+import { getComputedColor } from '@/utils/colors'
 import { setDefaultStyles } from '@/utils/theme'
 import data_restaurants from '@/json/restaurantes_com_menu.json'
-import { useRestaurantStore } from '../stores/useRestaurantStore'
+import { useRestaurantStore } from '@/stores/useRestaurantStore'
 
 export function useRestaurantData(router) {
   const restaurant = ref(null)
@@ -11,12 +11,29 @@ export function useRestaurantData(router) {
   const backgroundImage = ref(null)
   const restaurantStore = useRestaurantStore()
 
-  const restaurantMap = new Map()
-  data_restaurants.forEach(r => restaurantMap.set(r.id, r))
+  // Mapa para acesso rápido aos restaurantes por id
+  const restaurantMap = new Map(data_restaurants.map(r => [r.id, r]))
+
+  // Função para setar a imagem de fundo aleatória, se ainda não existir
+  function setRandomBackgroundImage() {
+    if (!backgroundImage.value && restaurantStore.allProducts?.length > 0) {
+      const randomIndex = Math.floor(Math.random() * restaurantStore.allProducts.length)
+      backgroundImage.value = restaurantStore.allProducts[randomIndex].image
+    }
+  }
+
+  // Função para aplicar cor ao restaurante e atualizar a store
+  function applyRestaurantColor(restaurantData, color) {
+    bgColor.value = color
+    setDefaultStyles(color)
+    restaurantData.color = color
+    restaurantStore.setRestaurant(restaurantData)
+    restaurant.value = restaurantData
+    setRandomBackgroundImage()
+  }
 
   function loadRestaurantData(id) {
-    const restaurantData = restaurantMap.get(id)
-    restaurant.value = restaurantData
+    const restaurantData = { ...restaurantMap.get(id), color: null }
 
     if (!restaurantData) {
       alert('Restaurante não encontrado.')
@@ -28,41 +45,24 @@ export function useRestaurantData(router) {
     img.crossOrigin = 'Anonymous'
     img.src = restaurantData.logo || ''
 
-    if (restaurantData.menu?.length > 0) {
-      const randomIndex = Math.floor(Math.random() * restaurantData.menu.length)
-      backgroundImage.value = restaurantData.menu[randomIndex].image
-    }
-
     img.onload = () => {
-      const colorThief = new ColorThief()
-      const dominantColor = colorThief.getColor(img) || [0, 0, 0]
-      bgColor.value = `rgb(${dominantColor.join(',')})`
-      setDefaultStyles(bgColor.value)
-
-      restaurantStore.setRestaurant({
-        id: restaurantData.id,
-        name: restaurantData.name,
-        deliveryDuration: restaurantData.delivery_duration,
-        logo: restaurantData.logo,
-        color: bgColor.value
-      })
+      try {
+        const colorThief = new ColorThief()
+        const dominantColor = colorThief.getColor(img) || [0, 0, 0]
+        applyRestaurantColor(restaurantData, `rgb(${dominantColor.join(',')})`)
+      } catch {
+        const fallback = getComputedColor('--color-primary')
+        applyRestaurantColor(restaurantData, fallback)
+      }
     }
 
     img.onerror = () => {
       const fallback = getComputedColor('--color-primary')
-      bgColor.value = fallback
+      applyRestaurantColor(restaurantData, fallback)
+    }
 
-      const hoverColor = darkenColor(fallback, 20)
-      document.documentElement.style.setProperty('--color-primary-hover', hoverColor)
-
-      setDefaultStyles(bgColor.value)
-      restaurantStore.setRestaurant({
-        id: restaurantData.id,
-        name: restaurantData.name,
-        deliveryDuration: restaurantData.delivery_duration,
-        logo: restaurantData.logo,
-        color: bgColor.value
-      })
+    if (img.complete) {
+      img.onload()
     }
   }
 

@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { ref, computed, watch } from 'vue'
 import Swal from 'sweetalert2'
 
-function parseJSON(key, fallback = null) {
+function parseJSON(key, fallback) {
   try {
     const value = localStorage.getItem(key)
     return value ? JSON.parse(value) : fallback
@@ -12,21 +12,25 @@ function parseJSON(key, fallback = null) {
 }
 
 function persistLocalStorage(key, value) {
-  localStorage.setItem(key, typeof value === 'string' ? value : JSON.stringify(value))
+  const plain = JSON.parse(JSON.stringify(value))
+  localStorage.setItem(key, JSON.stringify(plain))
 }
 
 export const useCartStore = defineStore('cart', () => {
-  const cartItems = ref(parseJSON('cart', []))
+  const cartItems = ref(Array.isArray(parseJSON('cart')) ? parseJSON('cart') : [])
   const currentRestaurantId = ref(localStorage.getItem('restaurantId') || null)
-  const currentRestaurantInfo = ref(parseJSON('restaurantInfo', null))
+  const currentRestaurantInfo = ref(parseJSON('restaurantInfo') || null)
 
   watch(cartItems, (newVal) => {
     persistLocalStorage('cart', newVal)
-    if (newVal.length === 0) {
+
+    console.log( 'currentRestaurantId.valu', currentRestaurantId.value)
+    if (newVal.length === 0 && currentRestaurantId.value !== null) {
       currentRestaurantId.value = null
       currentRestaurantInfo.value = null
     }
   }, { deep: true })
+
 
   watch(currentRestaurantId, (newVal) => {
     if (newVal) persistLocalStorage('restaurantId', newVal)
@@ -41,7 +45,7 @@ export const useCartStore = defineStore('cart', () => {
   )
 
   const subtotal = computed(() =>
-    cartItems.value.reduce((sum, item) => sum + item.quantity * item.price, 0)
+    cartItems.value.reduce((sum, item) => sum + item.quantity * item.totalPrice, 0)
   )
 
   async function addCart(item, restaurantInfo) {
@@ -79,18 +83,45 @@ export const useCartStore = defineStore('cart', () => {
     currentRestaurantInfo.value = restaurantInfo
 
     const quantity = Math.max(item.quantity || 1, 1)
-    const cartMap = new Map(cartItems.value.map(p => [p.id, p]))
-
-    const existing = cartMap.get(product.id)
+    const selectedModifiers = item.selectedModifiers || []
+    const comment = item.comment || ''
+    const cartItemId = generateCartItemId(product, selectedModifiers)
+    const totalPrice = item.totalPrice
+    const existing = cartItems.value.find(i => i.cartItemId === cartItemId)
 
     if (existing) {
       existing.quantity += quantity
-      cartMap.set(product.id, { ...existing })
     } else {
-      cartMap.set(product.id, { ...product, quantity })
+      cartItems.value.push({
+        ...product,
+        quantity,
+        selectedModifiers,
+        comment,
+        cartItemId,
+        totalPrice
+      })
     }
 
-    cartItems.value = Array.from(cartMap.values())
+    console.log('Carrinho com coisas', cartItems.value)
+    console.log('Carrinho com idzão', cartItems.value[0].cartItemId)
+  }
+
+  function updateCartItem(cartItemId, quantity, selectedModifiers, totalPrice, comment) {
+    console.log('updateCartItem chamado', { cartItemId, quantity, selectedModifiers })
+    const item = cartItems.value.find(i => i.cartItemId === cartItemId)
+    if (item) {
+      item.quantity = quantity
+      item.totalPrice = totalPrice
+      item.comment = comment
+      if (selectedModifiers) {
+        item.selectedModifiers = selectedModifiers
+        item.cartItemId = generateCartItemId(item, selectedModifiers)
+      }
+    }
+  }
+
+  const generateCartItemId = (product, selectedModifiers) => {
+    return `${product.id}--${btoa(JSON.stringify(selectedModifiers || []))}`
   }
 
   function updateQuantity(id, quantity) {
@@ -117,6 +148,7 @@ export const useCartStore = defineStore('cart', () => {
     currentRestaurantId,
     currentRestaurantInfo,
     addCart,
+    updateCartItem,
     updateQuantity,
     removeItem,
     clearCart,
