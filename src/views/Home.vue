@@ -25,19 +25,19 @@
 </template>
 
 <script setup>
-import FeaturedRestaurants from '../components/FeaturedRestaurants.vue';
-import FeaturedProducts from '@/components/FeaturedProducts.vue'
-import Button from '../components/ui/Button.vue';
-import CategoryCarousel from '../components/CategoryCarousel.vue'
-import Footer from '@/components/Footer.vue'
+import FeaturedRestaurants from '@/components/restaurant/FeaturedRestaurants.vue';
+import FeaturedProducts from '@/components/ui/FeaturedProducts.vue'
+import Button from '@/components/ui/Button.vue';
+import CategoryCarousel from '@/components/restaurant/CategoryCarousel.vue'
+import Footer from '@/components/ui/Footer.vue'
 
 const products = [
   {
     id: 1,
     name: 'Pizzaria La Vera',
-    eta: 35,
+    eta: "35",
     category: 'Pizza',
-    price: 29.99,
+    base_price: 29.99,
     description: 'Deliciosa pizza de pepperoni com massa fina e crocante.',
     ingredients: ['Massa fina', 'Molho de tomate', 'Queijo muçarela', 'Pepperoni'],
     rating: 4.1,
@@ -46,9 +46,9 @@ const products = [
   {
     id: 2,
     name: 'Sushi House',
-    eta: 25,
+    eta: "25",
     category: 'Sushi',
-    price: 49.99,
+    base_price: 49.99,
     description: 'Sushi fresco com uma variedade de peixes e vegetais.',
     ingredients: ['Arroz de sushi', 'Peixe fresco', 'Alga nori', 'Vegetais variados'],
     rating: 4.9,
@@ -57,9 +57,9 @@ const products = [
   {
     id: 3,
     name: 'Burguer King',
-    eta: 20,
+    eta: "20",
     category: 'Hambúrguer',
-    price: 19.99,
+    base_price: 19.99,
     description: 'Saboroso hambúrguer com queijo, alface e tomate.',
     ingredients: ['Pão de hambúrguer', 'Carne bovina', 'Queijo cheddar', 'Alface', 'Tomate'],
     rating: 4.5,
