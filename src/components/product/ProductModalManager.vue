@@ -1,0 +1,74 @@
+<template>
+  <div>
+    <ProductModal
+      v-if="selectedProduct"
+      :product="selectedProduct"
+      @close="closeModal"
+      @add-to-cart="addtoCart($event)"
+    />
+  </div>
+</template>
+
+<script setup>
+import { ref, onMounted, watch, defineEmits } from 'vue';
+import ProductModal from '@/components/product/ProductModal.vue';
+import { useRoute, useRouter } from 'vue-router';
+import { useCartStore } from '@/stores/cartStore';
+import { useRestaurantStore } from '@/stores/useRestaurantStore';
+
+const cartStore = useCartStore()
+const restaurantStore = useRestaurantStore()
+
+const props = defineProps({
+  products: {
+    type: Array,
+    required: true
+  }
+});
+
+const selectedProduct = ref(null);
+const route = useRoute();
+const router = useRouter();
+
+function openModal(product) {
+  selectedProduct.value = product;
+  router.push({ query: { productId: product.id } });
+}
+
+function closeModal() {
+  selectedProduct.value = null;
+  router.push({ query: {} });
+}
+
+defineExpose({ openModal })
+
+const emit = defineEmits('add-to-cart')
+
+function addtoCart(event) {
+  cartStore.addCart(event, restaurantStore.restaurantInfo)
+  closeModal()
+}
+
+const productMap = new Map();
+props.products.forEach(product => {
+  productMap.set(product.id, product);
+});
+
+
+onMounted(() => {
+  const idFromURL = route.query.productId;
+  if (idFromURL) {
+    const product = productMap.get(Number(idFromURL));
+    if (product) selectedProduct.value = product;
+  }
+});
+
+watch(() => route.query.productId, (newId) => {
+  if (newId) {
+    const product = productMap.get(Number(newId));
+    if (product) selectedProduct.value = product;
+  } else {
+    selectedProduct.value = null;
+  }
+})
+</script>
