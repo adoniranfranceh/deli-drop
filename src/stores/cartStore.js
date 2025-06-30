@@ -17,14 +17,14 @@ function persistLocalStorage(key, value) {
 }
 
 export const useCartStore = defineStore('cart', () => {
-  const cartItems = ref(Array.isArray(parseJSON('cart')) ? parseJSON('cart') : [])
+  const initialCart = parseJSON('cart', [])
+  const cartItems = ref(Array.isArray(initialCart) ? initialCart : [])
   const currentRestaurantId = ref(localStorage.getItem('restaurantId') || null)
   const currentRestaurantInfo = ref(parseJSON('restaurantInfo') || null)
 
   watch(cartItems, (newVal) => {
     persistLocalStorage('cart', newVal)
 
-    console.log( 'currentRestaurantId.valu', currentRestaurantId.value)
     if (newVal.length === 0 && currentRestaurantId.value !== null) {
       currentRestaurantId.value = null
       currentRestaurantInfo.value = null
@@ -101,27 +101,46 @@ export const useCartStore = defineStore('cart', () => {
         totalPrice
       })
     }
-
-    console.log('Carrinho com coisas', cartItems.value)
-    console.log('Carrinho com idzão', cartItems.value[0].cartItemId)
   }
 
   function updateCartItem(cartItemId, quantity, selectedModifiers, totalPrice, comment) {
-    console.log('updateCartItem chamado', { cartItemId, quantity, selectedModifiers })
-    const item = cartItems.value.find(i => i.cartItemId === cartItemId)
-    if (item) {
-      item.quantity = quantity
-      item.totalPrice = totalPrice
-      item.comment = comment
-      if (selectedModifiers) {
-        item.selectedModifiers = selectedModifiers
-        item.cartItemId = generateCartItemId(item, selectedModifiers)
-      }
+    const index = cartItems.value.findIndex(i => i.cartItemId === cartItemId)
+    if (index === -1) return
+
+    const product = cartItems.value[index]
+    const newCartItemId = generateCartItemId(product, selectedModifiers)
+
+    const existingIndex = cartItems.value.findIndex(
+      (item, i) => item.cartItemId === newCartItemId && i !== index
+    )
+
+    if (existingIndex !== -1) {
+      cartItems.value[existingIndex].quantity += quantity
+      cartItems.value.splice(index, 1)
+    } else {
+      cartItems.value.splice(index, 1, {
+        ...product,
+        quantity,
+        totalPrice,
+        comment,
+        selectedModifiers,
+        cartItemId: newCartItemId
+      })
     }
   }
 
+  function normalizeModifiers(mods) {
+    return (mods || [])
+      .map(mod => ({
+        id: mod.id,
+        selected: [...(mod.selected || [])].sort((a, b) => a.id - b.id)
+      }))
+      .sort((a, b) => a.id - b.id)
+  }
+
   const generateCartItemId = (product, selectedModifiers) => {
-    return `${product.id}--${btoa(JSON.stringify(selectedModifiers || []))}`
+    const normalized = normalizeModifiers(selectedModifiers)
+    return `${product.id}--${btoa(JSON.stringify(normalized))}`
   }
 
   function updateQuantity(id, quantity) {
