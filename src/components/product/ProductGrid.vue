@@ -63,7 +63,7 @@ defineProps({
 }
 
 .product-card:hover h3 {
-  color: var(--color-primary);
+  color: var(--color-restaurant);
 }
 
 .product-info {

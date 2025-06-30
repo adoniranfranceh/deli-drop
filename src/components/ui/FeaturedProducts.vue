@@ -7,7 +7,7 @@
       :showInRestaurant="showInRestaurant"
       :bgColor="bgColor"
       @selected-product="openModal"
-      @add-to-cart="$emit('add-to-cart', $event)"
+      @open-modal="openModal"
     />
 
     <ProductModalManager
