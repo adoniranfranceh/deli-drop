@@ -7,6 +7,10 @@ export const useTotalPriceStore = defineStore('totalPrice', () => {
   const productQuantity = ref(1)
 
   const totalPrice = computed(() =>
+    basePrice.value + extraPrice.value
+  )
+
+  const totalPriceWithQty = computed(() =>
     (basePrice.value + extraPrice.value) * productQuantity.value
   )
 
@@ -23,11 +27,11 @@ export const useTotalPriceStore = defineStore('totalPrice', () => {
   }
 
   function addExtraPrice(amount) {
-    extraPrice.value += amount
+    setExtraPrice(extraPrice.value += amount)
   }
 
   function removeExtraPrice(amount) {
-    extraPrice.value = Math.max(0, extraPrice.value - amount)
+    setExtraPrice(Math.max(0, extraPrice.value - (amount || 0)))
   }
 
   function reset() {
@@ -56,6 +60,7 @@ export const useTotalPriceStore = defineStore('totalPrice', () => {
     productQuantity,
     setExtraPrice,
     totalPrice,
+    totalPriceWithQty,
     setBasePrice,
     addExtraPrice,
     removeExtraPrice,
