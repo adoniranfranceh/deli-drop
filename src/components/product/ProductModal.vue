@@ -9,7 +9,7 @@
       <div class="product-details">
         <div class="about-product"> 
           <h2>{{ product.name }}</h2>
-          <div class="product-price">{{ FloatToMoney(totalPrice) }}</div>
+          <div class="product-price">{{ FloatToMoney(finalPrice) }}</div>
         </div>
 
         <div class="info">
@@ -56,7 +56,7 @@
           <WrapperQuantity v-model="quantity"/>
           <Button
             class="add-btn"
-            :text="(props.cartItemId ? 'Atualizar' : 'Adicionar') + FloatToMoney(totalPrice)"
+            :text="buttonText"
             iconLeft="ph:shopping-bag-open-thin"
             :disabled="!productSelectionStore.modifiersValid && product.modifier_group"
             @click="handleAddToCart"
@@ -83,44 +83,60 @@ import { useRestaurantStore } from '@/stores/useRestaurantStore'
 import { useCartStore } from '@/stores/cartStore'
 import { useProductSelectionStore } from '@/stores/useProductSelectionStore'
 
-const productSelectionStore = useProductSelectionStore()
-const restaurantStore = useRestaurantStore()
-const totalStore = useTotalPriceStore()
-
+const ui = useUIStore()
 const cartStore = useCartStore()
+const totalStore = useTotalPriceStore()
+const restaurantStore = useRestaurantStore()
+const productSelectionStore = useProductSelectionStore()
+
 const props = defineProps({
   product: Object,
-  selectedModifiers: {
-    type: Array,
-    default: () => []
-  },
-  cartItemId: {
-    type: String,
-    default: null
+  selectedModifiers: { type: Array, default: () => [] },
+  cartItemId: { type: String, default: null }
+})
+const emit = defineEmits(['add-to-cart'])
+
+const quantity = ref(props.product.quantity || 1)
+const comment = ref('')
+
+const totalPrice = computed(() => totalStore.totalPrice)
+const finalPrice = computed(() =>
+  totalPrice.value * quantity.value
+)
+
+watch(quantity, (qty) => {
+  if (totalStore.productQuantity !== qty) {
+    totalStore.setQuantity(qty)
+    totalStore.setBasePrice(props.product.base_price)
   }
 })
 
-const emit = defineEmits(['add-to-cart'])
-const ui = useUIStore()
-
-const totalPrice = computed(() => totalStore.totalPrice)
-const quantity = ref(1)
-
 onMounted(() => {
-  ui.openModal()
-  productSelectionStore.basePrice = props.product.base_price
-  totalStore.setBasePrice(props.product.base_price)
-
-  props.product.modifier_group?.forEach(group => {
-    group.modifiers = group.modifiers.map(item => {
-      const product = restaurantStore.getProduct(item)
-      return { ...item, ...product }
-    })
-  })
+  setupModal()
+  hydrateModifierGroups()
+  loadSelectedModifiers()
 })
 
-onMounted(() => {
-  if (props.product && props.selectedModifiers) {
+onUnmounted(() => ui.closeModal())
+
+function setupModal() {
+  ui.openModal()
+  totalStore.setBasePrice(props.product.base_price)
+  totalStore.setQuantity(quantity.value)
+  productSelectionStore.basePrice = props.product.base_price
+}
+
+function hydrateModifierGroups() {
+  props.product.modifier_group?.forEach(group => {
+    group.modifiers = group.modifiers.map(item => ({
+      ...item,
+      ...restaurantStore.getProduct(item)
+    }))
+  })
+}
+
+function loadSelectedModifiers() {
+  if (props.selectedModifiers.length) {
     productSelectionStore.reset()
     props.selectedModifiers.forEach(mod => {
       productSelectionStore.updateModifierSelection(
@@ -131,18 +147,11 @@ onMounted(() => {
       )
     })
   }
-})
+}
 
-onUnmounted(() => {
-  ui.closeModal()
-})
-
-watch(() => quantity.value, (qty) => {
-  if (totalStore.quantity !== qty) {
-    totalStore.setQuantity(qty)
-    totalStore.setBasePrice( props.product.base_price)
-  }
-})
+const buttonText = computed(() =>
+  (props.cartItemId ? 'Atualizar ' : 'Adicionar ') + FloatToMoney(finalPrice.value)
+)
 
 function handleAddToCart() {
   emit('add-to-cart', {
@@ -151,7 +160,7 @@ function handleAddToCart() {
     selectedModifiers: productSelectionStore.plainSelectedModifiers,
     comment: comment.value,
     cartItemId: props.cartItemId,
-    totalPrice: totalPrice.value,
+    totalPrice: totalPrice.value
   })
 }
 </script>
@@ -181,7 +190,7 @@ function handleAddToCart() {
 }
 
 .modal-content h2 {
-  color: var(--color-primary);
+  color: var(--color-restaurant);
   font-size: 1.5rem;
   margin-bottom: 0;
 }
@@ -238,11 +247,6 @@ function handleAddToCart() {
   border-radius: 0.5rem;
   margin-top: 1rem;
   resize: none;
-
-}
-
-.comment-content textarea::placeholder {
-  padding: 0.5rem;
 }
 
 .add-wrapper {
@@ -253,6 +257,15 @@ function handleAddToCart() {
   width: 100%;
   gap: 0.5rem;
   margin: 1.5rem 0;
+
+  button {
+    background: var(--color-restaurant);
+  }
+
+  button:hover {
+    background: var(--color-restaurant);
+    opacity: 0.9;
+  }
 }
 
 .product-price {
@@ -298,6 +311,7 @@ hr {
     width: 90%;
     padding-bottom: 100px;
   }
+
 
   .comment-content textarea {
     width: 97%;

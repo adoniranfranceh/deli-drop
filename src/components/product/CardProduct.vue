@@ -22,7 +22,7 @@
         <strong class="product-price">{{ FloatToMoney(product.base_price) }}</strong>
           <Button
             text="Adicionar"
-            @click.stop="cartStore.addCart({ product, quantity: 1 }, restaurantStore.restaurantInfo)"
+            @click.stop="$emit('open-modal', product)"
           />
         </div>
       </div>
