@@ -41,7 +41,12 @@
 
             <div class="item-name">
               <strong>{{ item.name }}</strong>
-              <span>{{ item.description }}</span>
+              <span class="ingredients" v-if="Array.isArray(item.ingredients)">
+                {{ item.ingredients.join(', ') }}
+              </span>
+              <span v-else>
+                {{ item.ingredients || item.description }}
+              </span>
             </div>
           </div>
 
@@ -174,10 +179,11 @@ const props = defineProps({
   flex-direction: column;
   justify-content: center;
 
-  span {
-    font-size: 0.875rem;
-    color: var(--color-muted);
-  }
+}
+
+.ingredients {
+  font-size: 0.875rem;
+  color: var(--color-muted);
 }
 
 .item-info {
@@ -198,5 +204,11 @@ const props = defineProps({
   font-size: 0.775rem;
   color: var(--color-text-light);
   text-decoration: line-through;
+}
+
+@media (max-width: 758px) {
+  .ingredients {
+    font-size: 11px;
+  }
 }
 </style>

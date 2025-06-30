@@ -32,7 +32,7 @@ const router = useRouter();
 
 function openModal(product) {
   selectedProduct.value = product;
-  router.push({ query: { productId: product.id } });
+  router.push({ path: `/restaurante/${selectedProduct.value.restaurant_id}`, query: { productId: product.id } })
 }
 
 function closeModal() {

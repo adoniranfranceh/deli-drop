@@ -11,92 +11,97 @@
   },
   {
     "id": 3,
-    "name": "Hamburgueria Top",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbG9kWf9tjiOh5M9i6bERaIWLmMu5r5twNcg&s"
-  },
-  {
-    "id": 4,
-    "name": "Veggie Time",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAins4nYG1Z8tGwVD0iZXSpdWx2rsKoIO_yQ&s"
-  },
-  {
-    "id": 5,
-    "name": "Doces da Vó",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3cMCDvOZmRUQYjEwiMvPfGXnWa2_P3aqfIQ&s"
-  },
-  {
-    "id": 6,
-    "name": "Taco Loco",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-mexicano-com-design-plano_23-2149433478.jpg"
-  },
-  {
-    "id": 7,
-    "name": "China Box",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-chines-com-desenho-de-caixa-de-comida_23-2148465080.jpg"
-  },
-  {
-    "id": 8,
-    "name": "Churrasquinho BR",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-churrasco-com-design-plano_23-2148487451.jpg"
-  },
-  {
-    "id": 9,
-    "name": "Padoca Central",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-da-padaria-com-pao-em-desenho-plano_23-2148467235.jpg"
-  },
-  {
-    "id": 10,
-    "name": "Café do Bairro",
-    "logo": "https://img.freepik.com/vetores-premium/logotipo-do-cafe-design-de-logotipo-de-cafe-moderno_564974-197.jpg"
-  },
-  {
-    "id": 11,
-    "name": "La Pasta",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-italiano-em-desenho-plano_23-2148477011.jpg"
-  },
-  {
-    "id": 12,
-    "name": "Dogão Express",
-    "logo": "https://img.freepik.com/vetores-premium/logotipo-de-hot-dog-de-estilo-vintage_441769-122.jpg"
-  },
-  {
-    "id": 13,
-    "name": "Temaki House",
-    "logo": "https://img.freepik.com/vetores-gratis/modelo-de-logotipo-de-temaki-com-design-plano_23-2148476760.jpg"
-  },
-  {
-    "id": 14,
     "name": "Açaiteria Raiz",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
   },
   {
-    "id": 15,
-    "name": "Pastel Mania",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-do-fast-food-pastel_23-2148455883.jpg"
+    "id": 1,
+    "name": "Pizzaria Bella",
+    "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
   },
   {
-    "id": 16,
-    "name": "Food Truck 77",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-food-truck-com-design-plano_23-2148460642.jpg"
+    "id": 2,
+    "name": "Sushi Yama",
+    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
   },
   {
-    "id": 17,
-    "name": "Espetinhos da Vila",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-churrasco-em-estilo-vintage_23-2148461093.jpg"
+    "id": 3,
+    "name": "Açaiteria Raiz",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
   },
   {
-    "id": 18,
-    "name": "Donuts & Cia",
-    "logo": "https://img.freepik.com/vetores-gratis/design-de-logotipo-de-donuts_23-2148477335.jpg"
+    "id": 1,
+    "name": "Pizzaria Bella",
+    "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
   },
   {
-    "id": 19,
-    "name": "Sucos Tropicais",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-suco-com-design-plano_23-2148455880.jpg"
+    "id": 2,
+    "name": "Sushi Yama",
+    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
   },
   {
-    "id": 20,
-    "name": "Lanches da Tarde",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-do-fast-food-lanches_23-2148455882.jpg"
+    "id": 3,
+    "name": "Açaiteria Raiz",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
+  },
+  {
+    "id": 1,
+    "name": "Pizzaria Bella",
+    "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
+  },
+  {
+    "id": 2,
+    "name": "Sushi Yama",
+    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Açaiteria Raiz",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
+  },
+  {
+    "id": 1,
+    "name": "Pizzaria Bella",
+    "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
+  },
+  {
+    "id": 2,
+    "name": "Sushi Yama",
+    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Açaiteria Raiz",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
+  },
+  {
+    "id": 1,
+    "name": "Pizzaria Bella",
+    "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
+  },
+  {
+    "id": 2,
+    "name": "Sushi Yama",
+    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Açaiteria Raiz",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
+  },
+  {
+    "id": 1,
+    "name": "Pizzaria Bella",
+    "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
+  },
+  {
+    "id": 2,
+    "name": "Sushi Yama",
+    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Açaiteria Raiz",
+    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
   }
 ]

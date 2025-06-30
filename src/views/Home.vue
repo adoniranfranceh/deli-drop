@@ -9,7 +9,7 @@
           <p>Entrega rápida, pratos variados e promoções exclusivas.</p>
         </div>
 
-        <Button text="Pedir agora" path="/pedir" icon="radix-icons:arrow-right" />
+        <Button text="Pedir agora" path="/buscar" icon="radix-icons:arrow-right" />
       </section>
 
        <!-- <CategoryCarousel /> -->
@@ -33,38 +33,76 @@ import Footer from '@/components/ui/Footer.vue'
 
 const products = [
   {
-    id: 1,
-    name: 'Pizzaria La Vera',
+    id: 1007,
+    restaurant_id: 1,
+    name: "Combo Mix",
     eta: "35",
-    category: 'Pizza',
-    base_price: 29.99,
-    description: 'Deliciosa pizza de pepperoni com massa fina e crocante.',
-    ingredients: ['Massa fina', 'Molho de tomate', 'Queijo muçarela', 'Pepperoni'],
-    rating: 4.1,
-    image: 'https://www.minhareceita.com.br/app/uploads/2022/12/pizza-de-pepperoni-caseira-portal-minha-receita.jpg',
-  },
-  {
-    id: 2,
-    name: 'Sushi House',
-    eta: "25",
-    category: 'Sushi',
-    base_price: 49.99,
-    description: 'Sushi fresco com uma variedade de peixes e vegetais.',
-    ingredients: ['Arroz de sushi', 'Peixe fresco', 'Alga nori', 'Vegetais variados'],
-    rating: 4.9,
-    image: 'https://media.istockphoto.com/id/1053854126/pt/foto/all-you-can-eat-sushi.jpg?s=612x612&w=0&k=20&c=3RMMIy05HDxFzejgbMWSgxmh72ZhEwm3oyUNU-tTrqY=',
-  },
-  {
-    id: 3,
-    name: 'Burguer King',
-    eta: "20",
-    category: 'Hambúrguer',
-    base_price: 19.99,
-    description: 'Saboroso hambúrguer com queijo, alface e tomate.',
-    ingredients: ['Pão de hambúrguer', 'Carne bovina', 'Queijo cheddar', 'Alface', 'Tomate'],
+    base_price: 34.99,
+    description: "Escolha uma pizza média e um açaí de 500ml",
+    image: "https://scontent.fpcs1-1.fna.fbcdn.net/v/t39.30808-6/483665471_2986263421524920_120209351972226674_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=8FQIF9eo_jwQ7kNvwG-kv4H&_nc_oc=Adkc20N7KcONYL2qdR0R1CTGkLwasEPwc3Sum5MExa9L6n6TzY-R24pAaLKFul2jXURWD9xW-FzcplZySRNxAfeW&_nc_zt=23&_nc_ht=scontent.fpcs1-1.fna&_nc_gid=jG5SXRzIZh2nj6MAvlSgsw&oh=00_AfPBTQz7K1zCLs_iEXGTPGIVcbIRb31RkXcPm5_SCAZxHQ&oe=686769DF",
+    category: "Pizza",
     rating: 4.5,
-    image: 'https://d3sn2rlrwxy0ce.cloudfront.net/BK_Taste_1.0_new_2025-01-08-161052_ajor.png?mtime=20250108161053&focal=none',
   },
+  {
+    id: 3001,
+    restaurant_id: 2,
+    name: "Combo Angus",
+    eta: "20",
+    base_price: 39.99,
+    duration: "8-12",
+    description: "Hambúrguer artesanal + batata + refri",
+    image: "https://www.cidadeoferta.com.br/storage/offers/9255-combo-angus-bacon-2.jpg",
+    category: "Combo",
+    rating: 4.9,
+  },
+  {
+    id: 3102,
+    restaurant_id: 3,
+    name: "Açaí 500ml",
+    eta: "10",
+    base_price: 14.00,
+    description: "Açaí cremoso com até 4 adicionais",
+    image: "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
+    category: "Açaí",
+    rating: 4.9,
+    modifier_group: [
+      {
+        id: 8002,
+        name: "Escolha até 4 adicionais",
+        type: "product",
+        input_type: "quantity",
+        min: 0,
+        max: 4,
+        free_limit: 2,
+        modifiers: [
+          {
+            id: 8101,
+            name: "Granola",
+            image: "https://conteudo.imguol.com.br/c/entretenimento/20/2017/11/10/granola-1510338231101_v2_450x450.jpg",
+            base_price: 2.00
+          },
+          {
+            id: 8102,
+            name: "Leite em pó",
+            image: "https://ecila.com.br/wp-content/uploads/2018/01/leite-em-po.png",
+            base_price: 1.00
+          },
+          {
+            id: 8103,
+            name: "Paçoca",
+            image: "https://revistaabm.com.br/storage/2019/06/19/029bd48170e74f21fe9f86e711964fe54fb2c959.jpg",
+            base_price: 1.50
+          },
+          {
+            id: 8104,
+            name: "Banana",
+            image: "https://cdn.pixabay.com/photo/2018/01/03/09/09/bananas-3050728_1280.jpg",
+            base_price: 2.00
+          }
+        ]
+      }
+    ]
+  }
 ]
 </script>
 
@@ -94,5 +132,15 @@ const products = [
 .showcase h2 {
   color: var(--color-black);
   margin-bottom: 1.5rem;
+}
+
+@media (max-width: 758px){
+  .main-content {
+    padding: 0;
+  }
+
+  .container-hero {
+    padding: 1rem 0;
+  }
 }
 </style>

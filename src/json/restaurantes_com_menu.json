@@ -16,7 +16,6 @@
             "name": "Pequena",
             "duration": "5-10",
             "base_price": 25.00,
-            "max_flavors": 2,
             "description": "Escolha um sabor da melhor pizza da cidade",
             "image": "https://receitatodahora.com.br/wp-content/uploads/2024/08/pizza-portuguesa-0508-1024x683.jpg.webp",
             "category": "Pizza",
@@ -26,7 +25,7 @@
                 "id": 5001,
                 "name": "Escolha até 2 sabores",
                 "type": "flavor",
-                "input_type": "radio",
+                "input_type": "checkbox",
                 "min": 1,
                 "max": 2,
                 "free_limit": 2,
@@ -44,7 +43,6 @@
             "name": "Média",
             "base_price": 35.00,
             "duration": "5-10",
-            "max_flavors": 3,
             "description": "Escolha 2 sabores da melhor pizza da cidade",
             "image": "https://swiftbr.vteximg.com.br/arquivos/ids/202872-1500-1000/618283-pizza-artesanal-de-calabresa_1.jpg?v=638679052014630000",
             "category": "Pizza",
@@ -72,7 +70,6 @@
             "name": "Grande",
             "base_price": 45.00,
             "duration": "8-12",
-            "max_flavors": 4,
             "description": "Escolha 3 sabores da melhor pizza da cidade",
             "image": "https://swiftbr.vteximg.com.br/arquivos/ids/202872-1500-1000/618283-pizza-artesanal-de-calabresa_1.jpg?v=638679052014630000",
             "category": "Pizza",
@@ -105,7 +102,6 @@
             "id": 2001,
             "name": "Calabresa",
             "base_price": 25.00,
-            "max_flavors": 2,
             "description": "Experimente a nossa deliciosa pizza de calabresa",
             "ingredients": [
               "Mussarela",
@@ -121,7 +117,6 @@
             "id": 2002,
             "name": "Creme Cheese",
             "base_price": 35.00,
-            "max_flavors": 3,
             "description": "Experimente a nossa deliciosa pizza de creme cheese",
             "ingredients": [
               "Creme de queijo",
@@ -137,7 +132,6 @@
             "id": 2003,
             "name": "Frango",
             "base_price": 45.00,
-            "max_flavors": 4,
             "description": "Se delicie com a nossa pizza de frango",
             "ingredients": [
               "Frango desfiado",
@@ -153,7 +147,6 @@
             "id": 2004,
             "name": "Nordestina",
             "base_price": 45.00,
-            "max_flavors": 4,
             "description": "Se delicie com a nossa pizza nordestina",
             "ingredients": [
               "Carne de sol",
@@ -173,11 +166,10 @@
         "products": [
           {
             "id": 1007,
-            "name": "Mix",
+            "name": "Combo Mix",
             "base_price": 34.99,
-            "max_flavors": 2,
             "description": "Escolha uma pizza média e um açaí de 500ml",
-            "image": "https://scontent.fpcs1-1.fna.fbcdn.net/v/t39.30808-6/483665471_2986263421524920_120209351972226674_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=TwnpSEi_p2oQ7kNvwGDZjqY&_nc_oc=AdldAai10RW1ZMpYIObt40t4GL0kiczzYvXAeDYZI3tpXbONBZnavLxv8shlBflwMxB8QIJjjYrMJHf4DIxb43Wk&_nc_zt=23&_nc_ht=scontent.fpcs1-1.fna&_nc_gid=ALHAP9PLsST6jbt7m_Utcg&oh=00_AfP7Xo8u3OreIuDzPj307-bH9i8Opw3Ik7X9ZHX-felVEQ&oe=685FB91F",
+            "image": "https://scontent.fpcs1-1.fna.fbcdn.net/v/t39.30808-6/483665471_2986263421524920_120209351972226674_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=8FQIF9eo_jwQ7kNvwG-kv4H&_nc_oc=Adkc20N7KcONYL2qdR0R1CTGkLwasEPwc3Sum5MExa9L6n6TzY-R24pAaLKFul2jXURWD9xW-FzcplZySRNxAfeW&_nc_zt=23&_nc_ht=scontent.fpcs1-1.fna&_nc_gid=jG5SXRzIZh2nj6MAvlSgsw&oh=00_AfPBTQz7K1zCLs_iEXGTPGIVcbIRb31RkXcPm5_SCAZxHQ&oe=686769DF",
             "category": "Pizza",
             "rating": 4.5,
             "modifier_group": [
@@ -424,985 +416,322 @@
   },
   {
     "id": 2,
-    "name": "Açaí do Morro",
+    "name": "Burger do Zé",
+    "logo": "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg",
+    "rating": 4.7,
+    "delivery_duration": "20-25",
+    "description": "Hambúrgueres artesanais com carne angus e pães especiais",
     "categories": [
       {
-        "id": 103,
-        "name": "Copos",
-        "products": [
-          {
-            "id": 2001,
-            "name": "Açaí 300ml",
-            "base_price": 10.00,
-            "modifiers": [
-              {
-                "id": 5010,
-                "name": "Escolha até 3 adicionais (2 grátis)",
-                "type": "product",
-                "min": 0,
-                "max": 3,
-                "free_limit": 2,
-                "modifiers": [
-                  {
-                    "id": 6010,
-                    "name": "Paçoca",
-                    "base_price": 1.50,
-                    "product_id": 9101
-                  },
-                  {
-                    "id": 6011,
-                    "name": "Leite em pó",
-                    "base_price": 1.00,
-                    "product_id": 9102
-                  },
-                  {
-                    "id": 6012,
-                    "name": "Morango",
-                    "base_price": 2.00,
-                    "product_id": 9103
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Lanches da Esquina",
-    "categories": [
-      {
-        "id": 103,
-        "name": "Lanches",
+        "id": 201,
+        "name": "Destaques",
         "products": [
           {
             "id": 3001,
-            "name": "X-Salada",
-            "base_price": 14.00,
-            "modifiers": [
+            "restaurant_id": 2,
+            "name": "Combo Angus",
+            "base_price": 39.99,
+            "duration": "8-12",
+            "description": "Hambúrguer artesanal + batata + refri",
+            "image": "https://cdn.pixabay.com/photo/2022/06/13/09/22/hamburger-7258429_960_720.jpg",
+            "category": "Combo",
+            "rating": 4.9,
+            "modifier_group": [
               {
-                "id": 5020,
-                "name": "Deseja adicionar?",
-                "type": "product",
-                "min": 0,
-                "max": 2,
+                "id": 7001,
+                "name": "Escolha seu hambúrguer",
+                "type": "combo-product",
+                "input_type": "radio",
+                "min": 1,
+                "max": 1,
+                "free_limit": 1,
                 "modifiers": [
-                  {
-                    "id": 6020,
-                    "name": "Bacon",
-                    "base_price": 2.00,
-                    "product_id": 9201
-                  },
-                  {
-                    "id": 6021,
-                    "name": "Ovo",
-                    "base_price": 1.50,
-                    "product_id": 9202
-                  }
+                  { "id": 7101, "product_id": 4001 },
+                  { "id": 7102, "product_id": 4002 }
+                ]
+              },
+              {
+                "id": 7002,
+                "restaurant_id": 2,
+                "name": "Escolha um acompanhamento",
+                "type": "combo-product",
+                "input_type": "radio",
+                "min": 1,
+                "max": 1,
+                "free_limit": 1,
+                "modifiers": [
+                  { "id": 7103, "product_id": 5001 },
+                  { "id": 7104, "product_id": 5002 }
+                ]
+              },
+              {
+                "id": 7003,
+                "restaurant_id": 2,
+                "name": "Escolha uma bebida",
+                "type": "combo-product",
+                "input_type": "radio",
+                "min": 1,
+                "max": 1,
+                "free_limit": 1,
+                "modifiers": [
+                  { "id": 7105, "product_id": 6001 },
+                  { "id": 7106, "product_id": 6002 }
                 ]
               }
             ]
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Veggie Time",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAins4nYG1Z8tGwVD0iZXSpdWx2rsKoIO_yQ&s",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
+      },
       {
-        "id": 101,
-        "name": "Destaques",
+        "id": 202,
+        "name": "Hambúrgueres",
         "products": [
           {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
+            "id": 4001,
+            "restaurant_id": 2,
+            "name": "Cheddar Angus",
+            "base_price": 29.00,
+            "description": "Hambúrguer 180g, cheddar cremoso, pão australiano",
+            "ingredients": ["Carne Angus", "Cheddar", "Pão Australiano"],
+            "image": "https://cdn.pixabay.com/photo/2018/06/18/16/05/hamburger-3481623_1280.jpg",
+            "category": "Hambúrguer",
+            "rating": 4.8
           },
           {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
+            "id": 4002,
+            "restaurant_id": 2,
+            "name": "Bacon Burguer",
+            "base_price": 28.00,
+            "description": "Hambúrguer 180g, bacon crocante, queijo prato",
+            "ingredients": ["Bacon", "Queijo Prato", "Carne Angus"],
+            "image": "https://cdn.pixabay.com/photo/2020/03/17/14/58/burger-4935788_1280.jpg",
+            "category": "Hambúrguer",
+            "rating": 4.6
+          }
+        ]
+      },
+      {
+        "id": 203,
+        "restaurant_id": 2,
+        "name": "Acompanhamentos",
+        "products": [
+          {
+            "id": 5001,
+            "name": "Batata Rústica",
+            "base_price": 9.00,
+            "description": "Batatas temperadas com ervas e alho",
+            "image": "https://cdn.pixabay.com/photo/2016/03/05/22/23/french-fries-1238247_1280.jpg",
+            "category": "Acompanhamento"
           },
           {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
+            "id": 5002,
+            "name": "Onion Rings",
+            "base_price": 10.00,
+            "description": "Anéis de cebola empanados crocantes",
+            "image": "https://cdn.pixabay.com/photo/2020/01/15/15/01/onion-4766323_1280.jpg",
+            "category": "Acompanhamento"
+          }
+        ]
+      },
+      {
+        "id": 204,
+        "restaurant_id": 2,
+        "name": "Bebidas",
+        "products": [
+          {
+            "id": 6001,
+            "name": "Guaraná 350ml",
+            "base_price": 5.00,
+            "description": "",
+            "image": "https://www.cantinacheirodepizza.com.br/content/images/thumbs/0000502_guarana-350ml_800.png",
+            "category": "Bebida"
+          },
+          {
+            "id": 6002,
+            "name": "Suco Natural de Laranja 300ml",
+            "base_price": 7.00,
+            "description": "",
+            "image": "https://cdn.pixabay.com/photo/2016/07/21/12/47/orange-1538492_1280.jpg",
+            "category": "Bebida"
           }
         ]
       }
     ]
   },
   {
-    "id": 5,
-    "name": "Doces da Vó",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3cMCDvOZmRUQYjEwiMvPfGXnWa2_P3aqfIQ&s",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 6,
-    "name": "Taco Loco",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-mexicano-com-design-plano_23-2149433478.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 7,
-    "name": "China Box",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-chines-com-desenho-de-caixa-de-comida_23-2148465080.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 8,
-    "name": "Churrasquinho BR",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-churrasco-com-design-plano_23-2148487451.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 9,
-    "name": "Padoca Central",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW2vNFBzP7h_w7WsQARapeiC0HHECD2r3w6Q&s",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 10,
-    "name": "Café do Bairro",
-    "logo": "https://img.freepik.com/vetores-premium/logotipo-do-cafe-design-de-logotipo-de-cafe-moderno_564974-197.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 11,
-    "name": "La Pasta",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-restaurante-italiano-em-desenho-plano_23-2148477011.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 12,
-    "name": "Dogão Express",
-    "logo": "https://img.freepik.com/vetores-premium/logotipo-de-hot-dog-de-estilo-vintage_441769-122.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 13,
-    "name": "Temaki House",
-    "logo": "https://img.freepik.com/vetores-gratis/modelo-de-logotipo-de-temaki-com-design-plano_23-2148476760.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 14,
-    "name": "Açaiteria Raiz",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 15,
-    "name": "Pastel Mania",
-    "logo": "https://static.ifood-static.com.br/image/upload/t_high/logosgde/a8d38990-5b79-43c3-8b80-73d48f96ddc1/202008231507_Uw1y_i.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 16,
-    "name": "Food Truck 77",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-food-truck-com-design-plano_23-2148460642.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 17,
-    "name": "Espetinhos da Vila",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-churrasco-em-estilo-vintage_23-2148461093.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 18,
-    "name": "Donuts & Cia",
-    "logo": "https://img.freepik.com/vetores-gratis/design-de-logotipo-de-donuts_23-2148477335.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 19,
-    "name": "Sucos Tropicais",
-    "logo": "https://img.freepik.com/vetores-gratis/logotipo-de-suco-com-design-plano_23-2148455880.jpg",
-    "rating": 4.3,
-    "delivery_duration": "25-30",
-    "description": "Pizzas artesanais com ingredientes importados",
-    "categories": [
-      {
-        "id": 101,
-        "name": "Destaques",
-        "products": [
-          {
-            "name": "Prato Especial",
-            "eta": "30",
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Principal",
-            "base_price": 34.99,
-            "description": "Prato especial da casa, feito com ingredientes frescos.",
-            "ingredients": "Molho de tomate, mussarela, manjericão fresco e azeite.",
-            "image": "https://www.receiteria.com.br/wp-content/uploads/receitas-de-almoco-simples.jpg"
-          },
-          {
-            "name": "Bebida Refrescante",
-            "eta": 10,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Bebida",
-            "base_price": 9.99,
-            "description": "Bebida gelada para acompanhar sua refeição.",
-            "ingredients": [
-              "Água",
-              "Frutas"
-            ],
-            "image": "https://www.auroraalimentos.com.br/wp-content/uploads/2022/04/Bebida-Refrescante-de-Morango-com-Lima%CC%83o-e-Hortela%CC%83.png"
-          },
-          {
-            "name": "Sobremesa Doce",
-            "eta": 15,
-            "duration": "5-10",
-            "rating": 4.3,
-            "category": "Sobremesa",
-            "base_price": 14.99,
-            "description": "Deliciosa sobremesa para fechar a refeição com chave de ouro.",
-            "ingredients": [
-              "Açúcar",
-              "Chocolate",
-              "Creme"
-            ],
-            "image": "https://s2.glbimg.com/ob_LwdixjbViCVk74vTmWszbVec=/620x455/e.glbimg.com/og/ed/f/original/2020/10/08/receitas_havanna_-_pave_de_alfajor.png"
-          }
-        ]
-      }
-    ]
-  }
+  "id": 3,
+  "name": "Açaiteria Raiz",
+  "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s",
+  "rating": 4.9,
+  "delivery_duration": "15-20",
+  "description": "Açaí artesanal com os melhores acompanhamentos do Brasil",
+  "categories": [
+    {
+      "id": 301,
+      "name": "Açaí no Copo",
+      "products": [
+        {
+          "id": 3101,
+          "restaurant_id": 3,
+          "name": "Açaí 300ml",
+          "base_price": 10.00,
+          "description": "Açaí cremoso com até 3 adicionais",
+          "image": "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
+          "category": "Açaí",
+          "modifier_group": [
+            {
+              "id": 8001,
+              "name": "Escolha até 3 adicionais",
+              "type": "product",
+              "input_type": "quantity",
+              "min": 0,
+              "max": 3,
+              "free_limit": 2,
+              "modifiers": [
+                {
+                  "id": 8101,
+                  "name": "Granola",
+                  "image": "https://conteudo.imguol.com.br/c/entretenimento/20/2017/11/10/granola-1510338231101_v2_450x450.jpg",
+                  "base_price": 2.00
+                },
+                {
+                  "id": 8102,
+                  "name": "Leite em pó",
+                  "image": "https://ecila.com.br/wp-content/uploads/2018/01/leite-em-po.png",
+                  "base_price": 1.00
+                },
+                {
+                  "id": 8103,
+                  "name": "Paçoca",
+                  "image": "https://revistaabm.com.br/storage/2019/06/19/029bd48170e74f21fe9f86e711964fe54fb2c959.jpg",
+                  "base_price": 1.50
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 3102,
+          "name": "Açaí 500ml",
+          "base_price": 14.00,
+          "description": "Açaí cremoso com até 4 adicionais",
+          "image": "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
+          "category": "Açaí",
+          "modifier_group": [
+            {
+              "id": 8002,
+              "name": "Escolha até 4 adicionais",
+              "type": "product",
+              "input_type": "quantity",
+              "min": 0,
+              "max": 4,
+              "free_limit": 2,
+              "modifiers": [
+                {
+                  "id": 8101,
+                  "name": "Granola",
+                  "image": "https://conteudo.imguol.com.br/c/entretenimento/20/2017/11/10/granola-1510338231101_v2_450x450.jpg",
+                  "base_price": 2.00
+                },
+                {
+                  "id": 8102,
+                  "name": "Leite em pó",
+                  "image": "https://ecila.com.br/wp-content/uploads/2018/01/leite-em-po.png",
+                  "base_price": 1.00
+                },
+                {
+                  "id": 8103,
+                  "name": "Paçoca",
+                  "image": "https://revistaabm.com.br/storage/2019/06/19/029bd48170e74f21fe9f86e711964fe54fb2c959.jpg",
+                  "base_price": 1.50
+                },
+                {
+                  "id": 8104,
+                  "name": "Banana",
+                  "image": "https://cdn.pixabay.com/photo/2018/01/03/09/09/bananas-3050728_1280.jpg",
+                  "base_price": 2.00
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 302,
+      "name": "Combos",
+      "products": [
+        {
+          "id": 3201,
+          "name": "Combo Açaí + Suco",
+          "base_price": 19.90,
+          "description": "Açaí 500ml + suco 300ml",
+          "image": "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
+          "category": "Combo",
+          "rating": 4.8,
+          "modifier_group": [
+            {
+              "id": 8003,
+              "name": "Escolha os adicionais para o açaí",
+              "type": "combo-product",
+              "input_type": "quantity",
+              "min": 1,
+              "max": 4,
+              "free_limit": 2,
+              "modifiers": [
+                {
+                  "id": 8101,
+                  "name": "Granola",
+                  "image": "https://conteudo.imguol.com.br/c/entretenimento/20/2017/11/10/granola-1510338231101_v2_450x450.jpg",
+                  "base_price": 2.00
+                },
+                {
+                  "id": 8102,
+                  "name": "Leite em pó",
+                  "image": "https://ecila.com.br/wp-content/uploads/2018/01/leite-em-po.png",
+                  "base_price": 1.00
+                },
+                {
+                  "id": 8103,
+                  "name": "Paçoca",
+                  "image": "https://revistaabm.com.br/storage/2019/06/19/029bd48170e74f21fe9f86e711964fe54fb2c959.jpg",
+                  "base_price": 1.50
+                },
+                {
+                  "id": 8104,
+                  "name": "Banana",
+                  "image": "https://cdn.pixabay.com/photo/2018/01/03/09/09/bananas-3050728_1280.jpg",
+                  "base_price": 2.00
+                }
+              ]
+            },
+            {
+              "id": 8004,
+              "name": "Escolha seu suco",
+              "type": "combo-product",
+              "input_type": "radio",
+              "min": 1,
+              "max": 1,
+              "free_limit": 1,
+              "modifiers": [
+                {
+                  "id": 8201,
+                  "name": "Suco de Maracujá",
+                  "image": "https://s3-sa-east-1.amazonaws.com/deliveryon-uploads/products/imperio/38_5c58b562c06f5.jpg",
+                  "base_price": 0
+                },
+                {
+                  "id": 8202,
+                  "name": "Suco de Morango",
+                  "image": "https://conteudo.imguol.com.br/c/entretenimento/78/2018/02/28/morango-1519823853148_v2_900x506.jpg",
+                  "base_price": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
 ]

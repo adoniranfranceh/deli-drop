@@ -1,9 +1,20 @@
 <template>
-  <footer class="cart-bar" v-if="cartStore.cartItems.length">
-    <img :src="cartStore.currentRestaurantInfo?.logo" alt="" class="logo-cart" />
-    <p>{{ dropLabel }}</p>
-    <Button @click="goToCart" aria-label="Ver sacola com itens adicionados" text="Ver sacola" />
+  <footer class="cart-bar-wrapper" v-if="cartStore.cartItems.length">
+    <div class="logo-wrapper">
+      <img
+        :src="cartStore.currentRestaurantInfo?.logo"
+        alt="Logo do restaurante"
+        class="logo-cart"
+        @click="goToRestaurant"
+        style="cursor: pointer"
+      />
+    </div>
+    <div class="cart-bar">
+      <p>{{ dropLabel }}</p>
+      <Button @click="goToCart" text="Ver sacola" aria-label="Ver sacola com itens adicionados" />
+    </div>
   </footer>
+
   <CartModalManager
     ref="modalManager"
   />
@@ -14,13 +25,25 @@ import { onMounted, ref, computed, watch } from 'vue';
 import { useCartStore } from '@/stores/cartStore';
 import CartModalManager from '@/components/cart/CartModalManager.vue';
 import Button from '@/components/ui/Button.vue';
+import { useRouter } from 'vue-router'
+
 const cartStore = useCartStore()
 const modalManager = ref(null)
+const router = useRouter()
 
 console.log('🔍 CartBar mounted, currentRestaurantInfo:', cartStore.cartItems)
 onMounted(() => 
   document.documentElement.style.setProperty('--color-cart', cartStore.currentRestaurantInfo?.color)
 )
+
+function goToRestaurant() {
+  const restaurantId = cartStore.currentRestaurantInfo?.id
+  if (restaurantId) {
+    if (router.currentRoute.value.path !== `/restaurante/${restaurantId}`) {
+      router.replace({ path: `/restaurante/${restaurantId}` })
+    }
+  }
+}
 
 watch(
   () => cartStore.currentRestaurantInfo?.color,
@@ -47,42 +70,63 @@ const dropLabel = computed(() => {
 </script>
 
 <style scoped>
-.cart-bar {
+.cart-bar-wrapper {
   position: fixed;
   bottom: 10px;
-  left: 1;
   right: 10px;
-  background-color: var(--color-cart);
-  color: white;
-  padding: 0.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: var(--shadow-lg);
+  justify-content: center;
   z-index: 100;
-  border-radius: 1rem;
-  width: 430px;
+}
 
-  img {
-    margin: 0 15px;
-    right: 1;
-  }
-
-  button {
-    background: var(--color-cart);
-  }
+.logo-wrapper {
+  position: relative;
+  margin-right: 7px;
+  z-index: 101;
 }
 
 .logo-cart {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  border: 3px solid var(--color-cart);
   object-fit: cover;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
+.cart-bar {
+  background-color: var(--color-cart);
+  color: white;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 9999px;
+  max-width: 340px;
+  width: 100%;
+  height: 30px;
+  font-weight: 600;
+  box-shadow: var(--shadow-lg);
+}
+
+.cart-bar p {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.cart-bar :deep(button) {
+  background-color: white !important;
+  color: var(--color-cart) !important;
+  font-weight: bold;
+  border-radius: 9999px;
+  padding: 0.25rem 1rem;
+  font-size: 0.875rem;
+  border: none;
+}
 @media (max-width: 758px) {
   .cart-bar {
-    width: 90%;
+    font-size: 12px;
   }
 }
 </style>

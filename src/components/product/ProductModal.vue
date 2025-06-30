@@ -111,7 +111,7 @@ onMounted(() => {
   productSelectionStore.basePrice = props.product.base_price
   totalStore.setBasePrice(props.product.base_price)
 
-  props.product.modifier_group.forEach(group => {
+  props.product.modifier_group?.forEach(group => {
     group.modifiers = group.modifiers.map(item => {
       const product = restaurantStore.getProduct(item)
       return { ...item, ...product }

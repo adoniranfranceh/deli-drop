@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import SearchInput from '@/components/SearchInput.vue'
+import SearchInput from '@/components/ui/SearchInput.vue'
 </script>
 
 <style scoped>

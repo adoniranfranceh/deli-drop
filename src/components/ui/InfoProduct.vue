@@ -3,8 +3,7 @@
     <p class="product-rating">
       <Rating :rating="product.rating"/>
     </p>
-    <!-- <p>{{ product.eta }} min </p> -->
-     <DeliveryDuration :duration="product.eta" />
+     <p><DeliveryDuration :duration="product.eta" /></p>
     <p><Chip :item="product.category"/></p>
   </div>
 </template>
