@@ -124,6 +124,7 @@ const dropLabel = computed(() => {
   font-size: 0.875rem;
   border: none;
 }
+
 @media (max-width: 758px) {
   .cart-bar {
     font-size: 12px;
