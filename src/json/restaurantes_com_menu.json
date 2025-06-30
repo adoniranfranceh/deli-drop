@@ -13,6 +13,7 @@
         "products": [
           {
             "id": 1001,
+            "restaurant_id": 1,
             "name": "Pequena",
             "duration": "5-10",
             "base_price": 25.00,
@@ -40,6 +41,7 @@
           },
           {
             "id": 1002,
+            "restaurant_id": 1,
             "name": "Média",
             "base_price": 35.00,
             "duration": "5-10",
@@ -67,6 +69,7 @@
           },
           {
             "id": 1003,
+            "restaurant_id": 1,
             "name": "Grande",
             "base_price": 45.00,
             "duration": "8-12",
@@ -100,6 +103,7 @@
         "products": [
           {
             "id": 2001,
+            "restaurant_id": 1,
             "name": "Calabresa",
             "base_price": 25.00,
             "description": "Experimente a nossa deliciosa pizza de calabresa",
@@ -115,6 +119,7 @@
           },
           {
             "id": 2002,
+            "restaurant_id": 1,
             "name": "Creme Cheese",
             "base_price": 35.00,
             "description": "Experimente a nossa deliciosa pizza de creme cheese",
@@ -130,6 +135,7 @@
           },
           {
             "id": 2003,
+            "restaurant_id": 1,
             "name": "Frango",
             "base_price": 45.00,
             "description": "Se delicie com a nossa pizza de frango",
@@ -145,6 +151,7 @@
           },
           {
             "id": 2004,
+            "restaurant_id": 1,
             "name": "Nordestina",
             "base_price": 45.00,
             "description": "Se delicie com a nossa pizza nordestina",
@@ -166,6 +173,7 @@
         "products": [
           {
             "id": 1007,
+            "restaurant_id": 1,
             "name": "Combo Mix",
             "base_price": 34.99,
             "description": "Escolha uma pizza média e um açaí de 500ml",
@@ -247,6 +255,7 @@
         "products": [
           {
             "id": 2101,
+            "restaurant_id": 1,
             "name": "Açaí 300ml no copo",
             "base_price": 10.00,
             "description": "Selecione até 3 ingredientes do melhor açaí",
@@ -292,6 +301,7 @@
           },
           {
             "id": 2102,
+            "restaurant_id": 1,
             "name": "Açaí 500ml no copo",
             "base_price": 10.00,
             "description": "Selecione até 4 ingredientes do melhor açaí",
@@ -337,6 +347,7 @@
           },
           {
             "id": 2103,
+            "restaurant_id": 1,
             "name": "Açaí 700ml no copo",
             "base_price": 25.00,
             "description": "Selecione até 5 ingredientes do melhor açaí",
@@ -388,6 +399,7 @@
         "products": [
           {
             "id": 3001,
+            "restaurant_id": 1,
             "name": "Água com gás 500ml",
             "base_price": 5.00,
             "description": "",
@@ -396,6 +408,7 @@
           },
           {
             "id": 3002,
+            "restaurant_id": 1,
             "name": "Coca Cola 1L",
             "base_price": 7.00,
             "description": "",
@@ -404,6 +417,7 @@
           },
           {
             "id": 3003,
+            "restaurant_id": 1,
             "name": "Suco de Maracujá 500ml",
             "base_price": 6.00,
             "description": "",
@@ -452,7 +466,6 @@
               },
               {
                 "id": 7002,
-                "restaurant_id": 2,
                 "name": "Escolha um acompanhamento",
                 "type": "combo-product",
                 "input_type": "radio",
@@ -466,7 +479,6 @@
               },
               {
                 "id": 7003,
-                "restaurant_id": 2,
                 "name": "Escolha uma bebida",
                 "type": "combo-product",
                 "input_type": "radio",
@@ -512,11 +524,11 @@
       },
       {
         "id": 203,
-        "restaurant_id": 2,
         "name": "Acompanhamentos",
         "products": [
           {
             "id": 5001,
+            "restaurant_id": 2,
             "name": "Batata Rústica",
             "base_price": 9.00,
             "description": "Batatas temperadas com ervas e alho",
@@ -535,11 +547,11 @@
       },
       {
         "id": 204,
-        "restaurant_id": 2,
         "name": "Bebidas",
         "products": [
           {
             "id": 6001,
+            "restaurant_id": 2,
             "name": "Guaraná 350ml",
             "base_price": 5.00,
             "description": "",
@@ -548,6 +560,7 @@
           },
           {
             "id": 6002,
+            "restaurant_id": 2,
             "name": "Suco Natural de Laranja 300ml",
             "base_price": 7.00,
             "description": "",
@@ -612,6 +625,7 @@
         },
         {
           "id": 3102,
+          "restaurant_id": 3,
           "name": "Açaí 500ml",
           "base_price": 14.00,
           "description": "Açaí cremoso com até 4 adicionais",
@@ -663,6 +677,7 @@
       "products": [
         {
           "id": 3201,
+          "restaurant_id": 3,
           "name": "Combo Açaí + Suco",
           "base_price": 19.90,
           "description": "Açaí 500ml + suco 300ml",
