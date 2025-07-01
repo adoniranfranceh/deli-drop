@@ -58,6 +58,11 @@ export const useCartStore = defineStore('cart', () => {
       currentRestaurantId.value = restaurantId
     }
 
+    if (cartItems.value.length === 0) {
+      currentRestaurantId.value = null
+      currentRestaurantInfo.value = null
+    }
+
     if (Number(currentRestaurantId.value) !== restaurantId) {
       const result = await Swal.fire({
         title: 'Limpar sacola?',
