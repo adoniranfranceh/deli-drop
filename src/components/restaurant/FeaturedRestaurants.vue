@@ -51,4 +51,10 @@ const restaurants = data_restaurants;
   color: var(--color-text);
   white-space: nowrap;
 }
+
+@media (max-width: 758px) {
+  .restaurant-stories {
+    margin: 2rem 0;
+  }
+}
 </style>

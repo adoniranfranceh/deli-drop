@@ -4,8 +4,7 @@
       v-for="product in products"
       :key="product.id"
       :product="product"
-      :showInRestaurant="showInRestaurant"
-      :bgColor="bgColor"
+      :showCategory="showCategory"
       @selected-product="openModal"
       @open-modal="openModal"
     />
@@ -28,7 +27,7 @@ defineProps({
     type: Array,
     required: true
   },
-  showInRestaurant: Boolean,
+  showCategory: Boolean,
   bgColor: String
 })
 
@@ -42,19 +41,22 @@ const openModal = (product) => {
 <style scoped>
 .products-container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-@media (min-width: 600px) {
+.products-container {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+ @media (min-width: 758px) {
   .products-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1250px) {
   .products-container {
     grid-template-columns: repeat(3, 1fr);
     margin: 3rem auto;
