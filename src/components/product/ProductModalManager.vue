@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch, defineEmits } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import ProductModal from '@/components/product/ProductModal.vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useCartStore } from '@/stores/cartStore';
@@ -45,9 +45,15 @@ defineExpose({ openModal })
 const emit = defineEmits('add-to-cart')
 
 function addtoCart(event) {
-  cartStore.addCart(event, restaurantStore.restaurantInfo)
-  closeModal()
+  if (!Array.isArray(event.selectedModifiers)) {
+    event.selectedModifiers = [];
+  }
+
+  console.log(event.selectedModifiers);
+  cartStore.addCart(event, restaurantStore.restaurantInfo);
+  closeModal();
 }
+
 
 const productMap = new Map();
 props.products.forEach(product => {
