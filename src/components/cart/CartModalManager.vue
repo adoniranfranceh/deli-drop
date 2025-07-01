@@ -13,7 +13,7 @@
       :selectedModifiers="selectedProduct.selectedModifiers"
       :cartItemId="selectedProduct.cartItemId"
       @add-to-cart="handleEditedItem"
-      @close="selectedProduct = null"
+      @close="closeProductModal"
     />
   </div>
 </template>
@@ -40,6 +40,11 @@ const selectedProduct = ref(null)
 function openModal() {
   showCartModal.value = true
   router.replace({ query: { ...route.query, cart: 'open' } })
+}
+
+function closeProductModal() {
+  selectedProduct.value = null
+  openModal()
 }
 
 function closeCartModal() {
