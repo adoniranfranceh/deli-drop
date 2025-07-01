@@ -5,6 +5,7 @@
         v-for="(category, index) in categories"
         :key="category.id"
         :class="{ active: activeCategory === category.id }"
+        :data-id="category.id"
         @click="scrollToCategory(category.id)"
       >
         {{ category.name }}
@@ -31,18 +32,20 @@ const handleScroll = () => {
     if (el) {
       const rect = el.getBoundingClientRect()
       if (rect.top <= 200 && rect.bottom >= 200) {
-        activeCategory.value = category.id
+        if (activeCategory.value !== category.id) {
+          activeCategory.value = category.id
+          scrollActiveButtonIntoView(category.id)
+        }
         break
       }
     }
   }
 }
 
-const scrollToCategory = (id) => {
-  const el = document.getElementById(`category-${id}`)
-  if (el) {
-    const top = el.offsetTop - 200
-    window.scrollTo({ top, behavior: 'smooth' })
+const scrollActiveButtonIntoView = (id) => {
+  const btn = document.querySelector(`.categories-scroll button[data-id="${id}"]`)
+  if (btn) {
+    btn.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' })
   }
 }
 
@@ -71,6 +74,7 @@ onUnmounted(() => {
   gap: 1rem;
   overflow-x: auto;
   padding: 1rem;
+  scrollbar-width: none;
 }
 
 button {
