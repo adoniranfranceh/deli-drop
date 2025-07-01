@@ -31,7 +31,6 @@ const cartStore = useCartStore()
 const modalManager = ref(null)
 const router = useRouter()
 
-console.log('🔍 CartBar mounted, currentRestaurantInfo:', cartStore.cartItems)
 onMounted(() => 
   document.documentElement.style.setProperty('--color-cart', cartStore.currentRestaurantInfo?.color)
 )
