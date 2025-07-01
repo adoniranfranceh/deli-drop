@@ -7,6 +7,19 @@ export const useProductSelectionStore = defineStore('productSelection', () => {
   const selectedModifiers = ref([])
   const basePrice = ref(0)
 
+  const resetSelectedModifiersForProduct = (modifierGroups) => {
+    if (!modifierGroups || modifierGroups.length === 0) {
+      selectedModifiers.value = []
+    } else {
+      selectedModifiers.value = modifierGroups.map(group => ({
+        id: group.id,
+        min: group.min ?? 0,
+        max: group.max ?? null,
+        selected: []
+      }))
+    }
+  }
+
   const updateModifierSelection = (modifierId, selectedItems, min = 0, max = null) => {
     let normalizedSelected
 
@@ -74,6 +87,7 @@ export const useProductSelectionStore = defineStore('productSelection', () => {
   return {
     quantity,
     comment,
+    resetSelectedModifiersForProduct,
     selectedModifiers,
     plainSelectedModifiers,
     modifiersValid,
