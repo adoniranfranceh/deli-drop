@@ -1,11 +1,13 @@
 <template>
   <Icon
     icon="solar:close-circle-bold"
+    style="color: var(--color-restaurant);"
     class="close-button desktop"
     @click="$emit('close')"
   />
   <Icon
     icon="material-symbols-light:arrow-circle-left"
+    style="color: var(--color-restaurant);"
     class="close-button mobile"
     @click="$emit('close')"
   />
