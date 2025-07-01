@@ -47,7 +47,7 @@
 
         <p
           v-if="!modifiersValid && product.modifier_group"
-          style="color: red; font-size: 0.9rem;"
+          style="color: red; font-size: 0.8rem; margin-bottom: 2rem;"
         >
           Escolha os itens obrigatórios antes de adicionar ao carrinho.
         </p>
@@ -319,7 +319,7 @@ hr {
     position: fixed;
     top: 89%;
     gap: 1rem;
-    width: 90%;
+    width: 95%;
     padding-bottom: 100px;
   }
 
