@@ -5,7 +5,6 @@
         <img :src="item.image" alt="" class="item-image" />
         <div class="header-item">
           <strong class="item-name">{{ item.name }}</strong>
-          <Chip :item="item.category" />
           <WrapperQuantity
             class="wrapper-quantity"
             v-model="localQuantity"
@@ -36,10 +35,8 @@
 <script setup>
 import { ref, watch } from 'vue'
 import WrapperQuantity from '@/components/ui/WrapperQuantity.vue'
-import Chip from '@/components/ui/Chip.vue'
 import { Icon } from '@iconify/vue'
 import { FloatToMoney } from '@/utils/money'
-import { defineEmits, defineProps } from 'vue'
 
 const props = defineProps({
   item: Object

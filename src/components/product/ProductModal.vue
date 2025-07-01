@@ -68,7 +68,7 @@
 </template>
 
 <script setup>
-import { ref, defineEmits, computed, onMounted, onUnmounted, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import CloseButton from '@/components/ui/CloseButton.vue'
 import WrapperQuantity from '@/components/ui/WrapperQuantity.vue'
 import Ingredients from '@/components/product/Ingredients.vue'

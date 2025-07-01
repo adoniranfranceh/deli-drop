@@ -48,7 +48,6 @@ import CartItem from './CartItem.vue'
 import CartSummary from './CartSummary.vue'
 import EmptyCart from './EmptyCart.vue'
 import { useUIStore } from '@/stores/uiStore'
-import { defineEmits, defineProps } from 'vue'
 
 const cartStore = useCartStore()
 const uiStore = useUIStore()

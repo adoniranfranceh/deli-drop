@@ -45,7 +45,6 @@
 </template>
 
 <script setup>
-import { defineEmits, defineProps } from 'vue'
 import DeliveryDuration from '@/components/ui/DeliveryDuration.vue'
 import Location from '@/components/ui/Location.vue'
 import Button from '@/components/ui/Button.vue'
