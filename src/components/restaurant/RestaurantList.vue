@@ -1,18 +1,20 @@
 <template>
-  <div class="restaurant-card" @click="$emit('selected-restaurant', restaurant)">
-    <img :src="restaurant.logo" :alt="restaurant.name" class="logo" />
+  <router-link :to="`/restaurante/${restaurant.id}`">
+    <div class="restaurant-card" @click="$emit('selected-restaurant', restaurant)">
+      <img :src="restaurant.logo" :alt="restaurant.name" class="logo" />
 
-    <div class="info">
-      <h4>{{ restaurant.name }}</h4>
-      <p class="description">{{ restaurant.description }}</p>
+      <div class="info">
+        <h4>{{ restaurant.name }}</h4>
+        <p class="description">{{ restaurant.description }}</p>
 
-      <div class="details">
-        <Rating :rating="restaurant.rating" />
-        <DeliveryDuration :duration="restaurant.delivery_duration" />
-        <Location location="3 km" />
+        <div class="details">
+          <Rating :rating="restaurant.rating" />
+          <DeliveryDuration :duration="restaurant.delivery_duration" />
+          <Location location="3 km" />
+        </div>
       </div>
     </div>
-  </div>
+  </router-link>
 </template>
 
 <script setup>
