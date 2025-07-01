@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Pizzaria do Donão",
+    "name": "Pizzaria do Dony",
     "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png",
     "rating": 4.5,
     "delivery_duration": "25-30",
@@ -447,7 +447,7 @@
             "base_price": 39.99,
             "duration": "8-12",
             "description": "Hambúrguer artesanal + batata + refri",
-            "image": "https://cdn.pixabay.com/photo/2022/06/13/09/22/hamburger-7258429_960_720.jpg",
+            "image": "https://www.cidadeoferta.com.br/storage/offers/9255-combo-angus-bacon-2.jpg",
             "category": "Combo",
             "rating": 4.9,
             "modifier_group": [
@@ -505,7 +505,7 @@
             "base_price": 29.00,
             "description": "Hambúrguer 180g, cheddar cremoso, pão australiano",
             "ingredients": ["Carne Angus", "Cheddar", "Pão Australiano"],
-            "image": "https://cdn.pixabay.com/photo/2018/06/18/16/05/hamburger-3481623_1280.jpg",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_2T6OhlTYW99Nmi8cax2ILb3o99nUbnZqVg&s",
             "category": "Hambúrguer",
             "rating": 4.8
           },
@@ -516,7 +516,7 @@
             "base_price": 28.00,
             "description": "Hambúrguer 180g, bacon crocante, queijo prato",
             "ingredients": ["Bacon", "Queijo Prato", "Carne Angus"],
-            "image": "https://cdn.pixabay.com/photo/2020/03/17/14/58/burger-4935788_1280.jpg",
+            "image": "https://www.minhareceita.com.br/app/uploads/2023/08/x-bacon-portal-minha-receita.jpg",
             "category": "Hambúrguer",
             "rating": 4.6
           }
@@ -532,7 +532,7 @@
             "name": "Batata Rústica",
             "base_price": 9.00,
             "description": "Batatas temperadas com ervas e alho",
-            "image": "https://cdn.pixabay.com/photo/2016/03/05/22/23/french-fries-1238247_1280.jpg",
+            "image": "https://i0.statig.com.br/bancodeimagens/c6/cf/ml/c6cfmlni44951427cscm8fu56.jpg",
             "category": "Acompanhamento"
           },
           {
@@ -540,7 +540,7 @@
             "name": "Onion Rings",
             "base_price": 10.00,
             "description": "Anéis de cebola empanados crocantes",
-            "image": "https://cdn.pixabay.com/photo/2020/01/15/15/01/onion-4766323_1280.jpg",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTt97Ljw5a9emkaWYZtwEN8JHiBUqlyBImhhg&s",
             "category": "Acompanhamento"
           }
         ]
@@ -555,7 +555,7 @@
             "name": "Guaraná 350ml",
             "base_price": 5.00,
             "description": "",
-            "image": "https://www.cantinacheirodepizza.com.br/content/images/thumbs/0000502_guarana-350ml_800.png",
+            "image": "https://acdn-us.mitiendanube.com/stores/001/165/503/products/guarana1-b5047b4aaf1e0c9b6b16192134101772-1024-1024.png",
             "category": "Bebida"
           },
           {
@@ -564,7 +564,7 @@
             "name": "Suco Natural de Laranja 300ml",
             "base_price": 7.00,
             "description": "",
-            "image": "https://cdn.pixabay.com/photo/2016/07/21/12/47/orange-1538492_1280.jpg",
+            "image": "https://padariasantacruz.loji.com.br/storage/uploads/3lxHLWQkcJYRJcc1XNQ026DwgJwKXrVh6gjaX3o3.jpeg",
             "category": "Bebida"
           }
         ]
@@ -748,5 +748,148 @@
       ]
     }
   ]
+  },
+  {
+  "id": 4,
+  "name": "Sushi do Kenji",
+  "logo": "https://files.menudino.com/cardapios/69419/logo.png",
+  "rating": 4.9,
+  "delivery_duration": "30-40",
+  "description": "Experiência autêntica da culinária japonesa com ingredientes frescos e selecionados",
+  "categories": [
+    {
+      "id": 301,
+      "name": "Destaques",
+      "products": [
+        {
+          "id": 7001,
+          "restaurant_id": 4,
+          "name": "Combo Sushi Premium",
+          "base_price": 54.90,
+          "duration": "15-20",
+          "description": "20 peças selecionadas + bebida + acompanhamento",
+          "image": "https://alloydeliveryimages.s3.sa-east-1.amazonaws.com/item_images/9625/64ff4e3675d97ss0ld.webp",
+          "category": "Combo",
+          "rating": 4.9,
+          "modifier_group": [
+            {
+              "id": 8001,
+              "name": "Escolha seu combinado",
+              "type": "combo-product",
+              "input_type": "radio",
+              "min": 1,
+              "max": 1,
+              "free_limit": 1,
+              "modifiers": [
+                { "id": 8101, "product_id": 8001 },
+                { "id": 8102, "product_id": 8002 }
+              ]
+            },
+            {
+              "id": 8002,
+              "name": "Escolha um acompanhamento",
+              "type": "combo-product",
+              "input_type": "radio",
+              "min": 1,
+              "max": 1,
+              "free_limit": 1,
+              "modifiers": [
+                { "id": 8103, "product_id": 9001 },
+                { "id": 8104, "product_id": 9002 }
+              ]
+            },
+            {
+              "id": 8003,
+              "name": "Escolha uma bebida",
+              "type": "combo-product",
+              "input_type": "radio",
+              "min": 1,
+              "max": 1,
+              "free_limit": 1,
+              "modifiers": [
+                { "id": 8105, "product_id": 10001 },
+                { "id": 8106, "product_id": 10002 }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 302,
+      "name": "Combinados",
+      "products": [
+        {
+          "id": 8001,
+          "restaurant_id": 4,
+          "name": "Combinado Tradicional (12 peças)",
+          "base_price": 39.90,
+          "description": "4 nigiris, 4 sashimis e 4 uramakis",
+          "image": "https://imagens.jotaja.com/produtos/7220abe1-7d58-4aa5-976c-3bbac8860e71.jpg",
+          "category": "Combinado",
+          "rating": 4.8
+        },
+        {
+          "id": 8002,
+          "restaurant_id": 4,
+          "name": "Combinado Especial (20 peças)",
+          "base_price": 59.90,
+          "description": "8 sashimis, 6 uramakis, 4 hossomakis, 2 nigiris",
+          "image": "https://imagens.jotaja.com/produtos/7220abe1-7d58-4aa5-976c-3bbac8860e71.jpg",
+          "category": "Combinado",
+          "rating": 4.9
+        }
+      ]
+    },
+    {
+      "id": 303,
+      "name": "Acompanhamentos",
+      "products": [
+        {
+          "id": 9001,
+          "restaurant_id": 4,
+          "name": "Sunomono",
+          "base_price": 8.00,
+          "description": "Salada de pepino agridoce",
+          "image": "https://static.itdg.com.br/images/1200-675/89f91eea2abcca858e2fb06998f06e9e/shutterstock-2338607009.jpg",
+          "category": "Acompanhamento"
+        },
+        {
+          "id": 9002,
+          "restaurant_id": 4,
+          "name": "Missoshiro",
+          "base_price": 7.00,
+          "description": "Caldo tradicional de missô com tofu",
+          "image": "https://djapa.com.br/wp-content/uploads/2022/06/misso.jpg",
+          "category": "Acompanhamento"
+        }
+      ]
+    },
+    {
+      "id": 304,
+      "name": "Bebidas",
+      "products": [
+        {
+          "id": 10001,
+          "restaurant_id": 4,
+          "name": "Chá Verde 350ml",
+          "base_price": 6.50,
+          "description": "",
+          "image": "https://image.tuasaude.com/media/article/bm/iw/beneficios-do-cha-verde_13570.jpg?width=686&height=487",
+          "category": "Bebida"
+        },
+        {
+          "id": 10002,
+          "restaurant_id": 4,
+          "name": "Água com Gás 500ml",
+          "base_price": 4.50,
+          "description": "",
+          "image": "https://fortatacadista.vteximg.com.br/arquivos/ids/294006-1000-1000/7898165430039.jpg?v=637625571580730000",
+          "category": "Bebida"
+        }
+      ]
+    }
+  ]
 }
+
 ]

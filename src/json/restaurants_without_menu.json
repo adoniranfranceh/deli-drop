@@ -1,73 +1,93 @@
 [
   {
     "id": 1,
-    "name": "Pizzaria Bella",
+    "name": "Pizzaria do Dony",
     "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
   },
   {
     "id": 2,
-    "name": "Sushi Yama",
-    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
+    "name": "Burger do Zé",
+    "logo": "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg"
   },
   {
     "id": 3,
     "name": "Açaiteria Raiz",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
+  },
+  {
+    "id": 4,
+    "name": "Sushi do Kenji",
+    "logo": "https://files.menudino.com/cardapios/69419/logo.png"
   },
   {
     "id": 1,
-    "name": "Pizzaria Bella",
+    "name": "Pizzaria do Dony",
     "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
   },
   {
     "id": 2,
-    "name": "Sushi Yama",
-    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
+    "name": "Burger do Zé",
+    "logo": "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg"
   },
   {
     "id": 3,
     "name": "Açaiteria Raiz",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
+  },
+  {
+    "id": 4,
+    "name": "Sushi do Kenji",
+    "logo": "https://files.menudino.com/cardapios/69419/logo.png"
   },
   {
     "id": 1,
-    "name": "Pizzaria Bella",
+    "name": "Pizzaria do Dony",
     "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
   },
   {
     "id": 2,
-    "name": "Sushi Yama",
-    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
+    "name": "Burger do Zé",
+    "logo": "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg"
   },
   {
     "id": 3,
     "name": "Açaiteria Raiz",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
+  },
+  {
+    "id": 4,
+    "name": "Sushi do Kenji",
+    "logo": "https://files.menudino.com/cardapios/69419/logo.png"
   },
   {
     "id": 1,
-    "name": "Pizzaria Bella",
+    "name": "Pizzaria do Dony",
     "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
   },
   {
     "id": 2,
-    "name": "Sushi Yama",
-    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
+    "name": "Burger do Zé",
+    "logo": "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg"
   },
   {
     "id": 3,
     "name": "Açaiteria Raiz",
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
+  },
+  {
+    "id": 4,
+    "name": "Sushi do Kenji",
+    "logo": "https://files.menudino.com/cardapios/69419/logo.png"
   },
   {
     "id": 1,
-    "name": "Pizzaria Bella",
+    "name": "Pizzaria do Dony",
     "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
   },
   {
     "id": 2,
-    "name": "Sushi Yama",
-    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
+    "name": "Burger do Zé",
+    "logo": "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_1280.jpg"
   },
   {
     "id": 3,
@@ -75,33 +95,8 @@
     "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
   },
   {
-    "id": 1,
-    "name": "Pizzaria Bella",
-    "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
-  },
-  {
-    "id": 2,
-    "name": "Sushi Yama",
-    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Açaiteria Raiz",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
-  },
-  {
-    "id": 1,
-    "name": "Pizzaria Bella",
-    "logo": "https://static.expressodelivery.com.br/imagens/logos/43559/Expresso-Delivery_689c95c3253904fa4ded72f28ee825b6.png"
-  },
-  {
-    "id": 2,
-    "name": "Sushi Yama",
-    "logo": "https://img.freepik.com/vector-premium/palillos-logo-sushi-logo-comida-japonesa-rollo-sushi_268834-135.jpg"
-  },
-  {
-    "id": 3,
-    "name": "Açaiteria Raiz",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH97akJ7yZUNEzM086SYoVvf-Madloif792w&s"
+    "id": 4,
+    "name": "Sushi do Kenji",
+    "logo": "https://files.menudino.com/cardapios/69419/logo.png"
   }
 ]
