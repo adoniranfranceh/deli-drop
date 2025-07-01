@@ -3,7 +3,7 @@
     <div class="image-wrapper">
       <img :src="product.image" :alt="product.name" class="product-image" />
       <span class="product-stamp">
-        {{ showInRestaurant ? product?.category : 'Destaque' }}
+        {{ showCategory ? product?.category : 'Destaque' }}
       </span>
     </div>
 
@@ -16,7 +16,7 @@
         <p>{{ product.description }}</p>
       </div>
 
-      <InfoProduct v-if="!showInRestaurant" :product="product" />
+      <InfoProduct v-if="!showCategory" :product="product" />
 
       <div class="product-footer">
         <strong class="product-price">{{ FloatToMoney(product.base_price) }}</strong>
@@ -46,7 +46,7 @@
       type: Object,
       required: true,
     },
-    showInRestaurant: {
+    showCategory: {
       type: Boolean,
       default: false,
     },
