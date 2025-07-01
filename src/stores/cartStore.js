@@ -135,12 +135,23 @@ export const useCartStore = defineStore('cart', () => {
   }
 
   function normalizeModifiers(mods) {
-    return (mods || [])
-      .map(mod => ({
+    return (mods || []).map(mod => {
+      let selectedArray = [];
+      if (Array.isArray(mod.selected)) {
+        selectedArray = mod.selected.slice();
+      } else if (mod.selected && typeof mod.selected === 'object') {
+        selectedArray = Object.values(mod.selected);
+      }
+
+      if (selectedArray.length > 0 && selectedArray[0].id !== undefined) {
+        selectedArray.sort((a, b) => a.id - b.id);
+      }
+
+      return {
         id: mod.id,
-        selected: [...(mod.selected || [])].sort((a, b) => a.id - b.id)
-      }))
-      .sort((a, b) => a.id - b.id)
+        selected: selectedArray
+      };
+    }).sort((a, b) => a.id - b.id);
   }
 
   const generateCartItemId = (product, selectedModifiers) => {
