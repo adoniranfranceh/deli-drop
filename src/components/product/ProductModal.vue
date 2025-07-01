@@ -46,7 +46,7 @@
         <hr />
 
         <p
-          v-if="!productSelectionStore.modifiersValid && product.modifier_group"
+          v-if="!modifiersValid && product.modifier_group"
           style="color: red; font-size: 0.9rem;"
         >
           Escolha os itens obrigatórios antes de adicionar ao carrinho.
@@ -58,7 +58,7 @@
             class="add-btn"
             :text="buttonText"
             iconLeft="ph:shopping-bag-open-thin"
-            :disabled="!productSelectionStore.modifiersValid && product.modifier_group"
+            :disabled="!modifiersValid && product.modifier_group"
             @click="handleAddToCart"
           />
         </div>
@@ -80,14 +80,14 @@ import { FloatToMoney } from '@/utils/money'
 import { useUIStore } from '@/stores/uiStore'
 import { useTotalPriceStore } from '@/stores/totalPriceStore'
 import { useRestaurantStore } from '@/stores/useRestaurantStore'
-import { useCartStore } from '@/stores/cartStore'
 import { useProductSelectionStore } from '@/stores/useProductSelectionStore'
 
 const ui = useUIStore()
-const cartStore = useCartStore()
 const totalStore = useTotalPriceStore()
 const restaurantStore = useRestaurantStore()
 const productSelectionStore = useProductSelectionStore()
+
+const modifiersValid = computed(() => productSelectionStore.modifiersValid)
 
 const props = defineProps({
   product: Object,
@@ -95,6 +95,16 @@ const props = defineProps({
   cartItemId: { type: String, default: null }
 })
 const emit = defineEmits(['add-to-cart'])
+
+watch(() => props.product, (newProduct) => {
+  if (!newProduct) return
+
+  productSelectionStore.resetSelectedModifiersForProduct(newProduct.modifier_group || [])
+
+  if (props.selectedModifiers && props.selectedModifiers.length) {
+    loadSelectedModifiers()
+  }
+})
 
 const quantity = ref(props.product.quantity || 1)
 const comment = ref('')
@@ -136,8 +146,9 @@ function hydrateModifierGroups() {
 }
 
 function loadSelectedModifiers() {
+  productSelectionStore.reset()
+
   if (props.selectedModifiers.length) {
-    productSelectionStore.reset()
     props.selectedModifiers.forEach(mod => {
       productSelectionStore.updateModifierSelection(
         mod.id,
