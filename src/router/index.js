@@ -8,8 +8,8 @@ const routes = [
   },
   {
     path: '/buscar',
-    name: 'Search',
-    component: () => import('@/views/Search.vue')
+    name: 'SearchScreen',
+    component: () => import('@/views/SearchScreen.vue')
   },
   {
     path: '/restaurante/:id',
