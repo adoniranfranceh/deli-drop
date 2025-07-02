@@ -63,7 +63,7 @@ export const useCartStore = defineStore('cart', () => {
       currentRestaurantInfo.value = null
     }
 
-    if (Number(currentRestaurantId.value) !== restaurantId) {
+    if (currentRestaurantId.value && currentRestaurantId.value !== restaurantId) {
       const result = await Swal.fire({
         title: 'Limpar sacola?',
         text: 'Sua sacola está com itens de outro restaurante. Deseja esvaziá-la para adicionar novos itens?',
