@@ -72,7 +72,7 @@ watch(selectedCategory, () => {
   productLimit.value = 3
 })
 
-const popularTerms = ['Pizza Calabresa', 'Açaí 500ml', 'Combo Mix', 'Pizzaria do Dony']
+const popularTerms = ['Pizza de Calabresa', 'Açaí 500ml', 'Combo Mix', 'Pizzaria do Dony']
 const categories = {
   'Tudo': 'fluent:search-32-regular', 'Restaurantes': 'ri:restaurant-line',
   'Comidas': 'tabler:meat', 'Pizza': 'mynaui:pizza',
