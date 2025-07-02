@@ -28,9 +28,11 @@ nav a {
   color: #555;
   font-weight: 500;
 }
+
 nav a:hover {
-  color: #000;
+  color: var(--color-primary-hover);
 }
+
 #container-nav-desktop {
   font-family: 'Inter', sans-serif;
   color: var(--color-text);
