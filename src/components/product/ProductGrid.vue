@@ -5,7 +5,7 @@
       <p class="description">{{ product.description }}</p>
 
       <div class="product-meta">
-        <span class="time"><DeliveryDuration :duration="product.time || '25-35'" /></span>
+        <span class="time"><DeliveryDuration :duration="product.duration || '25-35'" /></span>
       </div>
 
       <strong class="price">A partir de {{ FloatToMoney(product.base_price) }}</strong>

@@ -22,7 +22,7 @@
         </p>
         <div class="restaurant-rating">
           <Rating :rating="restaurant.rating" />
-          <DeliveryDuration :duration="restaurant.delivery_duration"/>
+          <DeliveryDuration :duration="restaurant.duration" v-if="restaurant.duration"/>
           <Location location="Entrega disponível" />
         </div>
       </header>
@@ -70,6 +70,7 @@ watch(
 html {
   scroll-behavior: smooth;
 }
+
 .restaurant-page {
   font-family: 'Inter', sans-serif;
 }
@@ -173,7 +174,7 @@ button:hover {
   padding: 0 3rem;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 758px) {
   .restaurant-rating {
     margin-bottom: 10px;
   }

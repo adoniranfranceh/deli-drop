@@ -9,7 +9,7 @@
 
         <div class="details">
           <Rating :rating="restaurant.rating" />
-          <DeliveryDuration :duration="restaurant.delivery_duration" />
+          <DeliveryDuration :duration="restaurant.duration" />
           <Location location="3 km" />
         </div>
       </div>
@@ -21,7 +21,6 @@
 import Rating from '@/components/ui/Rating.vue'
 import DeliveryDuration from '@/components/ui/DeliveryDuration.vue'
 import Location from '@/components/ui/Location.vue'
-import Chip from '@/components/ui/Chip.vue' // opcional
 
 defineProps({
   restaurant: Object
@@ -38,6 +37,7 @@ defineProps({
   padding: 0.75rem;
   gap: 0.75rem;
   cursor: pointer;
+  box-shadow: var(--shadow-md);
   transition: box-shadow 0.2s;
 }
 
