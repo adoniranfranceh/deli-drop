@@ -27,18 +27,22 @@ const props = defineProps({
 const activeCategory = ref(null)
 
 const handleScroll = () => {
+  const OFFSET_TOP = 210
+  let lastVisible = null
+
   for (const category of props.categories) {
     const el = document.getElementById(`category-${category.id}`)
     if (el) {
       const rect = el.getBoundingClientRect()
-      if (rect.top <= 200 && rect.bottom >= 200) {
-        if (activeCategory.value !== category.id) {
-          activeCategory.value = category.id
-          scrollActiveButtonIntoView(category.id)
-        }
-        break
+      if (rect.top <= OFFSET_TOP) {
+        lastVisible = category.id
       }
     }
+  }
+
+  if (lastVisible && activeCategory.value !== lastVisible) {
+    activeCategory.value = lastVisible
+    scrollActiveButtonIntoView(lastVisible)
   }
 }
 
@@ -46,6 +50,20 @@ const scrollActiveButtonIntoView = (id) => {
   const btn = document.querySelector(`.categories-scroll button[data-id="${id}"]`)
   if (btn) {
     btn.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' })
+  }
+}
+
+const scrollToCategory = (id) => {
+  const el = document.getElementById(`category-${id}`)
+  if (el) {
+    const headerOffset = 200
+    const elementPosition = el.getBoundingClientRect().top + window.pageYOffset
+    const offsetPosition = elementPosition - headerOffset
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth',
+    })
   }
 }
 
@@ -76,6 +94,13 @@ onUnmounted(() => {
   padding: 1rem;
   scrollbar-width: none;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 
 button {
   background: transparent;
