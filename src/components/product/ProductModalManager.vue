@@ -49,7 +49,6 @@ function addtoCart(event) {
     event.selectedModifiers = [];
   }
 
-  console.log(event.selectedModifiers);
   cartStore.addCart(event, restaurantStore.restaurantInfo);
   closeModal();
 }
