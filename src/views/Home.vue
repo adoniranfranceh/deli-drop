@@ -12,8 +12,6 @@
         <Button text="Pedir agora" path="/buscar" icon="radix-icons:arrow-right" />
       </section>
 
-       <!-- <CategoryCarousel /> -->
-
       <section class="showcase">
         <h2>Seu restaurante favorito a um clique</h2>
         <FeaturedProducts :products="products"/>
@@ -28,7 +26,6 @@
 import FeaturedRestaurants from '@/components/restaurant/FeaturedRestaurants.vue';
 import FeaturedProducts from '@/components/ui/FeaturedProducts.vue'
 import Button from '@/components/ui/Button.vue';
-import CategoryCarousel from '@/components/restaurant/CategoryCarousel.vue'
 import Footer from '@/components/ui/Footer.vue'
 
 const products = [
@@ -36,7 +33,7 @@ const products = [
     id: 1007,
     restaurant_id: 1,
     name: "Combo Mix",
-    eta: "35",
+    duration: "35",
     base_price: 34.99,
     description: "Escolha uma pizza média e um açaí de 500ml",
     image: "https://scontent.fpcs1-1.fna.fbcdn.net/v/t39.30808-6/483665471_2986263421524920_120209351972226674_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=8FQIF9eo_jwQ7kNvwG-kv4H&_nc_oc=Adkc20N7KcONYL2qdR0R1CTGkLwasEPwc3Sum5MExa9L6n6TzY-R24pAaLKFul2jXURWD9xW-FzcplZySRNxAfeW&_nc_zt=23&_nc_ht=scontent.fpcs1-1.fna&_nc_gid=jG5SXRzIZh2nj6MAvlSgsw&oh=00_AfPBTQz7K1zCLs_iEXGTPGIVcbIRb31RkXcPm5_SCAZxHQ&oe=686769DF",
@@ -47,7 +44,7 @@ const products = [
     id: 3001,
     restaurant_id: 2,
     name: "Combo Angus",
-    eta: "20",
+    duration: "20",
     base_price: 39.99,
     duration: "8-12",
     description: "Hambúrguer artesanal + batata + refri",
@@ -59,7 +56,7 @@ const products = [
     id: 3102,
     restaurant_id: 3,
     name: "Açaí 500ml",
-    eta: "10",
+    duration: "10",
     base_price: 14.00,
     description: "Açaí cremoso com até 4 adicionais",
     image: "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
