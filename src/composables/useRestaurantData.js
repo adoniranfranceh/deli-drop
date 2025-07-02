@@ -11,10 +11,8 @@ export function useRestaurantData(router) {
   const backgroundImage = ref(null)
   const restaurantStore = useRestaurantStore()
 
-  // Mapa para acesso rápido aos restaurantes por id
   const restaurantMap = new Map(data_restaurants.map(r => [r.id, r]))
 
-  // Função para setar a imagem de fundo aleatória, se ainda não existir
   function setRandomBackgroundImage() {
     if (!backgroundImage.value && restaurantStore.allProducts?.length > 0) {
       const randomIndex = Math.floor(Math.random() * restaurantStore.allProducts.length)
@@ -22,7 +20,6 @@ export function useRestaurantData(router) {
     }
   }
 
-  // Função para aplicar cor ao restaurante e atualizar a store
   function applyRestaurantColor(restaurantData, color) {
     bgColor.value = color
     setDefaultStyles(color)
