@@ -11,6 +11,7 @@
       :product="selectedProduct.product"
       :selectedModifiers="selectedProduct.selectedModifiers"
       :cartItemId="selectedProduct.cartItemId"
+      :restaurantColor="cartStore.currentRestaurantInfo.color"
       @add-to-cart="handleEditedItem"
       @close="closeProductModal"
     />

@@ -1,8 +1,9 @@
 <template>
   <div class="modal-overlay" @click.self="closeModal">
-    <div class="modal-content">
+    <div class="modal-content" :style="{ '--color-product-modal': restaurantColor }">
       <div class="image-wrapper">
         <CloseButton @close="$emit('close')" />
+
         <img :src="product.image" :alt="product.name" class="modal-image" />
       </div>
 
@@ -82,7 +83,6 @@ import { useTotalPriceStore } from '@/stores/totalPriceStore'
 import { useRestaurantStore } from '@/stores/useRestaurantStore'
 import { useProductSelectionStore } from '@/stores/useProductSelectionStore'
 
-
 const ui = useUIStore()
 const totalStore = useTotalPriceStore()
 const restaurantStore = useRestaurantStore()
@@ -92,6 +92,7 @@ const modifiersValid = computed(() => productSelectionStore.modifiersValid)
 
 const props = defineProps({
   product: Object,
+  restaurantColor: String,
   selectedModifiers: { type: Array, default: () => [] },
   cartItemId: { type: String, default: null }
 })
@@ -211,7 +212,7 @@ function handleAddToCart() {
 }
 
 .modal-content h2 {
-  color: var(--color-cart, var(--color-restaurant));
+  color: var(--color-product-modal);
   font-size: 1.5rem;
   margin-bottom: 0;
 }
@@ -243,6 +244,16 @@ function handleAddToCart() {
 .image-wrapper {
   height: 40%;
   position: relative;
+}
+
+.restaurant-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  background: white;
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-product {
@@ -280,11 +291,11 @@ function handleAddToCart() {
   margin: 1.5rem 0;
 
   button {
-    background: var(--color-cart, var(--color-restaurant));
+    background: var(--color-product-modal);
   }
 
   button:hover {
-    background: var(--color-cart, var(--color-restaurant));
+    background: var(--color-product-modal);
     opacity: 0.9;
   }
 }

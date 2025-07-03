@@ -35,7 +35,7 @@
 
             <img
               :src="item.image"
-              alt="Product Image"
+              alt="Product"
               class="item-image"
             />
 
@@ -102,8 +102,8 @@ defineProps({
 }
 
 .modifiers-options.selected {
-  background-color: color-mix(in srgb, var(--color-cart, var(--color-restaurant)) 10%, white);
-  border-color: var(--color-cart, var(--color-restaurant));
+  background-color: color-mix(in srgb, var(--color-product-modal, var(--color-restaurant)) 10%, white);
+  border-color: var(--color-product-modal, var(--color-restaurant));
 }
 
 .modifiers-options.faded {
@@ -150,8 +150,8 @@ defineProps({
 }
 
 .content-option input[type='checkbox']:checked + .custom-checkbox {
-  background-color: var(--color-cart, var(--color-restaurant));
-  border-color: var(--color-cart, var(--color-restaurant));
+  background-color: var(--color-product-modal, var(--color-restaurant));
+  border-color: var(--color-product-modal, var(--color-restaurant));
 }
 
 .content-option input[type='checkbox']:checked + .custom-checkbox::after {

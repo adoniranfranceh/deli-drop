@@ -4,6 +4,7 @@
       v-if="selectedProduct"
       :product="selectedProduct"
       @close="closeModal"
+      :restaurantColor="restaurantStore.restaurantInfo.color"
       @add-to-cart="addtoCart($event)"
     />
   </div>

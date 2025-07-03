@@ -129,7 +129,7 @@ function getPriceLabel(item) {
 }
 
 .modifier-chip {
-  background-color: var(--color-cart, var(--color-restaurant));
+  background-color: var(--color-product-modal);
   color: var(--color-white);
 }
 
