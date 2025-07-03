@@ -23,13 +23,11 @@ import { ref, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import CartModal from '@/components/cart/CartModal.vue'
 import ProductModal from '../product/ProductModal.vue'
-import { useRestaurantStore } from '@/stores/useRestaurantStore'
 import { useCartStore } from '@/stores/cartStore'
 import { useProductSelectionStore } from '../../stores/useProductSelectionStore'
 
 const productSelectionStore = useProductSelectionStore()
 
-const restaurantStore = useRestaurantStore()
 const route = useRoute()
 const router = useRouter()
 
