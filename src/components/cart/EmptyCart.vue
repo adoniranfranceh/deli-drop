@@ -12,7 +12,7 @@
         <Icon icon="lucide:shopping-bag" class="bag-icon"/>
         <p>Adicione alguns itens deliciosos</p>
 
-        <Button text="Continuar comprando" @click="$emit('close')"/>
+        <AppButton text="Continuar comprando" @click="$emit('close')"/>
       </div>
   </div>
 </template>
@@ -68,13 +68,7 @@
   color: var(--color-black);
 }
 
-.close-btn {
-  font-size: 1.5rem;
-  background: transparent;
-  cursor: pointer;
-  color: #555;
-  transition: color 0.2s;
-}
+
 
 .close-btn:hover {
   color: #b94a48;
@@ -114,7 +108,7 @@
 <script setup>
 import { Icon } from '@iconify/vue';
 import { useCartStore } from '@/stores/cartStore'
-import Button from '@/components/ui/Button.vue'
+import AppButton from '@/components/ui/AppButton.vue'
 
 defineProps({
   restauranName: String

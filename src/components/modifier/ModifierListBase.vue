@@ -66,7 +66,7 @@
 import { FloatToMoney } from '@/utils/money'
 import ModifierHeader from '@/components/ui/ModifierHeader.vue'
 
-const props = defineProps({
+defineProps({
   modifier_group: Object,
   totalSelected: Number,
   isSelected: Function,
@@ -102,8 +102,8 @@ const props = defineProps({
 }
 
 .modifiers-options.selected {
-  background-color: color-mix(in srgb, var(--color-restaurant) 10%, white);
-  border-color: var(--color-restaurant);
+  background-color: color-mix(in srgb, var(--color-cart, var(--color-restaurant)) 10%, white);
+  border-color: var(--color-cart, var(--color-restaurant));
 }
 
 .modifiers-options.faded {
@@ -150,8 +150,8 @@ const props = defineProps({
 }
 
 .content-option input[type='checkbox']:checked + .custom-checkbox {
-  background-color: var(--color-restaurant);
-  border-color: var(--color-restaurant);
+  background-color: var(--color-cart, var(--color-restaurant));
+  border-color: var(--color-cart, var(--color-restaurant));
 }
 
 .content-option input[type='checkbox']:checked + .custom-checkbox::after {

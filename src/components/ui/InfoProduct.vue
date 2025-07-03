@@ -1,16 +1,16 @@
 <template>
   <div class="wrapper-info">
     <p class="product-rating">
-      <Rating :rating="product.rating"/>
+      <RatingProduct :rating="product.rating"/>
     </p>
      <p><DeliveryDuration :duration="product.duration" /></p>
-    <p><Chip :item="product.category"/></p>
+    <p><ItemChip :item="product.category"/></p>
   </div>
 </template>
 
 <script setup>
-import Chip from '@/components/ui/Chip.vue';
-import Rating from '@/components/ui/Rating.vue';
+import ItemChip from '@/components/ui/ItemChip.vue';
+import RatingProduct from '@/components/ui/RatingProduct.vue';
 import DeliveryDuration from '@/components/ui/DeliveryDuration.vue';
 
 defineProps({

@@ -1,7 +1,7 @@
 <template>
   <h3>FILTROS</h3>
   <div class="filters">
-    <Button
+    <AppButton
       v-for="(value, key) in categories"
       :key="key"
       :iconLeft="value"
@@ -13,9 +13,9 @@
 </template>
 
 <script setup>
-import Button from '@/components/ui/Button.vue';
+import AppButton from '@/components/ui/AppButton.vue';
 
-const props = defineProps({
+defineProps({
   categories: Object,
   selected: String
 })

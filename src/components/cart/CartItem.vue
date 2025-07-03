@@ -1,5 +1,5 @@
 <template>
-  <div class="cart-item" @click="emitEdit" tabindex="0" role="button" @keydown.enter="emitEdit">
+  <div class="cart-item" @click="emitEdit" @keydown.enter="emitEdit">
     <div class="item-info">
       <div class="wrapper-info">
         <img :src="item.image" alt="" class="item-image" />
@@ -33,7 +33,6 @@
         icon="streamline-ultimate:bin-1"
         class="remove-btn"
         @click.stop="emitRemove"
-        role="button"
         tabindex="0"
         aria-label="Remover item"
         @keydown.enter.stop="emitRemove"
@@ -51,9 +50,7 @@ import { ref, watch } from 'vue'
 import WrapperQuantity from '@/components/ui/WrapperQuantity.vue'
 import { Icon } from '@iconify/vue'
 import { FloatToMoney } from '@/utils/money'
-import { useRestaurantStore } from '../../stores/useRestaurantStore'
 
-const restaurantStore = useRestaurantStore()
 const props = defineProps({
   item: Object
 })
@@ -89,6 +86,15 @@ function onQuantityChange(val) {
     0 1px 1px rgba(0, 0, 0, 0.04),
     0 4px 6px rgba(0, 0, 0, 0.03);
   justify-content: space-between;
+}
+
+.cart-item:hover {
+  box-shadow: var(--shadow-md);
+
+  .item-image {
+    width: 75px;
+    height: 75px;
+  }
 }
 
 .item-info {

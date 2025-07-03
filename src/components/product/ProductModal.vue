@@ -15,7 +15,7 @@
         <div class="info">
           <div class="header-wrapper">
             <p>{{ product.description }}</p>
-            <Rating v-if="product.rating" :rating="product.rating" />
+            <RatingProduct v-if="product.rating" :rating="product.rating" />
           </div>
           <DeliveryDuration :duration="product.duration" />
         </div>
@@ -28,7 +28,7 @@
           :modifier_group="group"
         />
 
-        <Ingredients
+        <ProductIngredients
           v-if="product.ingredients"
           :ingredients="product.ingredients"
         />
@@ -54,7 +54,7 @@
 
         <div class="add-wrapper">
           <WrapperQuantity v-model="quantity"/>
-          <Button
+          <AppButton
             class="add-btn"
             :text="buttonText"
             iconLeft="ph:shopping-bag-open-thin"
@@ -71,9 +71,9 @@
 import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import CloseButton from '@/components/ui/CloseButton.vue'
 import WrapperQuantity from '@/components/ui/WrapperQuantity.vue'
-import Ingredients from '@/components/product/Ingredients.vue'
-import Button from '@/components/ui/Button.vue'
-import Rating from '@/components/ui/Rating.vue'
+import ProductIngredients from '@/components/product/ProductIngredients.vue'
+import AppButton from '@/components/ui/AppButton.vue'
+import RatingProduct from '@/components/ui/RatingProduct.vue'
 import DeliveryDuration from '@/components/ui/DeliveryDuration.vue'
 import ModifierGroup from '@/components/modifier/ModifierGroup.vue'
 import { FloatToMoney } from '@/utils/money'
@@ -211,7 +211,7 @@ function handleAddToCart() {
 }
 
 .modal-content h2 {
-  color: var(--color-restaurant);
+  color: var(--color-cart, var(--color-restaurant));
   font-size: 1.5rem;
   margin-bottom: 0;
 }
@@ -280,11 +280,11 @@ function handleAddToCart() {
   margin: 1.5rem 0;
 
   button {
-    background: var(--color-restaurant);
+    background: var(--color-cart, var(--color-restaurant));
   }
 
   button:hover {
-    background: var(--color-restaurant);
+    background: var(--color-cart, var(--color-restaurant));
     opacity: 0.9;
   }
 }

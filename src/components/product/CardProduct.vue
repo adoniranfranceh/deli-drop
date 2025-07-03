@@ -20,7 +20,7 @@
 
       <div class="product-footer">
         <strong class="product-price">{{ FloatToMoney(product.base_price) }}</strong>
-        <Button
+        <AppButton
           class="add-btn"
           text="Adicionar"
           @click.stop="$emit('open-modal', product)"
@@ -32,7 +32,7 @@
 
 <script setup>
 import InfoProduct from '@/components/ui/InfoProduct.vue'
-import Button from '@/components/ui/Button.vue'
+import AppButton from '@/components/ui/AppButton.vue'
 import { FloatToMoney } from '@/utils/money'
 
 defineProps({

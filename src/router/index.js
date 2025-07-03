@@ -3,8 +3,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: () => import('@/views/Home.vue')
+    name: 'HomeScreen',
+    component: () => import('@/views/HomeScreen.vue')
   },
   {
     path: '/buscar',
@@ -13,8 +13,8 @@ const routes = [
   },
   {
     path: '/restaurante/:id',
-    name: 'RestaurantDetails',
-    component: () => import('@/views/RestaurantDetails.vue'),
+    name: 'RestaurantScreen',
+    component: () => import('@/views/RestaurantScreen.vue'),
     props: true
   }
 ]

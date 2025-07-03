@@ -4,7 +4,7 @@
     BUSCAS POPULARES
   </h3>
   <div class="popular-searches">
-    <Chip 
+    <ItemChip 
       v-for="term in terms"
       :key="term"
       @click="$emit('update:query', term)"
@@ -16,7 +16,7 @@
 
 <script setup>
 import { Icon } from '@iconify/vue';
-import Chip from './Chip.vue';
+import ItemChip from './ItemChip.vue';
 
 defineProps({
   terms: Array

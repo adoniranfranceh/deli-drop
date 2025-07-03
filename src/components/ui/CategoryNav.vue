@@ -2,7 +2,7 @@
   <nav class="floating-category-nav">
     <div class="categories-scroll">
       <button
-        v-for="(category, index) in categories"
+        v-for="(category) in categories"
         :key="category.id"
         :class="{ active: activeCategory === category.id }"
         :data-id="category.id"

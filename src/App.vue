@@ -1,6 +1,6 @@
 <template>
   <div id="layout">
-    <Navbar />
+    <MainNavbar />
     <main id="container">
       <router-view />
       <CartBar />
@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import Navbar from '@/components/navigation/Navbar.vue'
+import MainNavbar from '@/components/navigation/MainNavbar.vue'
 import CartBar from '@/components/cart/CartBar.vue';
 
 

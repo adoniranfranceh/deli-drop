@@ -42,7 +42,7 @@ function closeModal() {
 
 defineExpose({ openModal })
 
-const emit = defineEmits('add-to-cart')
+defineEmits('add-to-cart')
 
 function addtoCart(event) {
   if (!Array.isArray(event.selectedModifiers)) {

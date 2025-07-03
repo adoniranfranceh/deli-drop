@@ -52,7 +52,7 @@ import { useUIStore } from '@/stores/uiStore'
 const cartStore = useCartStore()
 const uiStore = useUIStore()
 
-const props = defineProps({
+defineProps({
   deliveryAddress: { type: String, default: 'Rua das Flores, 123' },
   deliveryFee: { type: Number, default: 4.99 },
   serviceFee: { type: Number, default: 0.45 }

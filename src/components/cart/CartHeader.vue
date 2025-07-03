@@ -20,12 +20,10 @@
 <script setup>
 import { Icon } from '@iconify/vue'
 
-const props = defineProps({
+defineProps({
   restaurantName: String,
   totalItems: Number
 })
-
-const emit = defineEmits(['close'])
 </script>
 
 <style scoped>

@@ -11,7 +11,7 @@
     </div>
     <div class="cart-bar">
       <p>{{ dropLabel }}</p>
-      <Button @click="goToCart" text="Ver sacola" aria-label="Ver sacola com itens adicionados" />
+      <AppButton @click="goToCart" text="Ver sacola" aria-label="Ver sacola com itens adicionados" />
     </div>
   </footer>
 
@@ -24,7 +24,7 @@
 import { onMounted, ref, computed, watch } from 'vue';
 import { useCartStore } from '@/stores/cartStore';
 import CartModalManager from '@/components/cart/CartModalManager.vue';
-import Button from '@/components/ui/Button.vue';
+import AppButton from '../ui/AppButton.vue';
 import { useRouter } from 'vue-router'
 
 const cartStore = useCartStore()

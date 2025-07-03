@@ -1,7 +1,7 @@
 <template>
   <span>
     <Icon icon="system-uicons:location" style="width: 20px; height: 20px;" />
-    {{ location }}
+    {{ location}}
   </span>
 </template>
 

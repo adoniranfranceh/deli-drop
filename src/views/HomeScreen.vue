@@ -9,7 +9,7 @@
           <p>Entrega rápida, pratos variados e promoções exclusivas.</p>
         </div>
 
-        <Button text="Pedir agora" path="/buscar" icon="radix-icons:arrow-right" />
+        <AppButton text="Pedir agora" path="/buscar" icon="radix-icons:arrow-right" />
       </section>
 
       <section class="showcase">
@@ -18,15 +18,15 @@
       </section>
     </main>
   </div>
-  <Footer />
+  <MainNavbar />
 
 </template>
 
 <script setup>
 import FeaturedRestaurants from '@/components/restaurant/FeaturedRestaurants.vue';
 import FeaturedProducts from '@/components/ui/FeaturedProducts.vue'
-import Button from '@/components/ui/Button.vue';
-import Footer from '@/components/ui/Footer.vue'
+import AppButton from '@/components/ui/AppButton.vue';
+import MainNavbar from '@/components/ui/MainNavbar.vue'
 
 const products = [
   {
@@ -44,7 +44,6 @@ const products = [
     id: 3001,
     restaurant_id: 2,
     name: "Combo Angus",
-    duration: "20",
     base_price: 39.99,
     duration: "8-12",
     description: "Hambúrguer artesanal + batata + refri",

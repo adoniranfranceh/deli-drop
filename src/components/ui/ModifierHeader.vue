@@ -2,7 +2,7 @@
   <div class="header-modifier">
     <div class="header-title">
       <h3><strong>{{ name }}</strong></h3>
-      <Chip
+      <ItemChip
         class="modifier-chip"
         v-if="totalSelected !== undefined"
         :class="chipClass"
@@ -23,7 +23,7 @@
 
 <script setup>
 import { computed } from 'vue'
-import Chip from '@/components/ui/Chip.vue'
+import ItemChip from '@/components/ui/ItemChip.vue'
 
 const props = defineProps({
   name: String,
@@ -64,7 +64,7 @@ const chipText = computed(() => {
 }
 
 .modifier-chip {
-  background-color: var(--color-restaurant);
+  background-color: var(--color-cart, var(--color-restaurant));
   color: var(--color-white);
 }
 

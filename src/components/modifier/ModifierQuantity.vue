@@ -97,7 +97,7 @@ function getPriceLabel(item) {
     >
       <div class="content-option">
         <div class="item-details">
-          <img :src="item.image" alt="Product Image" class="item-image" />
+          <img :src="item.image" :alt="item.name" class="item-image" />
           <div class="item-info">
             {{ item.name }}
             <div class="free-modifier">
@@ -129,7 +129,7 @@ function getPriceLabel(item) {
 }
 
 .modifier-chip {
-  background-color: var(--color-restaurant);
+  background-color: var(--color-cart, var(--color-restaurant));
   color: var(--color-white);
 }
 
@@ -195,7 +195,7 @@ function getPriceLabel(item) {
 }
 
 .free-modifier {
-  color: var(--color-restaurant);
+  color: var(--color-cart, var(--color-restaurant));
 }
 
 .quantity-controls {

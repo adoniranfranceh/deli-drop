@@ -2,7 +2,7 @@
   <p class="ingredients-title">Ingredientes:</p>
 
   <div class="ingredients-chips">
-    <Chip
+    <ItemChip
       v-for="ingredient in ingredients"
       :key="ingredient"
       :item="ingredient"
@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import Chip from '@/components/ui/Chip.vue'
+import ItemChip from '@/components/ui/ItemChip.vue'
 
 defineProps({
   ingredients: {

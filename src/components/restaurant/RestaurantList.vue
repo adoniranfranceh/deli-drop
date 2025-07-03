@@ -8,9 +8,9 @@
         <p class="description">{{ restaurant.description }}</p>
 
         <div class="details">
-          <Rating :rating="restaurant.rating" />
+          <RatingProduct :rating="restaurant.rating" />
           <DeliveryDuration :duration="restaurant.duration" />
-          <Location location="3 km" />
+          <LocationRestaurant location="3 km" />
         </div>
       </div>
     </div>
@@ -18,9 +18,9 @@
 </template>
 
 <script setup>
-import Rating from '@/components/ui/Rating.vue'
+import RatingProduct from '@/components/ui/RatingProduct.vue'
 import DeliveryDuration from '@/components/ui/DeliveryDuration.vue'
-import Location from '@/components/ui/Location.vue'
+import LocationRestaurant from '@/components/ui/LocationRestaurantfrom.vue'
 
 defineProps({
   restaurant: Object

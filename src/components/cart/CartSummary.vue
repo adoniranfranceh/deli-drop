@@ -5,7 +5,7 @@
       <div class="bike-delivery">
         <Icon icon="tabler:bike" style="height: 16px; width: 16px;" /> Entrega
       </div>
-      <div><Location :location="deliveryAddress" /></div>
+      <div><LocationRestaurant :location="deliveryAddress" /></div>
     </div>
 
     <hr />
@@ -30,13 +30,13 @@
       </div>
     </div>
 
-    <Button
+    <AppButton
       class="checkout-btn"
       text="Finalizar pedido"
       iconLeft="si:credit-card-line"
       @click="$emit('checkout')"
     />
-    <Button
+    <AppButton
       class="clear-cart-btn"
       text="Limpar sacola"
       @click="$emit('clearCart')"
@@ -46,12 +46,12 @@
 
 <script setup>
 import DeliveryDuration from '@/components/ui/DeliveryDuration.vue'
-import Location from '@/components/ui/Location.vue'
-import Button from '@/components/ui/Button.vue'
+import LocationRestaurant from '@/components/ui/LocationRestaurant.vue'
+import AppButton from '@/components/ui/AppButton.vue'
 import { Icon } from '@iconify/vue'
 import { FloatToMoney } from '@/utils/money'
 
-const props = defineProps({
+defineProps({
   subtotal: Number,
   deliveryFee: Number,
   serviceFee: Number,
@@ -60,14 +60,13 @@ const props = defineProps({
   deliveryAddress: String
 })
 
-const emit = defineEmits(['checkout', 'clearCart'])
+defineEmits(['checkout', 'clearCart'])
 </script>
 
 <style scoped>
 .wrapper-delivery {
   padding: 0 1.5rem;
 }
-
 
 .delivery-info {
   display: flex;
@@ -92,13 +91,10 @@ const emit = defineEmits(['checkout', 'clearCart'])
 }
 
 .checkout-btn {
-  width: 100%;
   display: flex;
   justify-content: center;
+  width: 100%;
   margin: 1rem 0;
-}
-
-.checkout-btn {
   background: var(--color-cart);
 }
 
@@ -111,7 +107,6 @@ const emit = defineEmits(['checkout', 'clearCart'])
   background: none;
   border: none;
   color: #555;
-  margin-top: 0.5rem;
   cursor: pointer;
   font-size: 0.9rem;
   width: 100%;

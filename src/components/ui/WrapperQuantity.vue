@@ -85,7 +85,7 @@ const decreaseQuantity = () => {
 }
 
 .btn-just-plus {
-  background-color: var(--color-restaurant);
+  background-color: var(--color-cart, var(--color-restaurant));
   color: var(--color-white);
   width: 2.2rem;
   height: 2.2rem;

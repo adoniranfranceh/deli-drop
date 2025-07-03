@@ -21,9 +21,9 @@
           {{ restaurant.description }}
         </p>
         <div class="restaurant-rating">
-          <Rating :rating="restaurant.rating" />
+          <RatingProduct :rating="restaurant.rating" />
           <DeliveryDuration :duration="restaurant.duration" v-if="restaurant.duration"/>
-          <Location location="Entrega disponível" />
+          <LocationRestaurant location="Entrega disponível" />
         </div>
       </header>
 
@@ -36,12 +36,12 @@
 </template>
 
 <script setup>
-import { onMounted, watch, ref } from 'vue'
+import { onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useRestaurantData } from '@/composables/useRestaurantData'
 import DeliveryDuration from '@/components/ui/DeliveryDuration.vue'
-import Rating from '@/components/ui/Rating.vue'
-import Location from '@/components/ui/Location.vue'
+import RatingProduct from '@/components/ui/RatingProduct.vue'
+import LocationRestaurant from '@/components/ui/LocationRestaurant.vue'
 import RestaurantMenu from '@/components/restaurant/RestaurantMenu.vue'
 
 const route = useRoute()

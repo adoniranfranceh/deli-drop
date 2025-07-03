@@ -83,7 +83,7 @@ export const useProductSelectionStore = defineStore('productSelection', () => {
     const group = selectedModifiers.value.find(g => g.id === groupId)
     if (!group) return
 
-    const quantities = { ...group.selected?.quantities } || {}
+    const quantities = group.selected?.quantities ? { ...group.selected.quantities } : {}
 
     const total = Object.values(quantities).reduce((a, b) => a + (b.quantity || 0), 0)
     if (max && total >= max) return
@@ -103,7 +103,7 @@ function decrementQuantity(groupId, itemId, min, max) {
   const group = selectedModifiers.value.find(g => g.id === groupId)
   if (!group) return
 
-  const quantities = { ...group.selected?.quantities } || {}
+  const quantities = group.selected?.quantities ? { ...group.selected.quantities } : {}
   const current = quantities[itemId]
 
   if (!current || current.quantity <= 0) return
