@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-overlay" @click.self="$emit('close')">
+  <div class="modal-overlay" @click.self="closeModal">
     <div class="modal-content">
       <div class="image-wrapper">
         <CloseButton @close="$emit('close')" />
@@ -82,6 +82,7 @@ import { useTotalPriceStore } from '@/stores/totalPriceStore'
 import { useRestaurantStore } from '@/stores/useRestaurantStore'
 import { useProductSelectionStore } from '@/stores/useProductSelectionStore'
 
+
 const ui = useUIStore()
 const totalStore = useTotalPriceStore()
 const restaurantStore = useRestaurantStore()
@@ -94,11 +95,11 @@ const props = defineProps({
   selectedModifiers: { type: Array, default: () => [] },
   cartItemId: { type: String, default: null }
 })
+
 const emit = defineEmits(['add-to-cart'])
 
 watch(() => props.product, (newProduct) => {
   if (!newProduct) return
-
   productSelectionStore.resetSelectedModifiersForProduct(newProduct.modifier_group || [])
 
   if (props.selectedModifiers && props.selectedModifiers.length) {
@@ -134,14 +135,17 @@ function setupModal() {
   totalStore.setBasePrice(props.product.base_price)
   totalStore.setQuantity(quantity.value)
   productSelectionStore.basePrice = props.product.base_price
+  comment.value = props.product.comment || ''
 }
 
 function hydrateModifierGroups() {
   props.product.modifier_group?.forEach(group => {
-    group.modifiers = group.modifiers.map(item => ({
-      ...item,
-      ...restaurantStore.getProduct(item)
-    }))
+    group.modifiers = group.modifiers.map(item => {
+      return {
+        ...item,
+        ...restaurantStore.getProduct(item)
+      }
+    })
   })
 }
 
@@ -163,6 +167,12 @@ function loadSelectedModifiers() {
 const buttonText = computed(() =>
   (props.cartItemId ? 'Atualizar ' : 'Adicionar ') + FloatToMoney(finalPrice.value)
 )
+
+function closeModal() {
+  emit('close');
+  totalStore.reset();
+  productSelectionStore.reset()
+}
 
 function handleAddToCart() {
   emit('add-to-cart', {
