@@ -20,13 +20,13 @@ const selectedId = computed(() => {
 
 function toggle(item) {
   const isAlreadySelected = selectedId.value === item.id
-  const newSelection = isAlreadySelected ? [] : [item]
+  const updatedSelected = isAlreadySelected ? [] : [item]
 
   productSelectionStore.updateModifierSelection(
     props.modifier_group.id,
-    newSelection,
-    props.modifier_group.min ?? 0,
-    props.modifier_group.max ?? 1
+    updatedSelected,
+    props.modifier_group.min,
+    props.modifier_group.max
   )
 }
 
