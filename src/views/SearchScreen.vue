@@ -214,13 +214,13 @@ async function showMoreProducts() {
 }
 
 
- @media (min-width: 758px) {
+ @media (min-width: 900px) {
   .restaurant-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1250px) {
+@media (min-width: 1450px) {
   .restaurant-list {
     grid-template-columns: repeat(3, 1fr);
   }
