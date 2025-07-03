@@ -63,6 +63,10 @@ h2 {
   background-color: var(--color-restaurant);
 }
 
+.featured-products :deep(.product-card:hover h3) {
+  color: var(--color-restaurant);
+}
+
 .last-grid {
   height: calc(100vh - 329px);
   overflow-y: auto;
