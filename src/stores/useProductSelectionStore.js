@@ -62,20 +62,66 @@ export const useProductSelectionStore = defineStore('productSelection', () => {
 
   const modifiersValid = computed(() => {
     return selectedModifiers.value.every(mod => {
-      let count = 0
-
-      if (Array.isArray(mod.selected)) {
-        count = mod.selected.length
-      } else if (mod.selected && typeof mod.selected === 'object' && mod.selected.quantities) {
-        count = Object.values(mod.selected.quantities).reduce((sum, q) => sum + q, 0)
-      }
-
+      const selected = mod.selected
       const min = mod.min ?? 0
       const max = mod.max ?? Infinity
+
+      let count = 0
+
+      if (Array.isArray(selected)) {
+        count = selected.length
+      } else if (selected && typeof selected === 'object' && selected.quantities) {
+        count = Object.values(selected.quantities).reduce((sum, entry) => sum + (entry?.quantity || 0), 0)
+      }
 
       return count >= min && count <= max
     })
   })
+
+
+  function incrementQuantity(groupId, item, min, max) {
+    const group = selectedModifiers.value.find(g => g.id === groupId)
+    if (!group) return
+
+    const quantities = { ...group.selected?.quantities } || {}
+
+    const total = Object.values(quantities).reduce((a, b) => a + (b.quantity || 0), 0)
+    if (max && total >= max) return
+
+    const prevQty = quantities[item.id]?.quantity || 0
+
+    quantities[item.id] = {
+      item,
+      quantity: prevQty + 1
+    }
+
+    updateModifierSelection(groupId, { quantities }, min, max)
+  }
+
+
+function decrementQuantity(groupId, itemId, min, max) {
+  const group = selectedModifiers.value.find(g => g.id === groupId)
+  if (!group) return
+
+  const quantities = { ...group.selected?.quantities } || {}
+  const current = quantities[itemId]
+
+  if (!current || current.quantity <= 0) return
+
+  const newQty = current.quantity - 1
+
+  if (newQty === 0) {
+    delete quantities[itemId]
+  } else {
+    quantities[itemId] = {
+      ...current,
+      quantity: newQty
+    }
+  }
+
+  updateModifierSelection(groupId, { quantities }, min, max)
+}
+
 
   const reset = () => {
     quantity.value = 1
@@ -91,6 +137,8 @@ export const useProductSelectionStore = defineStore('productSelection', () => {
     selectedModifiers,
     plainSelectedModifiers,
     modifiersValid,
+    incrementQuantity,
+    decrementQuantity,
 
     reset,
     updateModifierSelection
