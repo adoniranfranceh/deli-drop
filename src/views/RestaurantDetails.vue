@@ -155,7 +155,6 @@ html {
 }
 
 button {
-  /* background-color: var(--color-restaurant); */
   color: white;
   border: none;
   border-radius: 6px;
