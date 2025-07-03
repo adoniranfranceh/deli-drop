@@ -35,32 +35,33 @@ const quantities = computed({
 })
 
 const totalSelected = computed(() => {
-  return Object.values(quantities.value).reduce((sum, q) => sum + q, 0)
+  return Object.values(quantities.value).reduce((sum, entry) => sum + (entry?.quantity || 0), 0)
 })
 
-function incrementQuantity(item) {
-  const newQuantities = { ...quantities.value }
-  const prevQty = quantities.value[item.id] || 0
-  newQuantities[item.id] = prevQty + 1
-  quantities.value = newQuantities
+const incrementQuantity = (item) => {
+  productSelectionStore.incrementQuantity(
+    props.modifier_group.id,
+    item,
+    props.modifier_group.min,
+    props.modifier_group.max
+  )
 
-  totalSelected.value += 1
-
-  if (totalSelected.value > props.modifier_group.free_limit) {
+  const total = totalSelected.value
+  if (total > props.modifier_group.free_limit) {
     totalStore.addExtraPrice(getBasePrice(item))
   }
 }
 
-function decrementQuantity(item) {
-  const newQuantities = { ...quantities.value }
-  const prevQty = quantities.value[item.id] || 0
-  if (prevQty > 0) {
-    newQuantities[item.id] = prevQty - 1
-    quantities.value = newQuantities
-    totalSelected.value = Math.max(0, totalSelected.value - 1)
-  }
+const decrementQuantity = (item) => {
+  const total = totalSelected.value
+  productSelectionStore.decrementQuantity(
+    props.modifier_group.id,
+    item.id,
+    props.modifier_group.min,
+    props.modifier_group.max
+  )
 
-  if (totalSelected.value <= props.modifier_group.free_limit) {
+  if (total >= props.modifier_group.free_limit) {
     totalStore.removeExtraPrice(getBasePrice(item))
   }
 }
@@ -107,13 +108,13 @@ function getPriceLabel(item) {
 
         <div class="quantity-controls">
           <WrapperQuantity
-            :modelValue="quantities[item.id]"
+            :modelValue="quantities[item.id]?.quantity ?? 0"
             @plus="() => incrementQuantity(item)"
             @minus="() => decrementQuantity(item)"
-            :justPlus="(quantities[item.id] ?? 0) <= 0"
             :noLabel="true"
             :min="0"
             :disablePlus="reachedMax"
+            :justPlus="(quantities[item.id]?.quantity ?? 0) <= 0"
           />
         </div>
       </div>
@@ -137,7 +138,6 @@ function getPriceLabel(item) {
   align-items: center;
   justify-content: space-between;
   margin: 0;
-
 }
 
 .header-info {
@@ -220,5 +220,4 @@ function getPriceLabel(item) {
 .chip-maxed {
   background-color: #f87171;
 }
-
 </style>
