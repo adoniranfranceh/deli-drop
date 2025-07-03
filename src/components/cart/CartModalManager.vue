@@ -2,7 +2,6 @@
   <div>
     <CartModal
       v-if="showCartModal"
-      :cartItems="cart"
       @close="closeCartModal"
       @edit-product="openEditProduct"
     />

@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper-delivery">
     <div class="delivery-info">
-      <DeliveryDuration :duration="deliveryDuration" />
+      <DeliveryDuration :duration="deliveryDuration"  v-if="deliveryDuration"/>
       <div class="bike-delivery">
         <Icon icon="tabler:bike" style="height: 16px; width: 16px;" /> Entrega
       </div>
