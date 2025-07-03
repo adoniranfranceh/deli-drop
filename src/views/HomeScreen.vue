@@ -18,7 +18,7 @@
       </section>
     </main>
   </div>
-  <MainNavbar />
+  <MainFooter />
 
 </template>
 
@@ -26,7 +26,7 @@
 import FeaturedRestaurants from '@/components/restaurant/FeaturedRestaurants.vue';
 import FeaturedProducts from '@/components/ui/FeaturedProducts.vue'
 import AppButton from '@/components/ui/AppButton.vue';
-import MainNavbar from '@/components/ui/MainNavbar.vue'
+import MainFooter from '@/components/ui/MainFooter.vue'
 
 const products = [
   {
