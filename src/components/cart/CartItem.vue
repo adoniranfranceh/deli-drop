@@ -5,6 +5,20 @@
         <img :src="item.image" alt="" class="item-image" />
         <div class="header-item">
           <strong class="item-name">{{ item.name }}</strong>
+          <div v-for="selectedModifier in item.selectedModifiers" :key="selectedModifier.id" class="modifier-group">
+            <ul v-if="selectedModifier.selected.quantities">
+              <li v-for="(value, key) in selectedModifier.selected.quantities" :key="key">
+                {{ value.quantity }}x {{ value.item.name }}
+              </li>
+            </ul>
+
+            <ul v-else>
+              <li v-for="selected in selectedModifier.selected" :key="selected.id">
+                {{ selected.name }}
+              </li>
+            </ul>
+          </div>
+
           <WrapperQuantity
             class="wrapper-quantity"
             v-model="localQuantity"
@@ -37,7 +51,9 @@ import { ref, watch } from 'vue'
 import WrapperQuantity from '@/components/ui/WrapperQuantity.vue'
 import { Icon } from '@iconify/vue'
 import { FloatToMoney } from '@/utils/money'
+import { useRestaurantStore } from '../../stores/useRestaurantStore'
 
+const restaurantStore = useRestaurantStore()
 const props = defineProps({
   item: Object
 })
@@ -133,6 +149,23 @@ function onQuantityChange(val) {
 .price {
   font-weight: 700;
   color: #222;
+}
+
+.modifier-group {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.modifier-group ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.modifier-group li {
+  margin-left: 1rem;
+  line-height: 1.2;
 }
 
 @media (max-width: 758px) {
