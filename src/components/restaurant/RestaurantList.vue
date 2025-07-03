@@ -9,7 +9,7 @@
 
         <div class="details">
           <RatingProduct :rating="restaurant.rating" />
-          <DeliveryDuration :duration="restaurant.duration" />
+          <DeliveryDuration :duration="restaurant.duration" v-if="restaurant.duration" />
           <LocationRestaurant location="3 km" />
         </div>
       </div>
@@ -20,7 +20,7 @@
 <script setup>
 import RatingProduct from '@/components/ui/RatingProduct.vue'
 import DeliveryDuration from '@/components/ui/DeliveryDuration.vue'
-import LocationRestaurant from '@/components/ui/LocationRestaurantfrom.vue'
+import LocationRestaurant from '@/components/ui/LocationRestaurant.vue'
 
 defineProps({
   restaurant: Object
@@ -39,6 +39,7 @@ defineProps({
   cursor: pointer;
   box-shadow: var(--shadow-md);
   transition: box-shadow 0.2s;
+  height: 100px;
 }
 
 .restaurant-card:hover {
