@@ -28,7 +28,7 @@
           :deliveryFee="deliveryFee"
           :serviceFee="serviceFee"
           :totalItems="totalItems"
-          :deliveryDuration="deliveryDuration"
+          :deliveryDuration="deliveryDuration || ''"
           :deliveryAddress="deliveryAddress"
           @checkout="handleCheckout"
           @clearCart="handleClearCart"
