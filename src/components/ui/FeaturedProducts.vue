@@ -44,9 +44,6 @@ const openModal = (product) => {
   gap: 2rem;
   margin: 2rem auto;
   padding: 0 1rem;
-}
-
-.products-container {
   grid-template-columns: repeat(1, 1fr);
 }
 
