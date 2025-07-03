@@ -96,7 +96,7 @@ const props = defineProps({
   cartItemId: { type: String, default: null }
 })
 
-const emit = defineEmits(['add-to-cart'])
+const emit = defineEmits(['add-to-cart', 'close'])
 
 watch(() => props.product, (newProduct) => {
   if (!newProduct) return
