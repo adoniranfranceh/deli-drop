@@ -45,7 +45,7 @@
             "base_price": 35.00,
             "duration": "5-10",
             "description": "Escolha 2 sabores da melhor pizza da cidade",
-            "image": "https://swiftbr.vteximg.com.br/arquivos/ids/202872-1500-1000/618283-pizza-artesanal-de-calabresa_1.jpg?v=638679052014630000",
+            "image": "https://static.itdg.com.br/images/1200-630/47d6583c93d77edac5244cab67ba660b/253447-378226756-original.jpg",
             "category": "Pizza",
             "rating": 4.5,
             "modifier_group": [
@@ -73,7 +73,7 @@
             "base_price": 45.00,
             "duration": "8-12",
             "description": "Escolha 3 sabores da melhor pizza da cidade",
-            "image": "https://swiftbr.vteximg.com.br/arquivos/ids/202872-1500-1000/618283-pizza-artesanal-de-calabresa_1.jpg?v=638679052014630000",
+            "image": "https://static.itdg.com.br/images/1200-630/47d6583c93d77edac5244cab67ba660b/253447-378226756-original.jpg",
             "category": "Pizza",
             "rating": 4.5,
             "modifier_group": [
@@ -130,7 +130,7 @@
               "Cebola",
               "Azeitona"
             ],
-            "image": "https://swiftbr.vteximg.com.br/arquivos/ids/202872-1500-1000/618283-pizza-artesanal-de-calabresa_1.jpg?v=638679052014630000",
+            "image": "https://static.itdg.com.br/images/1200-630/47d6583c93d77edac5244cab67ba660b/253447-378226756-original.jpg",
             "category": "Pizza",
             "rating": 4.5
           },
@@ -147,7 +147,7 @@
               "Cebola",
               "Azeitona"
             ],
-            "image": "https://swiftbr.vteximg.com.br/arquivos/ids/202872-1500-1000/618283-pizza-artesanal-de-calabresa_1.jpg?v=638679052014630000",
+            "image": "https://static.itdg.com.br/images/1200-630/47d6583c93d77edac5244cab67ba660b/253447-378226756-original.jpg",
             "category": "Pizza",
             "rating": 4.5
           },
@@ -164,7 +164,7 @@
               "Cebola",
               "Azeitona"
             ],
-            "image": "https://swiftbr.vteximg.com.br/arquivos/ids/202872-1500-1000/618283-pizza-artesanal-de-calabresa_1.jpg?v=638679052014630000",
+            "image": "https://static.itdg.com.br/images/1200-630/47d6583c93d77edac5244cab67ba660b/253447-378226756-original.jpg",
             "category": "Pizza",
             "rating": 4.5
           }
@@ -269,12 +269,12 @@
             "modifier_group": [
               {
                 "id": 5010,
-                "name": "Escolha até 3 adicionais (2 grátis)",
+                "name": "Escolha até 10 adicionais (3 grátis)",
                 "type": "product",
                 "input_type": "quantity",
                 "min": 0,
                 "max": 10,
-                "free_limit": 2,
+                "free_limit": 3,
                 "modifiers": [
                   {
                     "id": 6010,
@@ -316,12 +316,12 @@
             "modifier_group": [
               {
                 "id": 5010,
-                "name": "Escolha até 4 adicionais (2 grátis)",
+                "name": "Escolha até 10 adicionais (4 grátis)",
                 "type": "product",
                 "input_type": "quantity",
                 "min": 0,
-                "max": 3,
-                "free_limit": 2,
+                "max": 10,
+                "free_limit": 4,
                 "modifiers": [
                   {
                     "id": 6010,
@@ -363,12 +363,12 @@
             "modifier_group": [
               {
                 "id": 5010,
-                "name": "Escolha até 5 adicionais (2 grátis)",
+                "name": "Escolha até 10 adicionais (5 grátis)",
                 "type": "product",
                 "input_type": "quantity",
                 "min": 0,
-                "max": 3,
-                "free_limit": 2,
+                "max": 10,
+                "free_limit": 5,
                 "modifiers": [
                   {
                     "id": 6010,
@@ -678,7 +678,7 @@
                 {
                   "id": 8104,
                   "name": "Banana",
-                  "image": "https://cdn.pixabay.com/photo/2018/01/03/09/09/bananas-3050728_1280.jpg",
+                  "image": "https://pt.petitchef.com/imgupl/ingredient/2547.jpg",
                   "base_price": 2.00
                 }
               ]
