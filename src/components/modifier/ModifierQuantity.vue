@@ -25,12 +25,12 @@ const quantities = computed({
     return selectedGroup.value?.selected?.quantities || {}
   },
   set(newQuantities) {
-    productSelectionStore.updateModifierSelection(
-      props.modifier_group.id,
-      { quantities: { ...newQuantities } },
-      props.modifier_group.min,
-      props.modifier_group.max
-    )
+    productSelectionStore.updateSelection({
+      modifierId: props.modifier_group.id,
+      selectedItems: { quantities: { ...newQuantities } },
+      min: props.modifier_group.min,
+      max: props.modifier_group.max
+    })
   }
 })
 
@@ -42,8 +42,12 @@ const incrementQuantity = (item) => {
   productSelectionStore.incrementQuantity(
     props.modifier_group.id,
     item,
-    props.modifier_group.min,
-    props.modifier_group.max
+    {
+      constraints: {
+        min: props.modifier_group.min,
+        max: props.modifier_group.max
+      }
+    }
   )
 
   const total = totalSelected.value
@@ -56,9 +60,13 @@ const decrementQuantity = (item) => {
   const total = totalSelected.value
   productSelectionStore.decrementQuantity(
     props.modifier_group.id,
-    item.id,
-    props.modifier_group.min,
-    props.modifier_group.max
+    item,
+    {
+      constraints: {
+        min: props.modifier_group.min,
+        max: props.modifier_group.max
+      }
+    }
   )
 
   if (total >= props.modifier_group.free_limit) {

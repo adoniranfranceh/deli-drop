@@ -32,7 +32,12 @@ function toggle(item) {
     updatedSelected.push(item)
   }
 
-  productSelectionStore.updateModifierSelection(props.modifier_group.id, updatedSelected, props.modifier_group.min, props.modifier_group.max)
+  productSelectionStore.updateSelection({
+    modifierId: props.modifier_group.id,
+    selectedItems: updatedSelected,
+    min: props.modifier_group.min,
+    max: props.modifier_group.max
+  })
 }
 
 const getBasePrice = item => item.base_price || 0
@@ -40,12 +45,12 @@ const getBasePrice = item => item.base_price || 0
 const localSelected = ref([])
 
 function registerModifierGroup() {
-  productSelectionStore.updateModifierSelection(
-    props.modifier_group.id,
-    [],
-    props.modifier_group.min ?? 0,
-    props.modifier_group.max ?? null
-  )
+  productSelectionStore.updateSelection({
+    modifierId: props.modifier_group.id,
+    selectedItems: [],
+    min: props.modifier_group.min,
+    max: props.modifier_group.max
+  })
 }
 
 onMounted(() => registerModifierGroup())

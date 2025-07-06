@@ -1,3 +1,4 @@
 export function FloatToMoney(float) {
-  return `R$ ${float.toFixed(2).replace('.', ',')}`
+  const decimalPlaces = 2;
+  return `R$ ${float.toFixed(decimalPlaces).replace('.', ',')}`
 }

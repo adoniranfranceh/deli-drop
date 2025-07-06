@@ -22,12 +22,12 @@ function toggle(item) {
   const isAlreadySelected = selectedId.value === item.id
   const updatedSelected = isAlreadySelected ? [] : [item]
 
-  productSelectionStore.updateModifierSelection(
-    props.modifier_group.id,
-    updatedSelected,
-    props.modifier_group.min,
-    props.modifier_group.max
-  )
+  productSelectionStore.updateSelection({
+    modifierId: props.modifier_group.id,
+    selectedItems: updatedSelected,
+    min: props.modifier_group.min,
+    max: props.modifier_group.max
+  })
 }
 
 function isSelected(item) {
@@ -43,12 +43,12 @@ function getBasePrice(item) {
 }
 
 function registerModifierGroup() {
-  productSelectionStore.updateModifierSelection(
-    props.modifier_group.id,
-    [],
-    props.modifier_group.min ?? 0,
-    props.modifier_group.max ?? 1
-  )
+  productSelectionStore.updateSelection({
+    modifierId: props.modifier_group.id,
+    selectedItems: [],
+    min: props.modifier_group.min ?? 0,
+    max: props.modifier_group.max ?? 1
+  })
 }
 
 onMounted(() => registerModifierGroup())
@@ -58,12 +58,12 @@ watch(
   (newVal) => {
     const group = newVal.find(m => m.id === props.modifier_group.id)
     const selected = group?.selected || []
-    productSelectionStore.updateModifierSelection(
-      props.modifier_group.id,
-      selected,
-      props.modifier_group.min ?? 0,
-      props.modifier_group.max ?? 1
-    )
+    productSelectionStore.updateSelection({
+      modifierId: props.modifier_group.id,
+      selectedItems: selected,
+      min: props.modifier_group.min ?? 0,
+      max: props.modifier_group.max ?? 1
+    })
   },
   { immediate: true, deep: true }
 )

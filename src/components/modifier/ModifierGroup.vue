@@ -36,12 +36,12 @@ watch(
 )
 
 watch(localValue, (newSelected) => {
-  productSelectionStore.updateModifierSelection(
-    props.modifier_group.id,
-    newSelected,
-    props.modifier_group.min,
-    props.modifier_group.max
-  )
+  productSelectionStore.updateSelection({
+    modifierId: props.modifier_group.id,
+    selectedItems: newSelected,
+    min: props.modifier_group.min,
+    max: props.modifier_group.max
+  })
 })
 </script>
 

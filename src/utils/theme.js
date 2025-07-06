@@ -6,9 +6,10 @@ export function resetRestaurantColors() {
 }
 
 export function setDefaultStyles(bgColor, darkenColorFn = darkenColor) {
+  const DARKEN_PERCENTAGE = 20;
   document.documentElement.style.setProperty('--color-restaurant', bgColor);
   document.documentElement.style.setProperty(
     '--color-restaurant-hover',
-    darkenColorFn(bgColor, 20)
+    darkenColorFn(bgColor, DARKEN_PERCENTAGE)
   );
 }

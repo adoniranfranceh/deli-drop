@@ -99,15 +99,6 @@ const props = defineProps({
 
 const emit = defineEmits(['add-to-cart', 'close'])
 
-watch(() => props.product, (newProduct) => {
-  if (!newProduct) return
-  productSelectionStore.resetSelectedModifiersForProduct(newProduct.modifier_group || [])
-
-  if (props.selectedModifiers && props.selectedModifiers.length) {
-    loadSelectedModifiers()
-  }
-})
-
 const quantity = ref(props.product.quantity || 1)
 const comment = ref('')
 
@@ -115,6 +106,24 @@ const totalPrice = computed(() => totalStore.totalPrice)
 const finalPrice = computed(() =>
   totalPrice.value * quantity.value
 )
+
+watch(
+  () => props.product?.id, // observar apenas a mudança de id, e não o objeto todo
+  (newId) => {
+    if (!newId) return
+
+    productSelectionStore.resetSelectedModifiersForProduct(props.product.modifier_group || [])
+
+    if (props.selectedModifiers && props.selectedModifiers.length) {
+      loadSelectedModifiers()
+    }
+
+    comment.value = props.product.comment || ''
+    quantity.value = props.product.quantity || 1
+  },
+  { immediate: true }
+)
+
 
 watch(quantity, (qty) => {
   if (totalStore.productQuantity !== qty) {
@@ -155,12 +164,12 @@ function loadSelectedModifiers() {
 
   if (props.selectedModifiers.length) {
     props.selectedModifiers.forEach(mod => {
-      productSelectionStore.updateModifierSelection(
-        mod.id,
-        mod.selected,
-        mod.min ?? 0,
-        mod.max ?? null
-      )
+      productSelectionStore.updateSelection({
+        modifierId: mod.id,
+        selectedItems: mod.selected,
+        min: mod.min ?? 0,
+        max: mod.max ?? null
+      })
     })
   }
 }

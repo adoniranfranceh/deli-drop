@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { countSelected } from './modifiersUtils'
-import { createQuantityHandlers } from './quantityHandlersFactory'
-import { updateModifierSelection } from './updateModifierSelection'
-import { resetSelectedModifiersForProduct } from './resetModifiers'
-import { computePlainSelectedModifiers } from './computePlainSelectedModifiers'
+import { countSelected } from './utils/modifiersUtils'
+import { createQuantityHandlers } from './helpers/quantityHandlersFactory'
+import { updateModifierSelection } from './helpers/updateModifierSelection'
+import { resetSelectedModifiersForProduct } from './helpers/resetModifiers'
+import { computePlainSelectedModifiers } from './helpers/computePlainSelectedModifiers'
 
 function resetState(state) {
   state.quantity.value = 1
