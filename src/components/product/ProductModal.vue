@@ -108,7 +108,7 @@ const finalPrice = computed(() =>
 )
 
 watch(
-  () => props.product?.id, // observar apenas a mudança de id, e não o objeto todo
+  () => props.product?.id,
   (newId) => {
     if (!newId) return
 
@@ -193,6 +193,8 @@ function handleAddToCart() {
     cartItemId: props.cartItemId,
     totalPrice: totalPrice.value
   })
+
+  productSelectionStore.reset()
 }
 </script>
 
