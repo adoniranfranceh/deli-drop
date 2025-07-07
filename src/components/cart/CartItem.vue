@@ -32,10 +32,10 @@
       <Icon
         icon="streamline-ultimate:bin-1"
         class="remove-btn"
-        @click.stop="emitRemove"
+        @click.stop="handleRemoveItem"
         tabindex="0"
         aria-label="Remover item"
-        @keydown.enter.stop="emitRemove"
+        @keydown.enter.stop="handleRemoveItem"
       />
       <div class="price-info">
         <div class="price">{{ FloatToMoney(item.totalPrice * localQuantity) }}</div>
@@ -48,8 +48,11 @@
 <script setup>
 import { ref, watch } from 'vue'
 import WrapperQuantity from '@/components/ui/WrapperQuantity.vue'
+import { useCartStore } from '@/stores/cartStore'
 import { Icon } from '@iconify/vue'
 import { FloatToMoney } from '@/utils/money'
+
+const cartStore = useCartStore()
 
 const props = defineProps({
   item: Object
@@ -66,8 +69,8 @@ function emitEdit() {
   emit('edit', props.item)
 }
 
-function emitRemove() {
-  emit('remove', props.item.id)
+function handleRemoveItem() {
+  cartStore.removeItem(props.item.cartItemId)
 }
 
 function onQuantityChange(val) {

@@ -16,7 +16,6 @@
             :key="item.cartItemId"
             :item="item"
             @edit="handleEditItem"
-            @remove="handleRemoveItem"
             @quantityChange="handleQuantityChange"
           />
         </div>
@@ -75,10 +74,6 @@ function handleEditItem(item) {
     cartItemId: item.cartItemId,
     finalTotalPrice: item.totalPrice
   })
-}
-
-function handleRemoveItem(id) {
-  cartStore.removeItem(id)
 }
 
 function handleQuantityChange(id, quantity) {

@@ -39,8 +39,8 @@ export function createCartActions(cartItems, currentRestaurantId, currentRestaur
     )
   }
 
-  function removeItem(id) {
-    cartItems.value = cartItems.value.filter(item => item.id !== id)
+  function removeItem(cartItemId) {
+    cartItems.value = cartItems.value.filter(item => item.cartItemId !== cartItemId)
   }
 
   function clearCart() {

@@ -77,7 +77,6 @@ function openEditProduct(payload) {
     finalTotalPrice: payload.finalTotalPrice
   }
 
-  console.log("payload.finalTotalPrice", payload)
   closeCartModal()
 }
 

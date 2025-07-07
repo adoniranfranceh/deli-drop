@@ -12,7 +12,6 @@ export function resetRestaurantInfoIfEmptyCart(cartItems, currentRestaurantId, c
 }
 
 export function isFromDifferentRestaurant(currentRestaurantId, newId) {
-  console.log(currentRestaurantId, newId.value)
   return newId.value && currentRestaurantId != newId.value
 }
 
