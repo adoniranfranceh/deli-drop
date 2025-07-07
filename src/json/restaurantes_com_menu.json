@@ -181,7 +181,7 @@
             "base_price": 34.99,
             "duration": "15-20",
             "description": "Escolha uma pizza média e um açaí de 500ml",
-            "image": "https://scontent.fpcs1-1.fna.fbcdn.net/v/t39.30808-6/483665471_2986263421524920_120209351972226674_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=8FQIF9eo_jwQ7kNvwG-kv4H&_nc_oc=Adkc20N7KcONYL2qdR0R1CTGkLwasEPwc3Sum5MExa9L6n6TzY-R24pAaLKFul2jXURWD9xW-FzcplZySRNxAfeW&_nc_zt=23&_nc_ht=scontent.fpcs1-1.fna&_nc_gid=jG5SXRzIZh2nj6MAvlSgsw&oh=00_AfPBTQz7K1zCLs_iEXGTPGIVcbIRb31RkXcPm5_SCAZxHQ&oe=686769DF",
+            "image": "https://scontent.fpcs1-1.fna.fbcdn.net/v/t39.30808-6/483665471_2986263421524920_120209351972226674_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=oCYD9e2cjfkQ7kNvwFbZdgH&_nc_oc=AdkGnwvSCSmEsrj8lF-IHe2xea9cZdDyyZGbeSVOceVqTipVro_yOx1jIsNe5ejUX-WFljXHcboxwdfuPVZDHLez&_nc_zt=23&_nc_ht=scontent.fpcs1-1.fna&_nc_gid=C4PVhepKbAt_VH0HHeN_Jg&oh=00_AfSZbCoeOFBZ_o9WuAY5uS627MCGnd5DNDQaChANI24d9A&oe=6871F5DF",
             "category": "Pizza",
             "rating": 4.5,
             "modifier_group": [
@@ -732,7 +732,7 @@
                 {
                   "id": 8104,
                   "name": "Banana",
-                  "image": "https://cdn.pixabay.com/photo/2018/01/03/09/09/bananas-3050728_1280.jpg",
+                  "image": "https://pt.petitchef.com/imgupl/ingredient/2547.jpg",
                   "base_price": 2.00
                 }
               ]
