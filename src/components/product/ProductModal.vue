@@ -81,7 +81,7 @@ import { FloatToMoney } from '@/utils/money'
 import { useUIStore } from '@/stores/uiStore'
 import { useTotalPriceStore } from '@/stores/totalPriceStore'
 import { useRestaurantStore } from '@/stores/useRestaurantStore'
-import { useProductSelectionStore } from '@/stores/useProductSelectionStore'
+import { useProductSelectionStore } from '@/stores/productSelectionStore'
 
 const ui = useUIStore()
 const totalStore = useTotalPriceStore()

@@ -2,7 +2,7 @@
 import { ref, watch, computed, onMounted } from 'vue'
 import ModifierListBase from '@/components/modifier/ModifierListBase.vue'
 
-import { useProductSelectionStore } from '@/stores/useProductSelectionStore'
+import { useProductSelectionStore } from '@/stores/productSelectionStore'
 
 const props = defineProps({
   modifier_group: Object,

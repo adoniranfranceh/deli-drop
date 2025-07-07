@@ -3,7 +3,7 @@ import { ref, watch, onMounted } from 'vue'
 import ModifierCheckbox from './ModifierCheckbox.vue'
 import ModifierRadio from './ModifierRadio.vue'
 import ModifierQuantity from './ModifierQuantity.vue'
-import { useProductSelectionStore } from '@/stores/useProductSelectionStore'
+import { useProductSelectionStore } from '@/stores/productSelectionStore'
 
 const productSelectionStore = useProductSelectionStore()
 

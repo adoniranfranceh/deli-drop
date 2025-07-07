@@ -4,7 +4,7 @@ import { useTotalPriceStore } from '@/stores/totalPriceStore'
 import { FloatToMoney } from '@/utils/money'
 import WrapperQuantity from '@/components/ui/WrapperQuantity.vue'
 import ModifierHeader from '@/components/ui/ModifierHeader.vue'
-import { useProductSelectionStore } from '../../stores/useProductSelectionStore'
+import { useProductSelectionStore } from '../../stores/productSelectionStore'
 
 const productSelectionStore = useProductSelectionStore()
 

@@ -24,7 +24,7 @@ import { useRoute, useRouter } from 'vue-router'
 import CartModal from '@/components/cart/CartModal.vue'
 import ProductModal from '../product/ProductModal.vue'
 import { useCartStore } from '@/stores/cartStore'
-import { useProductSelectionStore } from '../../stores/useProductSelectionStore'
+import { useProductSelectionStore } from '../../stores/productSelectionStore'
 
 const productSelectionStore = useProductSelectionStore()
 
