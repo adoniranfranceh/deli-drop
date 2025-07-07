@@ -30,5 +30,3 @@ export const useRestaurantStore = defineStore('restaurant', () => {
     getProduct
   }
 })
-
-
