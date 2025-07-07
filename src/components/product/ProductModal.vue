@@ -46,12 +46,14 @@
 
         <hr />
 
-        <p
-          v-if="!modifiersValid && product.modifier_group"
-          style="color: red; font-size: 0.8rem; margin-bottom: 2rem;"
-        >
-          Escolha os itens obrigatórios antes de adicionar ao carrinho.
-        </p>
+        <div class="invalid-min">
+          <p
+            v-if="!modifiersValid && product.modifier_group"
+            style="color: red; font-size: 0.8rem; margin: 0;"
+          >
+            Escolha os itens obrigatórios antes de adicionar ao carrinho.
+          </p>
+        </div>
 
         <div class="add-wrapper">
           <WrapperQuantity v-model="quantity"/>
@@ -292,6 +294,10 @@ function handleAddToCart() {
   resize: none;
 }
 
+.invalid-min {
+  height: 1rem;
+}
+
 .add-wrapper {
   display: flex;
   align-items: center;
@@ -358,6 +364,10 @@ hr {
 
   .comment-content textarea {
     width: 97%;
+  }
+
+  .invalid-min {
+    height: 5rem;
   }
 
   .about-product {
