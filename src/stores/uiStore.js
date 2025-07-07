@@ -2,14 +2,14 @@ import { defineStore } from 'pinia'
 
 export const useUIStore = defineStore('ui', {
   state: () => ({
-    isMobileModalOpen: false
+    modalOpen: false
   }),
   actions: {
     openModal() {
-      this.isMobileModalOpen = true
+      this.modalOpen = true
     },
     closeModal() {
-      this.isMobileModalOpen = false
+      this.modalOpen = false
     }
   }
 })
