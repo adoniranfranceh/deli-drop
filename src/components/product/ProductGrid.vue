@@ -1,5 +1,8 @@
 <template>
-  <div class="product-card" @click="(openModal(product))" v-for="product in products" :key="product.id">
+  <div class="product-card"
+@click="(openModal(product))"
+v-for="product in products"
+:key="product.id">
     <div class="product-info">
       <h3>{{ product.name }}</h3>
       <p class="description">{{ product.description }}</p>
