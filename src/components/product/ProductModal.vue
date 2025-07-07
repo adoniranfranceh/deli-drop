@@ -96,7 +96,8 @@ const props = defineProps({
   product: Object,
   restaurantColor: String,
   selectedModifiers: { type: Array, default: () => [] },
-  cartItemId: { type: String, default: null }
+  cartItemId: { type: String, default: null },
+  finalTotalPrice: Number
 })
 
 const emit = defineEmits(['add-to-cart', 'close'])
@@ -106,13 +107,15 @@ const comment = ref('')
 
 const totalPrice = computed(() => totalStore.totalPrice)
 const finalPrice = computed(() =>
-  totalPrice.value * quantity.value
+  (totalPrice.value) * quantity.value
 )
 
 watch(
   () => props.product?.id,
   (newId) => {
     if (!newId) return
+    totalStore.reset()
+    totalStore.setBasePrice(props.product.base_price)
 
     productSelectionStore.resetSelectedModifiersForProduct(props.product.modifier_group || [])
 
@@ -144,6 +147,9 @@ onUnmounted(() => ui.closeModal())
 
 function setupModal() {
   ui.openModal()
+  const justExtraPrice = props.finalTotalPrice - props.product.base_price
+  totalStore.addExtraPrice(justExtraPrice || 0)
+
   totalStore.setBasePrice(props.product.base_price)
   totalStore.setQuantity(quantity.value)
   productSelectionStore.basePrice = props.product.base_price

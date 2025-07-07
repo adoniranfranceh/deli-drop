@@ -72,7 +72,8 @@ function handleEditItem(item) {
     product: item,
     quantity: item.quantity,
     selectedModifiers: item.selectedModifiers,
-    cartItemId: item.cartItemId
+    cartItemId: item.cartItemId,
+    finalTotalPrice: item.totalPrice
   })
 }
 

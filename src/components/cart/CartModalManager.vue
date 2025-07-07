@@ -12,6 +12,7 @@
       :selectedModifiers="selectedProduct.selectedModifiers"
       :cartItemId="selectedProduct.cartItemId"
       :restaurantColor="cartStore.currentRestaurantInfo.color"
+      :finalTotalPrice="selectedProduct.finalTotalPrice"
       @add-to-cart="handleEditedItem"
       @close="closeProductModal"
     />
@@ -19,7 +20,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from 'vue'
+import { computed, ref, onMounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import CartModal from '@/components/cart/CartModal.vue'
 import ProductModal from '../product/ProductModal.vue'
@@ -27,13 +28,13 @@ import { useCartStore } from '@/stores/cartStore'
 import { useProductSelectionStore } from '../../stores/productSelectionStore'
 
 const productSelectionStore = useProductSelectionStore()
-
 const route = useRoute()
 const router = useRouter()
 
 const showCartModal = ref(false)
 const cartStore = useCartStore()
 const selectedProduct = ref(null)
+const cartItems = computed(() => cartStore.cartItems)
 
 function openModal() {
   showCartModal.value = true
@@ -72,8 +73,11 @@ function openEditProduct(payload) {
     product: payload.product,
     quantity: payload.quantity,
     selectedModifiers: payload.selectedModifiers,
-    cartItemId: payload.cartItemId
+    cartItemId: payload.cartItemId,
+    finalTotalPrice: payload.finalTotalPrice
   }
+
+  console.log("payload.finalTotalPrice", payload)
   closeCartModal()
 }
 
