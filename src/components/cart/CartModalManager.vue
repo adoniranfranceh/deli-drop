@@ -78,7 +78,14 @@ function openEditProduct(payload) {
 }
 
 function handleEditedItem(item) {
-  cartStore.updateCartItem(item.cartItemId, item.quantity, item.selectedModifiers, item.totalPrice, item.comment)
+  cartStore.updateCartItem({
+    cartItemId: item.cartItemId,
+    quantity: item.quantity,
+    selectedModifiers: item.selectedModifiers,
+    totalPrice: item.totalPrice,
+    comment: item.comment
+  })
+
   selectedProduct.value = null
   showCartModal.value = true
 }
