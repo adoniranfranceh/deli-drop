@@ -135,6 +135,18 @@ const products = [
     padding: 0;
   }
 
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.7rem;
+  }
+
+  .showcase h2 {
+    font-size: 1.2rem;
+  }
+
   .container-hero {
     padding: 1rem 0;
   }
