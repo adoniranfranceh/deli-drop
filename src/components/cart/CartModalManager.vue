@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted, watch } from 'vue'
+import { ref, onMounted, watch, onBeforeUnmount } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import CartModal from '@/components/cart/CartModal.vue'
 import ProductModal from '../product/ProductModal.vue'
@@ -34,23 +34,47 @@ const router = useRouter()
 const showCartModal = ref(false)
 const cartStore = useCartStore()
 const selectedProduct = ref(null)
-const cartItems = computed(() => cartStore.cartItems)
 
 function openModal() {
   showCartModal.value = true
   router.replace({ query: { ...route.query, cart: 'open' } })
+  pushStateOnce()
 }
 
-function closeProductModal() {
+function onPopState() {
+  if (selectedProduct.value) {
+    closeProductModal(true)
+  } else if (showCartModal.value) {
+    closeCartModal(true)
+  }
+}
+
+function pushStateOnce() {
+  if (!window.history.state || window.history.state !== 'modal') {
+    history.pushState('modal', '', window.location.href)
+  }
+}
+
+
+
+function closeProductModal(fromPopState = false) {
   selectedProduct.value = null
-  openModal()
+
+  if (fromPopState) {
+    showCartModal.value = true
+  } else {
+    openModal()
+  }
 }
 
-function closeCartModal() {
+function closeCartModal(fromPopState = false) {
   showCartModal.value = false
-  const newQuery = { ...route.query }
-  delete newQuery.cart
-  router.replace({ query: newQuery })
+
+  if (!fromPopState) {
+    const newQuery = { ...route.query }
+    delete newQuery.cart
+    router.replace({ query: newQuery })
+  }
 }
 
 function openEditProduct(payload) {
@@ -77,6 +101,7 @@ function openEditProduct(payload) {
     finalTotalPrice: payload.finalTotalPrice
   }
 
+  pushStateOnce()
   closeCartModal()
 }
 
@@ -99,6 +124,12 @@ onMounted(() => {
   if (route.query.cart === 'open') {
     showCartModal.value = true
   }
+
+  window.addEventListener('popstate', onPopState)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('popstate', onPopState)
 })
 
 watch(
