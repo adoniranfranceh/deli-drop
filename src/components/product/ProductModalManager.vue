@@ -31,9 +31,14 @@ const selectedProduct = ref(null);
 const route = useRoute();
 const router = useRouter();
 
-function openModal(product) {
+async function openModal(product) {
+  const restaurantPath = `/restaurante/${product.restaurant_id}`;
+  if (route.path !== restaurantPath) {
+    await router.push({ path: restaurantPath });
+  }
+
+  router.push({ path: restaurantPath, query: { productId: product.id } });
   selectedProduct.value = product;
-  router.push({ path: `/restaurante/${selectedProduct.value.restaurant_id}`, query: { productId: product.id } })
 }
 
 function closeModal() {
