@@ -1,73 +1,71 @@
 <template>
-  <div class="modal-overlay" @click.self="closeModal">
-    <div class="modal-content" :style="{ '--color-product-modal': restaurantColor }">
-      <div class="image-wrapper">
-        <CloseButton @close="$emit('close')" />
+  <BaseModal @close="closeModal" :style="{ '--color-product-modal': restaurantColor }">
+    <div class="image-wrapper">
+      <CloseButton @close="$emit('close')" />
 
-        <img :src="product.image" :alt="product.name" class="modal-image" />
+      <img :src="product.image" :alt="product.name" class="modal-image" />
+    </div>
+
+    <div class="product-details">
+      <div class="about-product">
+        <h2>{{ product.name }}</h2>
+        <div class="product-price">{{ FloatToMoney(finalPrice) }}</div>
       </div>
 
-      <div class="product-details">
-        <div class="about-product"> 
-          <h2>{{ product.name }}</h2>
-          <div class="product-price">{{ FloatToMoney(finalPrice) }}</div>
+      <div class="info">
+        <div class="header-wrapper">
+          <p>{{ product.description }}</p>
+          <RatingProduct v-if="product.rating" :rating="product.rating" />
         </div>
+        <DeliveryDuration :duration="product.duration" />
+      </div>
 
-        <div class="info">
-          <div class="header-wrapper">
-            <p>{{ product.description }}</p>
-            <RatingProduct v-if="product.rating" :rating="product.rating" />
-          </div>
-          <DeliveryDuration :duration="product.duration" />
-        </div>
+      <hr />
 
-        <hr />
+      <ModifierGroup
+        v-for="group in product.modifier_groups"
+        :key="group.id"
+        :modifier_groups="group"
+      />
 
-        <ModifierGroup
-          v-for="group in product.modifier_group"
-          :key="group.id"
-          :modifier_group="group"
+      <ProductIngredients
+        v-if="product.ingredients"
+        :ingredients="product.ingredients"
+      />
+
+      <div class="comment-content">
+        <label for="comment">Algum comentário?</label>
+        <textarea
+          id="comment"
+          rows="5"
+          placeholder="Ex: sem cebola, sem maionese..."
+          v-model="comment"
         />
+      </div>
 
-        <ProductIngredients
-          v-if="product.ingredients"
-          :ingredients="product.ingredients"
+      <hr />
+
+      <div class="invalid-min">
+        <p
+          v-if="!modifiersValid && product.modifier_groups"
+          style="color: red; font-size: 0.8rem; margin: 0;"
+        >
+          Escolha os itens obrigatórios antes de adicionar ao carrinho.
+        </p>
+      </div>
+
+      <div class="add-wrapper">
+        <WrapperQuantity v-model="quantity"/>
+        <AppButton
+          class="add-btn"
+          :text="buttonText"
+          iconLeft="ph:shopping-bag-open-thin"
+          :disabled="!modifiersValid && product.modifier_groups"
+          @click="handleAddToCart"
         />
-
-        <div class="comment-content">
-          <label for="comment">Algum comentário?</label>
-          <textarea
-            id="comment"
-            rows="5"
-            placeholder="Ex: sem cebola, sem maionese..."
-            v-model="comment"
-          />
-        </div>
-
-        <hr />
-
-        <div class="invalid-min">
-          <p
-            v-if="!modifiersValid && product.modifier_group"
-            style="color: red; font-size: 0.8rem; margin: 0;"
-          >
-            Escolha os itens obrigatórios antes de adicionar ao carrinho.
-          </p>
-        </div>
-
-        <div class="add-wrapper">
-          <WrapperQuantity v-model="quantity"/>
-          <AppButton
-            class="add-btn"
-            :text="buttonText"
-            iconLeft="ph:shopping-bag-open-thin"
-            :disabled="!modifiersValid && product.modifier_group"
-            @click="handleAddToCart"
-          />
-        </div>
       </div>
     </div>
-  </div>
+  </BaseModal>
 </template>
 
 <script setup>
@@ -84,6 +82,7 @@ import { useUIStore } from '@/stores/uiStore'
 import { useTotalPriceStore } from '@/stores/totalPriceStore'
 import { useRestaurantStore } from '@/stores/useRestaurantStore'
 import { useProductSelectionStore } from '@/stores/productSelectionStore'
+import BaseModal from '../modal/BaseModal.vue'
 
 const ui = useUIStore()
 const totalStore = useTotalPriceStore()
@@ -117,7 +116,7 @@ watch(
     totalStore.reset()
     totalStore.setBasePrice(props.product.base_price)
 
-    productSelectionStore.resetSelectedModifiersForProduct(props.product.modifier_group || [])
+    productSelectionStore.resetSelectedModifiersForProduct(props.product.modifier_groups || [])
 
     if (props.selectedModifiers && props.selectedModifiers.length) {
       loadSelectedModifiers()
@@ -157,7 +156,7 @@ function setupModal() {
 }
 
 function hydrateModifierGroups() {
-  props.product.modifier_group?.forEach(group => {
+  props.product.modifier_groups?.forEach(group => {
     group.modifiers = group.modifiers.map(item => {
       return {
         ...item,
@@ -207,29 +206,6 @@ function handleAddToCart() {
 </script>
 
 <style scoped>
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  background: #fff;
-  max-width: 1200px;
-  width: 800px;
-  height: 90%;
-  border-radius: 10px;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-  overflow-y: auto;
-  animation: slideUp 0.3s ease;
-}
-
 .modal-content h2 {
   color: var(--color-product-modal);
   font-size: 1.5rem;
@@ -269,7 +245,7 @@ function handleAddToCart() {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  background: white;
+  background: var(--color-white);
   border-radius: 50%;
   padding: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -335,21 +311,7 @@ hr {
 }
 
 
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
 @media (max-width: 768px) {
-  .modal-content {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-  }
 
   .product-details {
     padding: 2rem 1rem;
@@ -361,7 +323,7 @@ hr {
 
   .add-wrapper {
     position: fixed;
-    top: 89%;
+    top: 85%;
     gap: 1rem;
     width: 95%;
     padding-bottom: 100px;
