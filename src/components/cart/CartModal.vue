@@ -1,7 +1,6 @@
 <template>
   <BaseModal @close="$emit('close')" v-if="hasItems" >
     <div class="cart-modal">
-
       <CartHeader
         :restaurantName="restaurantName"
         :totalItems="totalItems"
@@ -91,18 +90,10 @@ function handleCheckout() {
 <style scoped>
 .cart-modal {
   overflow: auto;
-  scrollbar-width: none;
-}
-
-.cart-modal::-webkit-scrollbar {
-  display: none;
 }
 
 hr {
-  border-top: 1px solid var(--color-border);
-  margin: 0 auto;
   width: calc(100% - 1rem);
-  box-sizing: border-box;
 }
 
 .cart-info {
@@ -131,6 +122,10 @@ hr {
 
   .cart-info {
     overflow: unset;
+  }
+
+  hr {
+    width: 100%;
   }
 }
 </style>
