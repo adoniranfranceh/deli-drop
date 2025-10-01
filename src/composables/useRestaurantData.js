@@ -57,7 +57,7 @@ function handleImageSuccess({ img, restaurantData, store, refs, backgroundImage 
   }
 }
 
-export function loadRestaurantData({
+export async function loadRestaurantData({
   id,
   router,
   restaurantStore,
@@ -65,7 +65,7 @@ export function loadRestaurantData({
   bgColor,
   backgroundImage
 }) {
-  const restaurantData = getRestaurantDataById(id)
+  const restaurantData = await getRestaurantDataById(9)
 
   if (!restaurantData) {
     alert('Restaurante não encontrado.')
