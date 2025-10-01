@@ -1,68 +1,70 @@
 <template>
   <BaseModal @close="closeModal" :style="{ '--color-product-modal': restaurantColor }">
-    <div class="image-wrapper">
-      <CloseButton @close="$emit('close')" />
+    <div class="product-modal">
+      <div class="image-wrapper">
+        <CloseButton @close="$emit('close')" />
 
-      <img :src="product.image" :alt="product.name" class="modal-image" />
-    </div>
-
-    <div class="product-details">
-      <div class="about-product">
-        <h2>{{ product.name }}</h2>
-        <div class="product-price">{{ FloatToMoney(finalPrice) }}</div>
+        <img :src="product.image" :alt="product.name" class="modal-image" />
       </div>
 
-      <div class="info">
-        <div class="header-wrapper">
-          <p>{{ product.description }}</p>
-          <RatingProduct v-if="product.rating" :rating="product.rating" />
+      <div class="product-details">
+        <div class="about-product">
+          <h2>{{ product.name }}</h2>
+          <div class="product-price">{{ FloatToMoney(finalPrice) }}</div>
         </div>
-        <DeliveryDuration :duration="product.duration" />
-      </div>
 
-      <hr />
+        <div class="info">
+          <div class="header-wrapper">
+            <p>{{ product.description }}</p>
+            <RatingProduct v-if="product.rating" :rating="product.rating" />
+          </div>
+          <DeliveryDuration :duration="product.duration" />
+        </div>
 
-      <ModifierGroup
-        v-for="group in product.modifier_groups"
-        :key="group.id"
-        :modifier_groups="group"
-      />
+        <hr />
 
-      <ProductIngredients
-        v-if="product.ingredients"
-        :ingredients="product.ingredients"
-      />
-
-      <div class="comment-content">
-        <label for="comment">Algum comentário?</label>
-        <textarea
-          id="comment"
-          rows="5"
-          placeholder="Ex: sem cebola, sem maionese..."
-          v-model="comment"
+        <ModifierGroup
+          v-for="group in product.modifier_groups"
+          :key="group.id"
+          :modifier_groups="group"
         />
-      </div>
 
-      <hr />
-
-      <div class="invalid-min">
-        <p
-          v-if="!modifiersValid && product.modifier_groups"
-          style="color: red; font-size: 0.8rem; margin: 0;"
-        >
-          Escolha os itens obrigatórios antes de adicionar ao carrinho.
-        </p>
-      </div>
-
-      <div class="add-wrapper">
-        <WrapperQuantity v-model="quantity"/>
-        <AppButton
-          class="add-btn"
-          :text="buttonText"
-          iconLeft="ph:shopping-bag-open-thin"
-          :disabled="!modifiersValid && product.modifier_groups"
-          @click="handleAddToCart"
+        <ProductIngredients
+          v-if="product.ingredients"
+          :ingredients="product.ingredients"
         />
+
+        <div class="comment-content">
+          <label for="comment">Algum comentário?</label>
+          <textarea
+            id="comment"
+            rows="5"
+            placeholder="Ex: sem cebola, sem maionese..."
+            v-model="comment"
+          />
+        </div>
+
+        <hr />
+
+        <div class="invalid-min">
+          <p
+            v-if="!modifiersValid && product.modifier_groups"
+            style="color: red; font-size: 0.8rem; margin: 0;"
+          >
+            Escolha os itens obrigatórios antes de adicionar ao carrinho.
+          </p>
+        </div>
+
+        <div class="add-wrapper">
+          <WrapperQuantity v-model="quantity"/>
+          <AppButton
+            class="add-btn"
+            :text="buttonText"
+            iconLeft="ph:shopping-bag-open-thin"
+            :disabled="!modifiersValid && product.modifier_groups"
+            @click="handleAddToCart"
+          />
+        </div>
       </div>
     </div>
   </BaseModal>
@@ -206,13 +208,13 @@ function handleAddToCart() {
 </script>
 
 <style scoped>
-.modal-content h2 {
+.product-modal h2 {
   color: var(--color-product-modal);
   font-size: 1.5rem;
   margin-bottom: 0;
 }
 
-.modal-content p {
+.product-modal p {
   font-size: 1rem;
   color: #555;
   text-align: center;
@@ -231,24 +233,13 @@ function handleAddToCart() {
 
 .modal-image {
   width: 100%;
-  height: 100%;
+  height: 400px;
   display: block;
   object-fit: cover;
 }
 
 .image-wrapper {
-  height: 40%;
   position: relative;
-}
-
-.restaurant-logo {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  background: var(--color-white);
-  border-radius: 50%;
-  padding: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .about-product {
@@ -306,19 +297,17 @@ function handleAddToCart() {
 }
 
 hr {
-  border-top: 1px solid var(--color-border);
   margin: 1.5rem 0;
 }
 
 
 @media (max-width: 768px) {
-
   .product-details {
     padding: 2rem 1rem;
   }
 
   .modal-image {
-    height: 270px;
+    height: 35vh;
   }
 
   .add-wrapper {
@@ -328,7 +317,6 @@ hr {
     width: 95%;
     padding-bottom: 100px;
   }
-
 
   .comment-content textarea {
     width: 97%;
