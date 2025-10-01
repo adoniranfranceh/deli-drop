@@ -4,7 +4,7 @@ import ModifierListBase from '@/components/modifier/ModifierListBase.vue'
 import { useProductSelectionStore } from '@/stores/productSelectionStore'
 
 const props = defineProps({
-  modifier_group: { type: Object, required: true },
+  modifier_groups: { type: Object, required: true },
   selectedModifiers: {
     type: Array,
     default: () => []
@@ -14,7 +14,7 @@ const props = defineProps({
 const productSelectionStore = useProductSelectionStore()
 
 const selectedId = computed(() => {
-  const group = productSelectionStore.selectedModifiers.find(m => m.id === props.modifier_group.id)
+  const group = productSelectionStore.selectedModifiers.find(m => m.id === props.modifier_groups.id)
   return group?.selected?.[0]?.id || null
 })
 
@@ -23,10 +23,10 @@ function toggle(item) {
   const updatedSelected = isAlreadySelected ? [] : [item]
 
   productSelectionStore.updateSelection({
-    modifierId: props.modifier_group.id,
+    modifierId: props.modifier_groups.id,
     selectedItems: updatedSelected,
-    min: props.modifier_group.min,
-    max: props.modifier_group.max
+    min: props.modifier_groups.min,
+    max: props.modifier_groups.max
   })
 }
 
@@ -44,10 +44,10 @@ function getBasePrice(item) {
 
 function registerModifierGroup() {
   productSelectionStore.updateSelection({
-    modifierId: props.modifier_group.id,
+    modifierId: props.modifier_groups.id,
     selectedItems: [],
-    min: props.modifier_group.min ?? 0,
-    max: props.modifier_group.max ?? 1
+    min: props.modifier_groups.min ?? 0,
+    max: props.modifier_groups.max ?? 1
   })
 }
 
@@ -56,13 +56,13 @@ onMounted(() => registerModifierGroup())
 watch(
   () => props.selectedModifiers,
   (newVal) => {
-    const group = newVal.find(m => m.id === props.modifier_group.id)
+    const group = newVal.find(m => m.id === props.modifier_groups.id)
     const selected = group?.selected || []
     productSelectionStore.updateSelection({
-      modifierId: props.modifier_group.id,
+      modifierId: props.modifier_groups.id,
       selectedItems: selected,
-      min: props.modifier_group.min ?? 0,
-      max: props.modifier_group.max ?? 1
+      min: props.modifier_groups.min ?? 0,
+      max: props.modifier_groups.max ?? 1
     })
   },
   { immediate: true, deep: true }
@@ -71,7 +71,7 @@ watch(
 
 <template>
   <ModifierListBase
-    :modifier_group="modifier_group"
+    :modifier_groups="modifier_groups"
     :totalSelected="selectedId ? 1 : 0"
     :isSelected="isSelected"
     :faded="faded"
