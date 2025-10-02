@@ -108,14 +108,6 @@ hr {
 }
 
 @media (max-width: 1068px) {
-  :deep(.modal-content) {
-    margin: 0;
-    overflow-y: auto;
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-  }
-
   .items {
     overflow-y: unset;
   }
