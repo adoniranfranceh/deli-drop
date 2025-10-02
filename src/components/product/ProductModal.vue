@@ -1,5 +1,8 @@
 <template>
-  <BaseModal @close="closeModal" :style="{ '--color-product-modal': restaurantColor }">
+  <BaseModal
+    @close="closeModal"
+    :style="{ '--color-product-modal' : restaurantColor }"
+  >
     <div class="product-modal">
       <div class="image-wrapper">
         <CloseButton @close="$emit('close')" />
