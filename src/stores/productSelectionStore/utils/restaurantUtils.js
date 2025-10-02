@@ -11,7 +11,7 @@ const api = axios.create({
 
 export async function fetchRestaurant(id) {
   try {
-    const response = await api.get(`/restaurants/9`)
+    const response = await api.get(`/restaurants/${id}`)
     return response.data
   } catch (error) {
     console.error('Erro ao buscar restaurante:', error)

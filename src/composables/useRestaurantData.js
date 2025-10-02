@@ -65,7 +65,7 @@ export async function loadRestaurantData({
   bgColor,
   backgroundImage
 }) {
-  const restaurantData = await getRestaurantDataById(9)
+  const restaurantData = await getRestaurantDataById(id)
 
   if (!restaurantData) {
     alert('Restaurante não encontrado.')
