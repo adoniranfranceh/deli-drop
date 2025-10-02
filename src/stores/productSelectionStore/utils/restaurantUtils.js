@@ -15,7 +15,6 @@ export async function fetchRestaurant(id) {
     return response.data
   } catch (error) {
     console.error('Erro ao buscar restaurante:', error)
-    throw error
   }
 }
 
