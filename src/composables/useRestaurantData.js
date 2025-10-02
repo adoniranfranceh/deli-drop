@@ -67,7 +67,7 @@ export async function loadRestaurantData({
 }) {
   const restaurantData = await getRestaurantDataById(id)
 
-  if (!restaurantData) {
+  if (!restaurantData.id) {
     alert('Restaurante não encontrado.')
     router.replace('/')
     return
