@@ -1,4 +1,4 @@
 export function FloatToMoney(float) {
   const decimalPlaces = 2;
-  return `R$ ${float.toFixed(decimalPlaces).replace('.', ',')}`
+  return `R$ ${(float / 100).toFixed(decimalPlaces).replace('.', ',')}`
 }

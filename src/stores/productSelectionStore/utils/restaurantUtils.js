@@ -1,4 +1,22 @@
-import data_restaurants from '@/json/restaurantes_com_menu.json'
+import axios from 'axios'
+
+let data_restaurants = []
+
+const api = axios.create({
+  baseURL: import.meta.env.VITE_API_URL,
+  headers: {
+    Accept: 'application/json'
+  }
+})
+
+export async function fetchRestaurant(id) {
+  try {
+    const response = await api.get(`/restaurants/${id}`)
+    return response.data
+  } catch (error) {
+    console.error('Erro ao buscar restaurante:', error)
+  }
+}
 
 export function getSecureRandomIndex(length) {
   const array = new Uint32Array(1)
@@ -6,8 +24,7 @@ export function getSecureRandomIndex(length) {
   return array[0] % length
 }
 
-
-export function getRestaurantDataById(id) {
-  const restaurantMap = new Map(data_restaurants.map(r => [r.id, r]))
-  return { ...restaurantMap.get(id), color: null }
+export async function getRestaurantDataById(id) {
+  const restaurantData = await fetchRestaurant(id)
+  return { ...restaurantData, color: null }
 }

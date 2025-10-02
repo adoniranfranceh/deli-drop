@@ -1,6 +1,6 @@
 <template>
-  <div class="modal-overlay" @click.self="$emit('close')">
-    <div class="modal-content" v-if="hasItems">
+  <BaseModal @close="$emit('close')" v-if="hasItems" >
+    <div class="cart-modal">
       <CartHeader
         :restaurantName="restaurantName"
         :totalItems="totalItems"
@@ -34,22 +34,20 @@
         />
       </div>
     </div>
-
-    <EmptyCart v-else @close="$emit('close')" />
-  </div>
+  </BaseModal>
+  <EmptyCart v-else @close="$emit('close')" />
 </template>
 
 <script setup>
-import { computed, onMounted, onUnmounted } from 'vue'
+import { computed } from 'vue'
 import { useCartStore } from '@/stores/cartStore'
 import CartHeader from './CartHeader.vue'
 import CartItem from './CartItem.vue'
 import CartSummary from './CartSummary.vue'
 import EmptyCart from './EmptyCart.vue'
-import { useUIStore } from '@/stores/uiStore'
+import BaseModal from '../modal/BaseModal.vue'
 
 const cartStore = useCartStore()
-const uiStore = useUIStore()
 
 defineProps({
   deliveryAddress: { type: String, default: 'Rua das Flores, 123' },
@@ -87,46 +85,15 @@ function handleClearCart() {
 function handleCheckout() {
   emit('checkout')
 }
-
-onMounted(() => uiStore.openModal())
-onUnmounted(() => uiStore.closeModal())
 </script>
 
 <style scoped>
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background: white;
-  width: 850px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-  display: flex;
-  flex-direction: column;
-  animation: slideUp 0.3s ease;
-}
-
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-  }
-  to {
-    transform: translateY(0);
-  }
+.cart-modal {
+  overflow: auto;
 }
 
 hr {
-  border-top: 1px solid var(--color-border);
-  margin: 0;
-  width: 100%;
-  box-sizing: border-box;
+  width: calc(100% - 1rem);
 }
 
 .cart-info {
@@ -137,26 +104,20 @@ hr {
 }
 
 .items {
-  max-height: 400px;
   overflow-y: auto;
 }
 
-@media (max-width: 768px) {
-  .modal-content {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-    margin: 0;
-    overflow-y: auto;
-  }
-
+@media (max-width: 1068px) {
   .items {
-    max-height: 100%;
     overflow-y: unset;
   }
 
   .cart-info {
     overflow: unset;
+  }
+
+  hr {
+    width: 100%;
   }
 }
 </style>

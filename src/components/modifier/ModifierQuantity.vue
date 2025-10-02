@@ -9,7 +9,7 @@ import { useProductSelectionStore } from '../../stores/productSelectionStore'
 const productSelectionStore = useProductSelectionStore()
 
 const props = defineProps({
-  modifier_group: { type: Object, required: true }
+  modifier_groups: { type: Object, required: true }
 })
 
 const totalStore = useTotalPriceStore()
@@ -17,7 +17,7 @@ const totalStore = useTotalPriceStore()
 const getBasePrice = item => item?.base_price || 0
 
 const selectedGroup = computed(() => {
-  return productSelectionStore.selectedModifiers.find(m => m.id === props.modifier_group.id)
+  return productSelectionStore.selectedModifiers.find(m => m.id === props.modifier_groups.id)
 })
 
 const quantities = computed({
@@ -26,10 +26,10 @@ const quantities = computed({
   },
   set(newQuantities) {
     productSelectionStore.updateSelection({
-      modifierId: props.modifier_group.id,
+      modifierId: props.modifier_groups.id,
       selectedItems: { quantities: { ...newQuantities } },
-      min: props.modifier_group.min,
-      max: props.modifier_group.max
+      min: props.modifier_groups.min,
+      max: props.modifier_groups.max
     })
   }
 })
@@ -40,18 +40,18 @@ const totalSelected = computed(() => {
 
 const incrementQuantity = (item) => {
   productSelectionStore.incrementQuantity(
-    props.modifier_group.id,
+    props.modifier_groups.id,
     item,
     {
       constraints: {
-        min: props.modifier_group.min,
-        max: props.modifier_group.max
+        min: props.modifier_groups.min,
+        max: props.modifier_groups.max
       }
     }
   )
 
   const total = totalSelected.value
-  if (total > props.modifier_group.free_limit) {
+  if (total > props.modifier_groups.free_limit) {
     totalStore.addExtraPrice(getBasePrice(item))
   }
 }
@@ -59,36 +59,36 @@ const incrementQuantity = (item) => {
 const decrementQuantity = (item) => {
   const total = totalSelected.value
   productSelectionStore.decrementQuantity(
-    props.modifier_group.id,
+    props.modifier_groups.id,
     item,
     {
       constraints: {
-        min: props.modifier_group.min,
-        max: props.modifier_group.max
+        min: props.modifier_groups.min,
+        max: props.modifier_groups.max
       }
     }
   )
 
-  if (total >= props.modifier_group.free_limit) {
+  if (total >= props.modifier_groups.free_limit) {
     totalStore.removeExtraPrice(getBasePrice(item))
   }
 }
 
 const reachedMax = computed(() =>
-  props.modifier_group.max && totalSelected.value >= props.modifier_group.max
+  props.modifier_groups.max && totalSelected.value >= props.modifier_groups.max
 )
 
 const headerProps = computed(() => ({
-  name: props.modifier_group.name,
-  min: props.modifier_group.min,
-  max: props.modifier_group.max,
-  freeLimit: props.modifier_group.free_limit,
+  name: props.modifier_groups.name,
+  min: props.modifier_groups.min,
+  max: props.modifier_groups.max,
+  freeLimit: props.modifier_groups.free_limit,
   totalSelected: totalSelected.value
 }))
 
 function getPriceLabel(item) {
-  if (props.modifier_group.free_limit === props.modifier_group.max) return "Grátis"
-  if (totalSelected.value >= props.modifier_group.free_limit) {
+  if (props.modifier_groups.free_limit === props.modifier_groups.max) return "Grátis"
+  if (totalSelected.value >= props.modifier_groups.free_limit) {
     return `+ ${FloatToMoney(getBasePrice(item))}`
   }
   return "Grátis"
@@ -99,7 +99,7 @@ function getPriceLabel(item) {
   <ModifierHeader v-bind="headerProps" />
   <ul class="modifiers">
     <li
-      v-for="item in modifier_group.modifiers"
+      v-for="item in modifier_groups.modifiers"
       :key="item.id"
       class="modifiers-options"
     >
@@ -146,17 +146,6 @@ function getPriceLabel(item) {
   align-items: center;
   justify-content: space-between;
   margin: 0;
-}
-
-.header-info {
-  display: flex;
-  font-size: 0.875rem;
-  color: var(--color-text-secondary);
-  
-  p {
-    margin: 0;
-    margin-right: 0.2rem;
-  }
 }
 
 .modifier-free {

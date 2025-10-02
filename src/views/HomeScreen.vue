@@ -61,7 +61,7 @@ const products = [
     image: "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
     category: "Açaí",
     rating: 4.9,
-    modifier_group: [
+    modifier_groups: [
       {
         id: 8002,
         name: "Escolha até 4 adicionais",

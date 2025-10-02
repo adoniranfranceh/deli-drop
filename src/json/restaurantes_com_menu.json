@@ -20,7 +20,7 @@
             "image": "https://receitatodahora.com.br/wp-content/uploads/2024/08/pizza-portuguesa-0508-1024x683.jpg.webp",
             "category": "Pizza",
             "rating": 4.5,
-            "modifier_group": [
+            "modifier_groups": [
               {
                 "id": 5001,
                 "name": "Escolha até 2 sabores",
@@ -48,7 +48,7 @@
             "image": "https://static.itdg.com.br/images/1200-630/47d6583c93d77edac5244cab67ba660b/253447-378226756-original.jpg",
             "category": "Pizza",
             "rating": 4.5,
-            "modifier_group": [
+            "modifier_groups": [
               {
                 "id": 5002,
                 "name": "Escolha até 3 sabores",
@@ -76,7 +76,7 @@
             "image": "https://static.itdg.com.br/images/1200-630/47d6583c93d77edac5244cab67ba660b/253447-378226756-original.jpg",
             "category": "Pizza",
             "rating": 4.5,
-            "modifier_group": [
+            "modifier_groups": [
               {
                 "id": 5003,
                 "name": "Escolha até 4 sabores",
@@ -184,7 +184,7 @@
             "image": "https://scontent.fpcs1-1.fna.fbcdn.net/v/t39.30808-6/483665471_2986263421524920_120209351972226674_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=S2KUYM0aHvIQ7kNvwEIfgPL&_nc_oc=AdnpYq1ON08HW2Tn6B3YPsjJ3weYfZQy6IiHm6D7V_1s5cyR2E9Jdg3F68QmPTolr80JUf89f7LasFNkFx-S9fvw&_nc_zt=23&_nc_ht=scontent.fpcs1-1.fna&_nc_gid=3Xe5DdBg0mJPA61BFfXjXg&oh=00_AfXO1stH2sRYYy_pQOumQSSBnf3IMZrgZcYUTmTyH2pxaw&oe=68A2851F",
             "category": "Pizza",
             "rating": 4.5,
-            "modifier_group": [
+            "modifier_groups": [
               {
                 "id": 5101,
                 "name": "Escolha os sabores da pizza média",
@@ -266,7 +266,7 @@
             "description": "Selecione até 3 ingredientes do melhor açaí",
             "image": "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
             "category": "Açaí",
-            "modifier_group": [
+            "modifier_groups": [
               {
                 "id": 5010,
                 "name": "Escolha até 10 adicionais (3 grátis)",
@@ -313,7 +313,7 @@
             "description": "Selecione até 4 ingredientes do melhor açaí",
             "image": "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
             "category": "Açaí",
-            "modifier_group": [
+            "modifier_groups": [
               {
                 "id": 5010,
                 "name": "Escolha até 10 adicionais (4 grátis)",
@@ -360,7 +360,7 @@
             "description": "Selecione até 5 ingredientes do melhor açaí",
             "image": "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
             "category": "Açaí",
-            "modifier_group": [
+            "modifier_groups": [
               {
                 "id": 5010,
                 "name": "Escolha até 10 adicionais (5 grátis)",
@@ -459,7 +459,7 @@
             "image": "https://www.cidadeoferta.com.br/storage/offers/9255-combo-angus-bacon-2.jpg",
             "category": "Combo",
             "rating": 4.9,
-            "modifier_group": [
+            "modifier_groups": [
               {
                 "id": 7001,
                 "name": "Escolha seu hambúrguer",
@@ -606,7 +606,7 @@
           "description": "Açaí cremoso com até 3 adicionais",
           "image": "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
           "category": "Açaí",
-          "modifier_group": [
+          "modifier_groups": [
             {
               "id": 8001,
               "name": "Escolha até 3 adicionais",
@@ -647,7 +647,7 @@
           "description": "Açaí cremoso com até 4 adicionais",
           "image": "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
           "category": "Açaí",
-          "modifier_group": [
+          "modifier_groups": [
             {
               "id": 8002,
               "name": "Escolha até 4 adicionais",
@@ -701,7 +701,7 @@
           "image": "https://flordejambu.com/wp-content/uploads/2022/05/acai.png",
           "category": "Combo",
           "rating": 4.8,
-          "modifier_group": [
+          "modifier_groups": [
             {
               "id": 8003,
               "name": "Escolha os adicionais para o açaí",
@@ -787,7 +787,7 @@
           "image": "https://alloydeliveryimages.s3.sa-east-1.amazonaws.com/item_images/9625/64ff4e3675d97ss0ld.webp",
           "category": "Combo",
           "rating": 4.9,
-          "modifier_group": [
+          "modifier_groups": [
             {
               "id": 8001,
               "name": "Escolha seu combinado",

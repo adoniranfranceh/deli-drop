@@ -8,7 +8,7 @@ import { useProductSelectionStore } from '@/stores/productSelectionStore'
 const productSelectionStore = useProductSelectionStore()
 
 const props = defineProps({
-  modifier_group: {
+  modifier_groups: {
     type: Object,
     required: true
   }
@@ -23,7 +23,7 @@ const componentMap = {
 const localValue = ref([])
 
 function updateLocalValue() {
-  const mod = productSelectionStore.selectedModifiers.find(m => m.id === props.modifier_group.id)
+  const mod = productSelectionStore.selectedModifiers.find(m => m.id === props.modifier_groups.id)
   localValue.value = mod ? mod.selected : []
 }
 
@@ -37,10 +37,10 @@ watch(
 
 watch(localValue, (newSelected) => {
   productSelectionStore.updateSelection({
-    modifierId: props.modifier_group.id,
+    modifierId: props.modifier_groups.id,
     selectedItems: newSelected,
-    min: props.modifier_group.min,
-    max: props.modifier_group.max
+    min: props.modifier_groups.min,
+    max: props.modifier_groups.max
   })
 })
 </script>
@@ -48,8 +48,8 @@ watch(localValue, (newSelected) => {
 <template>
   <div>
     <component
-      :is="componentMap[modifier_group.input_type]"
-      :modifier_group="modifier_group"
+      :is="componentMap[modifier_groups.input_type]"
+      :modifier_groups="modifier_groups"
     />
   </div>
 </template>

@@ -10,7 +10,7 @@ import { Icon } from '@iconify/vue';
 
 defineProps({
   duration: {
-    type: String,
+    type: [String, Number],
     required: true
   }
 })

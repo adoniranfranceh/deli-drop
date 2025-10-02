@@ -1,10 +1,10 @@
 <template>
   <div>
     <ModifierHeader
-      :name="modifier_group.name"
-      :min="modifier_group.min"
-      :max="modifier_group.max"
-      :freeLimit="modifier_group.free_limit"
+      :name="modifier_groups.name"
+      :min="modifier_groups.min"
+      :max="modifier_groups.max"
+      :freeLimit="modifier_groups.free_limit"
       :totalSelected="totalSelected"
       :isCheckbox="isCheckbox"
       :isRadio="isRadio"
@@ -12,7 +12,7 @@
 
     <ul class="modifiers">
       <li
-      v-for="item in modifier_group.modifiers"
+      v-for="item in modifier_groups.modifiers"
       :key="item.id"
       class="modifiers-options"
       :class="{
@@ -26,7 +26,7 @@
               type="checkbox"
               :checked="isSelected(item)"
               @change="() => toggle(item)"
-              :name="`modifier-${modifier_group.id}`"
+              :name="`modifier-${modifier_groups.id}`"
             />
             <span 
               class="custom-checkbox"
@@ -67,7 +67,7 @@ import { FloatToMoney } from '@/utils/money'
 import ModifierHeader from '@/components/ui/ModifierHeader.vue'
 
 defineProps({
-  modifier_group: Object,
+  modifier_groups: Object,
   totalSelected: Number,
   isSelected: Function,
   faded: Function,
