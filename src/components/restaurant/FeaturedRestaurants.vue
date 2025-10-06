@@ -14,8 +14,15 @@
 </template>
 
 <script setup>
-import data_restaurants from '@/json/restaurants_without_menu.json';
-const restaurants = data_restaurants;
+import { ref, onMounted } from 'vue';
+import { apiGet } from '../../stores/totalPriceStore/helpers/apiHelpers';
+
+const restaurants = ref([])
+
+onMounted(async () => {
+  const data = await apiGet({ endpoint: '/restaurants' })
+  restaurants.value = data
+})
 </script>
 
 <style scoped>
