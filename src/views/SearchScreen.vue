@@ -47,13 +47,13 @@
 <script setup>
 import { ref, computed, onMounted, watch, nextTick } from 'vue'
 import { extractAllProductsFromCategories } from '@/utils/restaurant_products'
-
 import SearchInput from '@/components/ui/SearchInput.vue'
 import CategoryFilter from '@/components/ui/CategoryFilter.vue'
 import PopularSearches from '@/components/ui/PopularSearches.vue'
 import RestaurantList from '@/components/restaurant/RestaurantList.vue'
 import FeaturedProducts from '@/components/ui/FeaturedProducts.vue'
 import { Icon } from '@iconify/vue'
+import { apiGet } from '../stores/totalPriceStore/helpers/apiHelpers'
 
 const query = ref('')
 const selectedCategory = ref('Tudo')
@@ -80,10 +80,9 @@ const categories = {
   'Açaí': 'material-symbols:icecream-outline'
 }
 
-onMounted(() => {
-  import('@/json/restaurantes_com_menu.json').then(json => {
-    restaurantsData.value = json.default
-  })
+onMounted(async () => {
+  const data = await apiGet({ endpoint: '/restaurants?full=true' })
+  restaurantsData.value = data
 })
 
 const filteredRestaurants = computed(() => {
