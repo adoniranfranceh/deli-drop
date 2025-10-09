@@ -1,11 +1,16 @@
 <template>
-  <div class="floating-search">
+  <div
+    class="floating-search"
+    :class="{ 'is-focused': isFocused }"
+  >
     <div class="search-bar">
       <Icon class="search-icon" icon="fluent:search-32-regular" />
       <input
         type="text"
         :placeholder="placeholder"
         :value="modelValue"
+        @focus="isFocused = true"
+        @blur="isFocused = false"
         @input="$emit('update:modelValue', $event.target.value)"
       />
       <Icon 
@@ -19,7 +24,10 @@
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import { Icon } from '@iconify/vue';
+
+const isFocused = ref(false);
 
 defineProps({
   placeholder: {
@@ -27,21 +35,21 @@ defineProps({
     default: 'Buscar...'
   },
   modelValue: String
-})
+});
 
-defineEmits(['update:modelValue', 'search'])
+defineEmits(['update:modelValue', 'search']);
 </script>
-
 
 <style scoped>
 .floating-search {
   position: sticky;
-  top: 100px;
-  z-index: 1;
+  top: env(safe-area-inset-top, 0);
+  z-index: 1000;
   overflow-x: auto;
   background-color: var(--color-white);
   padding: 1rem;
   border-bottom: 1px solid var(--color-border);
+  transition: all 0.2s ease;
 }
 
 .search-bar {
@@ -49,7 +57,6 @@ defineEmits(['update:modelValue', 'search'])
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 1rem;
   position: relative;
 }
 
@@ -74,15 +81,24 @@ defineEmits(['update:modelValue', 'search'])
 }
 
 .search-bar input {
-  padding: 0.7rem 2.3rem 0.7rem 2.3rem;
   width: 100%;
+  padding: 0.7rem 2.3rem;
   border: 1px solid #ccc;
   border-radius: 7px;
+  outline: none;
 }
 
 @media (max-width: 758px) {
+  .floating-search.is-focused {
+    position: fixed;
+    top: env(safe-area-inset-top, 0);
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
   .search-bar input {
-    width: 90%
+    width: 90%;
   }
 }
 </style>
