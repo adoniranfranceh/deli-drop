@@ -30,7 +30,7 @@ defineProps({
 <style scoped>
 .restaurant-card {
   display: flex;
-  background: white;
+  background: var(--color-white);
   border: 1px solid #eee;
   border-radius: 12px;
   overflow: hidden;
@@ -39,7 +39,7 @@ defineProps({
   cursor: pointer;
   box-shadow: var(--shadow-md);
   transition: box-shadow 0.2s;
-  height: 100px;
+  height: 115px;
 }
 
 .restaurant-card:hover {
@@ -75,5 +75,11 @@ defineProps({
   font-size: 0.85rem;
   margin-top: 0.3rem;
   color: #555;
+}
+
+@media (max-width: 758px) {
+  .restaurant-card {
+    height: 125px;
+  }
 }
 </style>
