@@ -59,12 +59,10 @@ function addtoCart(event) {
   closeModal();
 }
 
-
 const productMap = new Map();
 props.products.forEach(product => {
   productMap.set(product.id, product);
 });
-
 
 onMounted(() => {
   const idFromURL = route.query.productId;

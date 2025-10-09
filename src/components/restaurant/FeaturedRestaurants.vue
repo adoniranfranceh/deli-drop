@@ -1,7 +1,7 @@
 <template>
   <div class="restaurant-stories">
     <div
-      v-for="restaurant in restaurants"
+      v-for="restaurant in restaurantsFetch.items.value"
       :key="restaurant.id"
       class="story"
     >
@@ -14,15 +14,14 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import { apiGet } from '../../stores/totalPriceStore/helpers/apiHelpers';
-
-const restaurants = ref([])
+import { onMounted } from 'vue';
+import { usePaginatedFetch } from '../../composables/usePaginatedFetch';
 
 onMounted(async () => {
-  const data = await apiGet({ endpoint: '/restaurants' })
-  restaurants.value = data
+  restaurantsFetch.load()
 })
+
+const restaurantsFetch = usePaginatedFetch('/restaurants')
 </script>
 
 <style scoped>
