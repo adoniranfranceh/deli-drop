@@ -43,8 +43,8 @@ const closeMenu = () => (menuOpen.value = false)
   #container-nav-mobile {
     display: flex;
     width: 100%;
-    padding: 0.75rem 1rem;
-    position: fixed;
+    padding: 0.75rem 0rem;
+    position: sticky;
     background-color: #ffffff;
     box-shadow: var(--shadow-md);
     z-index: 1000;
