@@ -1,7 +1,7 @@
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { apiGet } from '@/stores/totalPriceStore/helpers/apiHelpers'
 
-export function usePaginatedFetch(endpointBase) {
+export function usePaginatedFetch(endpointBase, { infiniteScroll = false, offset = 200 } = {}) {
   const items = ref([])
   const page = ref(1)
   const allLoaded = ref(false)
@@ -38,5 +38,19 @@ export function usePaginatedFetch(endpointBase) {
     allLoaded.value = false
   }
 
-  return { items, page, allLoaded, loading, load, reset }
+ const handleScroll = () => {
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const bottom = document.documentElement.offsetHeight - offset;
+
+    if (scrollPosition >= bottom && !loading.value && !allLoaded.value) {
+      load();
+    }
+  };
+
+  if (infiniteScroll) {
+    onMounted(() => window.addEventListener('scroll', handleScroll));
+    onBeforeUnmount(() => window.removeEventListener('scroll', handleScroll));
+  }
+
+  return { items, page, allLoaded, loading, load, reset };
 }
