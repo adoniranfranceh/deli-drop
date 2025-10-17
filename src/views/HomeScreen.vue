@@ -12,38 +12,43 @@
         <AppButton text="Pedir agora" path="/buscar" icon="radix-icons:arrow-right" />
       </section>
 
-      <transition name="fade" tag="section" class="showcase">
-        <div>
-          <h2>Seu restaurante favorito a um clique</h2>
-          <FeaturedProducts
-            :products="productsFetch.items.value"
-            :showCategory="true"
-            v-if="!productsFetch.loading.value && productsFetch.items.value.length > 0"
-          />
-          <FeaturedProductsSkeleton v-if="productsFetch.loading.value" :count="6" />
-        </div>
-      </transition>
-    </main>
-  </div>
-  <MainFooter />
+      <section class="showcase">
+        <h2>Seu restaurante favorito a um clique</h2>
+        <FeaturedProducts
+          :products="productsFetch.items.value"
+          :showCategory="true"
+          v-if="productsFetch.items.value.length > 0"
+        />
 
+        <FeaturedProductsSkeleton v-if="productsFetch.loading.value && productsFetch.items.value.length === 0" :count="6" />
+
+        <LoadingMoreIndicator v-if="productsFetch.loading.value && productsFetch.items.value.length > 0" />
+
+        <p v-if="productsFetch.allLoaded.value && productsFetch.items.value.length > 0" class="end-list">
+          Todos os produtos foram carregados
+        </p>
+      </section>
+    </main>
+
+    <MainFooter />
+  </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
 import FeaturedRestaurants from '@/components/restaurant/FeaturedRestaurants.vue';
-import FeaturedProducts from '@/components/ui/FeaturedProducts.vue'
+import FeaturedProducts from '@/components/ui/FeaturedProducts.vue';
 import AppButton from '@/components/ui/AppButton.vue';
 import MainFooter from '@/components/ui/MainFooter.vue';
+import FeaturedProductsSkeleton from '@/components/product/FeaturedProductsSkeleton.vue';
+import { usePaginatedFetch } from '@/composables/usePaginatedFetch';
+import LoadingMoreIndicator from '../components/ui/LoadingMoreIndicator.vue';
 
-import FeaturedProductsSkeleton from '../components/product/FeaturedProductsSkeleton.vue'
-import { usePaginatedFetch } from '../composables/usePaginatedFetch';
+const productsFetch = usePaginatedFetch('/products');
 
 onMounted(async () => {
-  productsFetch.load()
-})
-
-const productsFetch = usePaginatedFetch('/products')
+  await productsFetch.load({ enableInfiniteScroll: true });
+});
 </script>
 
 <style scoped>
@@ -86,6 +91,12 @@ const productsFetch = usePaginatedFetch('/products')
 .fade-enter-to, .fade-leave-from {
   opacity: 1;
   transform: translateY(0);
+}
+
+.end-list {
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--color-muted);
 }
 
 @media (max-width: 758px){
