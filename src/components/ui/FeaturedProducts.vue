@@ -1,37 +1,29 @@
 <template>
-  <div>
-    <InfiniteScroll
-      :items="products"
-      :perPage="10"
-      v-slot="{ items }"
-      class="products-container"
-    >
-      <CardProduct
-        v-for="product in items"
-        :key="product.id"
-        :product="product"
-        :showCategory="showCategory"
-        @selected-product="openModal"
-      />
+  <div class="products-container">
+    <CardProduct
+      v-for="product in products"
+      :key="product.id"
+      :product="product"
+      :showCategory="showCategory"
+      @selected-product="openModal"
+    />
 
-      <ProductModalManager ref="modalManager" :products="items" />
-    </InfiniteScroll>
+    <ProductModalManager ref="modalManager" :products="products" />
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import CardProduct from '@/components/product/CardProduct.vue'
-import ProductModalManager from '@/components/product/ProductModalManager.vue'
-import InfiniteScroll from '@/components/ui/InfiniteScroll.vue'
+import { ref } from 'vue';
+import CardProduct from '@/components/product/CardProduct.vue';
+import ProductModalManager from '@/components/product/ProductModalManager.vue';
 
 defineProps({
   products: { type: Array, required: true },
   showCategory: Boolean
-})
+});
 
-const modalManager = ref(null)
-const openModal = (product) => modalManager.value?.openModal(product)
+const modalManager = ref(null);
+const openModal = (product) => modalManager.value?.openModal(product);
 </script>
 
 <style scoped>
