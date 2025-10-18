@@ -9,7 +9,7 @@ const routes = [
   {
     path: '/buscar',
     name: 'SearchScreen',
-    component: () => import('@/views/SearchScreen.vue')
+    component: () => import('@/views/SearchScreen/index.vue')
   },
   {
     path: '/restaurante/:id',
