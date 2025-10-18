@@ -55,8 +55,6 @@ function pushStateOnce() {
   }
 }
 
-
-
 function closeProductModal(fromPopState = false) {
   selectedProduct.value = null
 

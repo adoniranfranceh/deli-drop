@@ -1,34 +1,25 @@
 <template>
-  <div class="empty-modal-content" v-if="cartStore.cartItems.length === 0">
-    <header class="modal-header">
-      <div class="wrapper-close">
-        <button class="close-btn" @click="$emit('close')">×</button>
-      </div>
-        <h2>
-          Sua sacola está vazia
-        </h2>
-      </header>
-      <div class="info-empty">
-        <Icon icon="lucide:shopping-bag" class="bag-icon"/>
-        <p>Adicione alguns itens deliciosos</p>
+  <BaseModal @close="$emit('close')">
+    <div class="empty-modal-content" v-if="cartStore.cartItems.length === 0">
+      <header class="modal-header">
+        <div class="wrapper-close">
+          <button class="close-btn" @click="$emit('close')">×</button>
+        </div>
+          <h2>
+            Sua sacola está vazia
+          </h2>
+        </header>
+        <div class="info-empty">
+          <Icon icon="lucide:shopping-bag" class="bag-icon"/>
+          <p>Adicione alguns itens deliciosos</p>
 
-        <AppButton text="Continuar comprando" @click="$emit('close')"/>
-      </div>
-  </div>
+          <AppButton text="Continuar comprando" @click="$emit('close')"/>
+        </div>
+    </div>
+  </BaseModal>
 </template>
 
 <style scoped>
-.empty-modal-content {
-  width: 520px;
-  height: 340px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-  display: flex;
-  flex-direction: column;
-  animation: slideUp 0.3s ease;
-}
-
 .close-btn {
   font-size: 1.5rem;
   background: transparent;
@@ -67,8 +58,6 @@
   margin: 0;
   color: var(--color-black);
 }
-
-
 
 .close-btn:hover {
   color: #b94a48;
@@ -109,6 +98,7 @@
 import { Icon } from '@iconify/vue';
 import { useCartStore } from '@/stores/cartStore'
 import AppButton from '@/components/ui/AppButton.vue'
+import BaseModal from '../modal/BaseModal.vue';
 
 defineProps({
   restauranName: String
