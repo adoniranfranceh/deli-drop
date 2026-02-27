@@ -166,12 +166,12 @@ onMounted(async () => {
   const code = route.params.code
   try {
     await orderStore.fetchOrder(code)
-    orderStore.startPolling(code)
+    orderStore.subscribe(code)
   } catch {
   }
 })
 
 onUnmounted(() => {
-  orderStore.stopPolling()
+  orderStore.unsubscribe()
 })
 </script>
