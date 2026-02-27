@@ -16,7 +16,7 @@
       </div>
 
       <div v-else-if="orderStore.error && !order" class="text-center py-12">
-        <p class="text-error">{{ orderStore.error }}</p>
+        <p class="text-[var(--color-error)]">{{ orderStore.error }}</p>
         <AppButton variant="secondary" text="Voltar" @click="$router.push('/')" />
       </div>
 
@@ -47,10 +47,10 @@
 
         <section
           v-if="isCancelled"
-          class="rounded-lg border border-error shadow-sm bg-white p-4 text-center"
+          class="rounded-lg border border-[var(--color-error)] shadow-sm bg-white p-4 text-center"
         >
-          <Icon icon="lucide:x-circle" class="w-12 h-12 text-error mx-auto mb-2" />
-          <p class="font-bold text-error m-0">Pedido cancelado</p>
+          <Icon icon="lucide:x-circle" class="w-12 h-12 text-[var(--color-error)] mx-auto mb-2" />
+          <p class="font-bold text-[var(--color-error)] m-0">Pedido cancelado</p>
           <p v-if="order.cancel_reason" class="text-sm text-text-subtle m-0 mt-1">
             Motivo: {{ order.cancel_reason }}
           </p>
@@ -58,18 +58,18 @@
 
         <section
           v-if="isRejected"
-          class="rounded-lg border border-error shadow-sm bg-white p-4 text-center"
+          class="rounded-lg border border-[var(--color-error)] shadow-sm bg-white p-4 text-center"
         >
-          <Icon icon="lucide:x-circle" class="w-12 h-12 text-error mx-auto mb-2" />
-          <p class="font-bold text-error m-0">Pedido recusado pelo restaurante</p>
+          <Icon icon="lucide:x-circle" class="w-12 h-12 text-[var(--color-error)] mx-auto mb-2" />
+          <p class="font-bold text-[var(--color-error)] m-0">Pedido recusado pelo restaurante</p>
         </section>
 
         <section
           v-if="isDelivered"
-          class="rounded-lg border border-success shadow-sm bg-white p-4 text-center"
+          class="rounded-lg border border-[var(--color-success)] shadow-sm bg-white p-4 text-center"
         >
-          <Icon icon="lucide:check-circle-2" class="w-12 h-12 text-success mx-auto mb-2" />
-          <p class="font-bold text-success m-0">Pedido entregue!</p>
+          <Icon icon="lucide:check-circle-2" class="w-12 h-12 text-[var(--color-success)] mx-auto mb-2" />
+          <p class="font-bold text-[var(--color-success)] m-0">Pedido entregue!</p>
         </section>
 
         <section class="rounded-lg border border-[var(--color-border)] shadow-sm bg-white p-4">
@@ -136,9 +136,9 @@ const statusBadgeClass = computed(() => {
   const status = order.value?.status
   const base = 'px-3 py-1 rounded-full text-xs font-semibold'
   if (status === 'cancelled' || status === 'rejected')
-    return `${base} bg-error/10 text-error`
+    return `${base} bg-[var(--color-error)]/10 text-[var(--color-error)]`
   if (status === 'delivered')
-    return `${base} bg-success/10 text-success`
+    return `${base} bg-[var(--color-success)]/10 text-[var(--color-success)]`
   return `${base} bg-[var(--color-cart)]/10 text-[var(--color-cart)]`
 })
 

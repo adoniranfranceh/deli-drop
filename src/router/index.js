@@ -23,6 +23,11 @@ const routes = [
     component: () => import('@/views/CheckoutView.vue')
   },
   {
+    path: '/meus-pedidos',
+    name: 'MyOrders',
+    component: () => import('@/views/MyOrdersView.vue')
+  },
+  {
     path: '/order/:code',
     name: 'OrderTracking',
     component: () => import('@/views/OrderTrackingView.vue'),

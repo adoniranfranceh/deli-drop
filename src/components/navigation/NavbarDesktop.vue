@@ -7,6 +7,7 @@
       <router-link to="/sobre" class="nav-link">Quero ser Parceiro</router-link>
       <router-link to="/sobre" class="nav-link">Quero ser Entregador</router-link>
 
+      <router-link to="/meus-pedidos" class="nav-link">Meus Pedidos</router-link>
       <a :href="appDownloadLink" target="_blank" class="nav-link">Baixe o App</a>
       <router-link to="/login" class="nav-link">Entrar</router-link>
     </nav>

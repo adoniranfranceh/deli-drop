@@ -25,9 +25,10 @@
     </div>
     <ul class="list-none flex flex-col gap-10 mt-8">
       <li><router-link @click="closeMenu" to="/" class="mobile-link">Início</router-link></li>
-      <li><router-link @click="closeMenu" to="/about" class="mobile-link">Sobre</router-link></li>
-      <li><router-link @click="closeMenu" to="/Quero ser Parceiro" class="mobile-link">Quero ser Parceiro</router-link></li>
-      <li><router-link @click="closeMenu" to="/Quero ser Entregador" class="mobile-link">Quero ser Entregador</router-link></li>
+      <li><router-link @click="closeMenu" to="/sobre" class="mobile-link">Sobre</router-link></li>
+      <li><router-link @click="closeMenu" to="/sobre" class="mobile-link">Quero ser Parceiro</router-link></li>
+      <li><router-link @click="closeMenu" to="/sobre" class="mobile-link">Quero ser Entregador</router-link></li>
+      <li><router-link @click="closeMenu" to="/meus-pedidos" class="mobile-link">Meus Pedidos</router-link></li>
       <li><router-link @click="closeMenu" to="/buscar" class="mobile-link">Buscar</router-link></li>
     </ul>
   </div>
