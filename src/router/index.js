@@ -16,6 +16,17 @@ const routes = [
     name: 'RestaurantScreen',
     component: () => import('@/views/RestaurantScreen.vue'),
     props: true
+  },
+  {
+    path: '/checkout',
+    name: 'Checkout',
+    component: () => import('@/views/CheckoutView.vue')
+  },
+  {
+    path: '/order/:code',
+    name: 'OrderTracking',
+    component: () => import('@/views/OrderTrackingView.vue'),
+    props: true
   }
 ]
 

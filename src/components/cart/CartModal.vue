@@ -40,6 +40,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { useRouter } from 'vue-router'
 import { useCartStore } from '@/stores/cartStore'
 import CartHeader from './CartHeader.vue'
 import CartItem from './CartItem.vue'
@@ -48,6 +49,7 @@ import EmptyCart from './EmptyCart.vue'
 import BaseModal from '../modal/BaseModal.vue'
 
 const cartStore = useCartStore()
+const router = useRouter()
 
 defineProps({
   deliveryAddress: { type: String, default: 'Rua das Flores, 123' },
@@ -83,7 +85,8 @@ function handleClearCart() {
 }
 
 function handleCheckout() {
-  emit('checkout')
+  emit('close')
+  router.push('/checkout')
 }
 </script>
 
