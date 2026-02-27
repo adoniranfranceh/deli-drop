@@ -1,23 +1,22 @@
 <template>
-  <div class="header-modifier">
-    <div class="header-title">
+  <div class="bg-gray-50 p-4">
+    <div class="flex items-center justify-between m-0">
       <h3><strong>{{ name }}</strong></h3>
       <ItemChip
-        class="modifier-chip"
+        class="!bg-[var(--color-product-modal)] !text-white"
         v-if="totalSelected !== undefined"
         :class="chipClass"
         :item="chipText"
       />
     </div>
-    <div class="header-info" v-if="isSimpleSelector">
+    <div class="flex text-sm text-gray-500 [&>p]:m-0 [&>p]:mr-1" v-if="isSimpleSelector">
       <p>{{ isRequired ? `Escolha ${freeLimit} grátis` : 'Opcional' }}</p>
     </div>
-    <div class="header-info" v-else>
+    <div class="flex text-sm text-gray-500 [&>p]:m-0 [&>p]:mr-1" v-else>
       <p>{{ isRequired ? `${min} Obrigatório •` : 'Opcional •' }}</p>
-      <p class="modifier-free">{{ freeLimitText }}</p>
+      <p class="text-success">{{ freeLimitText }}</p>
       <p>{{ maxText }}</p>
     </div>
-
   </div>
 </template>
 
@@ -56,38 +55,3 @@ const chipText = computed(() => {
   return `${props.totalSelected}`
 })
 </script>
-
-<style scoped>
-.header-modifier {
-  background: rgb(249, 250, 251);
-  padding: 1rem;
-}
-
-.modifier-chip {
-  background-color: var(--color-product-modal);
-  color: var(--color-white);
-}
-
-.header-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
-}
-
-.header-info {
-  display: flex;
-  font-size: 0.875rem;
-  color: var(--color-text-secondary);
-  
-  p {
-    margin: 0;
-    margin-right: 0.2rem;
-  }
-}
-
-.modifier-free {
-  color: var(--color-success);
-  font-size: 0.9rem;
-}
-</style>

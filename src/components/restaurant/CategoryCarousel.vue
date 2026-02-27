@@ -1,19 +1,20 @@
 <template>
-  <section class="category-carousel">
-    <h2>Escolha por categoria</h2>
-    <div class="category-list">
+  <section class="my-8 text-center">
+    <h2 class="mb-4 text-text">Escolha por categoria</h2>
+    <div class="flex justify-center overflow-x-auto gap-4 px-4 snap-x snap-mandatory">
       <div
         v-for="category in categories"
         :key="category.name"
-        class="category-item"
+        class="flex-none snap-center flex flex-col items-center cursor-pointer transition-transform duration-200 w-[90px] hover:scale-105"
         @click="goToCategory(category)"
       >
         <img
           :src="category.icon"
           :alt="category.name"
           @error="onImageError($event)"
+          class="w-16 h-16 object-contain mb-2 rounded-xl bg-white p-2 shadow-sm"
         />
-        <span>{{ category.name }}</span>
+        <span class="text-sm text-text whitespace-nowrap">{{ category.name }}</span>
       </div>
     </div>
   </section>
@@ -43,56 +44,3 @@ function onImageError(event) {
   event.target.src = fallbackIcon;
 }
 </script>
-
-<style scoped>
-.category-carousel {
-  margin: 2rem 0;
-  text-align: center;
-}
-
-.category-carousel h2 {
-  margin-bottom: 1rem;
-  color: var(--color-text);
-}
-
-.category-list {
-  display: flex;
-  justify-content: center;
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 0 1rem;
-  scroll-snap-type: x mandatory;
-}
-
-.category-item {
-  flex: 0 0 auto;
-  scroll-snap-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  cursor: pointer;
-  transition: transform 0.2s;
-  width: 90px;
-}
-
-.category-item:hover {
-  transform: scale(1.05);
-}
-
-.category-item img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  margin-bottom: 0.5rem;
-  border-radius: 12px;
-  background: white;
-  padding: 8px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.1);
-}
-
-.category-item span {
-  font-size: 0.85rem;
-  color: var(--color-text);
-  white-space: nowrap;
-}
-</style>

@@ -1,24 +1,24 @@
 <template>
-  <div class="products-container">
-    <div 
-      class="product-card skeleton"
-      v-for="n in count" 
+  <div class="grid gap-8 my-8 mx-auto px-4 grid-cols-1 min-[758px]:grid-cols-2 min-[1250px]:grid-cols-3 min-[1250px]:my-12">
+    <div
+      class="bg-white rounded-2xl shadow-md overflow-hidden flex flex-col gap-4 pointer-events-none"
+      v-for="n in count"
       :key="'skeleton-'+n"
-      >
-      <div class="image-wrapper">
-        <div class="image"></div>
+    >
+      <div>
+        <div class="w-full h-40 bg-border rounded-lg animate-pulse"></div>
       </div>
-      <div class="product-info">
-        <div class="product-header">
-          <div class="line short"></div>
-          <div class="line long"></div>
+      <div class="p-4">
+        <div class="flex flex-col justify-center items-center">
+          <div class="h-3.5 bg-border rounded-[7px] mb-2 animate-pulse w-[40%]"></div>
+          <div class="h-3.5 bg-border rounded-[7px] mb-2 animate-pulse w-[80%]"></div>
         </div>
-        <div class="product-description">
-          <div class="line long"></div>
+        <div class="flex justify-center items-center text-center h-[100px]">
+          <div class="h-3.5 bg-border rounded-[7px] mb-2 animate-pulse w-[80%]"></div>
         </div>
-        <div class="product-footer">
-          <div class="line short"></div>
-          <div class="line button"></div>
+        <div class="flex justify-between items-center mt-4">
+          <div class="h-3.5 bg-border rounded-[7px] mb-2 animate-pulse w-[40%]"></div>
+          <div class="h-[25px] bg-border rounded-[7px] mb-2 animate-pulse w-[30%]"></div>
         </div>
       </div>
     </div>
@@ -33,63 +33,3 @@ defineProps({
   }
 })
 </script>
-
-<style scoped>
-.products-container {
-  display: grid;
-  gap: 2rem;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.product-card.skeleton {
-  background: var(--color-white);
-  border-radius: 1rem;
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  pointer-events: none;
-}
-
-.image-wrapper .image {
-  width: 100%;
-  height: 160px;
-  background: var(--color-border);
-  border-radius: 0.5rem;
-  animation: pulse 1.5s infinite;
-}
-
-.line {
-  height: 14px;
-  background: var(--color-border);
-  border-radius: 7px;
-  margin-bottom: 0.5rem;
-  animation: pulse 1.5s infinite;
-}
-
-.line.short { width: 40%; }
-.line.long { width: 80%; }
-.line.button { width: 30%; height: 25px; }
-
-@media (min-width: 758px) {
-  .products-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1250px) {
-  .products-container {
-    grid-template-columns: repeat(3, 1fr);
-    margin: 3rem auto;
-  }
-}
-
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
-}
-</style>

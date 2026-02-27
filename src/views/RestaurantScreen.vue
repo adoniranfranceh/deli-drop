@@ -1,26 +1,23 @@
 <template>
-  <div 
-    class="restaurant-page"
-    v-if="restaurant"
-  >
+  <div class="font-sans" v-if="restaurant">
     <div
-      class="background-cover"
+      class="h-[350px] bg-cover bg-center bg-no-repeat relative"
       :style="{
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none'
       }"
     >
-      <div class="overlay"></div>
+      <div class="absolute inset-0 bg-[color-mix(in_srgb,var(--color-restaurant-hover)_70%,transparent)]"></div>
     </div>
-    <div class="restaurant-container">
-      <header class="restaurant-header">
-        <div class="header-image">
-          <img :src="restaurant.logo" :alt="restaurant.name" />
+    <div class="p-8 flex flex-col mb-16 max-[758px]:p-0">
+      <header class="flex flex-col items-center justify-center">
+        <div class="relative -mt-[350px] text-center z-[2] py-20">
+          <img :src="restaurant.logo" :alt="restaurant.name" class="w-[120px] h-[120px] rounded-full object-cover border-4 border-white bg-white" />
         </div>
-        <h1>{{ restaurant.name }}</h1>
-        <p>
+        <h1 class="text-4xl mx-5 leading-10 font-bold mt-20 flex items-center text-[var(--color-restaurant)]">{{ restaurant.name }}</h1>
+        <p class="font-normal leading-7 max-w-[672px] mx-10 my-5">
           {{ restaurant.description }}
         </p>
-        <div class="restaurant-rating">
+        <div class="flex [&>span]:flex [&>span]:items-center [&>span]:px-5 [&>span]:py-1.5 [&>span]:mb-2.5 max-[758px]:mb-2.5">
           <RatingProduct :rating="restaurant.rating" />
           <DeliveryDuration :duration="restaurant.duration" v-if="restaurant.duration"/>
           <LocationRestaurant location="Entrega disponível" />
@@ -28,7 +25,7 @@
       </header>
 
       <hr />
-      <div class="menu">
+      <div class="px-12 max-[758px]:px-4">
         <RestaurantMenu :categories="restaurant.categories"/>
       </div>
     </div>
@@ -66,132 +63,3 @@ watch(
 )
 </script>
 
-<style>
-html {
-  scroll-behavior: smooth;
-}
-
-.restaurant-page {
-  font-family: 'Inter', sans-serif;
-}
-
-.restaurant-container {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 4rem;
-}
-
-.background-cover {
-  height: 350px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: color-mix(in srgb, var(--color-restaurant-hover) 70%, transparent);
-}
-
-.restaurant-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  h1 {
-    font-size: 36px;
-    margin: 0 20px;
-    line-height: 40px;
-    font-weight: 700;
-    margin-top: 5rem;
-    display: flex;
-    align-items: center;
-    color: var(--color-restaurant);
-  }
-
-  p {
-    font-weight: 400;
-    line-height: 28px;
-    max-width: 672px;
-    margin: 20px 38px ;
-  }
-}
-
-.restaurant-rating {
-  display: flex;
-
-  span {
-    display: flex;
-    align-items: center;
-    padding: 5px 20px;
-    margin-bottom: 10px;
-  }
-}
-
-.products {
-  padding: 1.5rem;
-  background: rgb(249, 250, 251);
-}
-
-.header-image {
-  position: relative;
-  margin-top: -350px;
-  text-align: center;
-  z-index: 2;
-  padding: 5rem 0;
-}
-
-.header-image img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  background-color: white;
-}
-
-button {
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  font-size: 1rem;
-  width: fit-content;
-}
-
-button:hover {
-  color: var(--color-restaurant);
-}
-
-.menu {
-  padding: 0 3rem;
-}
-
-@media (max-width: 758px) {
-  .restaurant-rating {
-    margin-bottom: 10px;
-  }
-
-  .products {
-    padding: 1rem;
-  }
-
-  .cart-bar {
-    width: 90%;
-  }
-  
-  .menu {
-    padding: 1rem;
-  }
-
-  .restaurant-container {
-    padding: 0;
-  }
-}
-</style>

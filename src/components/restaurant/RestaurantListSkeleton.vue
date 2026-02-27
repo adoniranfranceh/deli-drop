@@ -1,65 +1,13 @@
 <template>
-  <div class="restaurant-card skeleton">
-    <div class="logo"></div>
-    <div class="info">
-      <div class="line short"></div>
-      <div class="line long"></div>
-      <div class="details">
-        <div class="line short"></div>
-        <div class="line short"></div>
+  <div class="flex bg-white rounded-xl overflow-hidden p-3 gap-3 pointer-events-none shadow-md h-[115px] max-[758px]:h-[125px]">
+    <div class="w-20 h-20 bg-border rounded-lg animate-pulse"></div>
+    <div class="flex-1">
+      <div class="h-3.5 bg-border rounded-[7px] mb-2 animate-pulse w-[40%]"></div>
+      <div class="h-3.5 bg-border rounded-[7px] mb-2 animate-pulse w-[80%]"></div>
+      <div class="flex gap-2">
+        <div class="h-3.5 bg-border rounded-[7px] mb-2 animate-pulse w-[30%]"></div>
+        <div class="h-3.5 bg-border rounded-[7px] mb-2 animate-pulse w-[30%]"></div>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-.restaurant-card.skeleton {
-  display: flex;
-  background: var(--color-white);
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 0.75rem;
-  gap: 0.75rem;
-  pointer-events: none;
-  box-shadow: var(--shadow-md);
-  height: 115px;
-}
-
-.restaurant-card.skeleton .logo {
-  width: 80px;
-  height: 80px;
-  background: #e0e0e0;
-  border-radius: 8px;
-  animation: pulse 1.5s infinite;
-}
-
-.restaurant-card.skeleton .info {
-  flex: 1;
-}
-
-.info .line {
-  height: 14px;
-  background: #e0e0e0;
-  border-radius: 7px;
-  margin-bottom: 0.5rem;
-  animation: pulse 1.5s infinite;
-}
-
-.line.short { width: 40%; }
-.line.long { width: 80%; }
-
-.details { display: flex; gap: 0.5rem; }
-.details .line { width: 30%; }
-
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.4; }
-  100% { opacity: 1; }
-}
-
-@media (max-width: 758px) {
-  .restaurant-card {
-    height: 125px;
-  }
-}
-</style>

@@ -1,16 +1,16 @@
 <template>
-  <div class="wrapper-delivery">
-    <div class="delivery-info">
-      <DeliveryDuration :duration="deliveryDuration"  v-if="deliveryDuration"/>
-      <div class="bike-delivery">
-        <Icon icon="tabler:bike" style="height: 16px; width: 16px;" /> Entrega
+  <div class="px-6 max-[758px]:pb-4">
+    <div class="flex justify-between text-sm text-text-subtle my-4">
+      <DeliveryDuration :duration="deliveryDuration" v-if="deliveryDuration"/>
+      <div class="flex items-center gap-1.5">
+        <Icon icon="tabler:bike" class="w-4 h-4" /> Entrega
       </div>
       <div><LocationRestaurant :location="deliveryAddress" /></div>
     </div>
 
     <hr />
 
-    <div class="cost-summary">
+    <div class="[&>div]:flex [&>div]:justify-between [&>div]:text-[0.95rem] [&>div]:text-text-dark [&>div]:my-3">
       <div>
         <span>Subtotal ({{ totalItems }} {{ totalItems === 1 ? 'item' : 'itens' }})</span>
         <span>{{ FloatToMoney(subtotal) }}</span>
@@ -24,20 +24,22 @@
         <span>{{ FloatToMoney(serviceFee) }}</span>
       </div>
       <hr />
-      <div class="total">
+      <div>
         <strong>Total</strong>
         <strong>{{ FloatToMoney(subtotal + serviceFee + deliveryFee) }}</strong>
       </div>
     </div>
 
     <AppButton
-      class="checkout-btn"
+      class="flex justify-center w-full my-4"
+      variant="cart"
       text="Finalizar pedido"
       iconLeft="si:credit-card-line"
       @click="$emit('checkout')"
     />
     <AppButton
-      class="clear-cart-btn"
+      class="w-full flex justify-center my-4 mb-8 text-text-subtle hover:text-[var(--color-cart)]"
+      variant="ghost"
       text="Limpar sacola"
       @click="$emit('clearCart')"
     />
@@ -62,72 +64,3 @@ defineProps({
 
 defineEmits(['checkout', 'clearCart'])
 </script>
-
-<style scoped>
-.wrapper-delivery {
-  padding: 0 1.5rem;
-}
-
-.delivery-info {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.85rem;
-  color: #555;
-  margin: 1rem 0;
-}
-
-.bike-delivery {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.cost-summary > div {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.95rem;
-  color: #222;
-  margin: 0.7rem 0;
-}
-
-.checkout-btn {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 1rem 0;
-  background: var(--color-cart);
-}
-
-.checkout-btn:hover {
-  background: var(--color-cart);
-  opacity: 0.9;
-}
-
-.clear-cart-btn {
-  background: none;
-  border: none;
-  color: #555;
-  cursor: pointer;
-  font-size: 0.9rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0 2rem;
-}
-
-.clear-cart-btn:hover {
-  color: var(--color-cart);
-  background-color: var(--color-white);
-}
-
-@media (max-width: 758px) {
-  .wrapper-delivery {
-    padding-bottom: 1rem;
-  }
-
-  .checkout-btn,
-  .clear-cart-btn {
-    font-size: 0.95rem;
-  }
-}
-</style>

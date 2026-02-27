@@ -1,17 +1,17 @@
 <template>
-  <div class="wrapper-header">
-    <header class="modal-header">
-      <h2>
+  <div class="m-4 mx-6">
+    <header class="flex justify-between items-center">
+      <h2 class="font-bold text-xl max-md:text-lg m-0">
         Sua sacola ({{ totalItems }} {{ totalItems === 1 ? 'item' : 'itens' }})
       </h2>
       <button
-        class="close-btn"
+        class="text-2xl bg-transparent cursor-pointer text-text-subtle transition-colors duration-200 hover:text-red-600 p-0 border-none"
         aria-label="Fechar modal"
         @click="$emit('close')"
       >×</button>
     </header>
-    <span class="restaurant-name">
-      <Icon icon="material-symbols:circle" style="color: var(--color-cart); margin-right: 0.4rem;" />
+    <span class="flex font-light leading-5 text-gray-500">
+      <Icon icon="material-symbols:circle" class="text-[var(--color-cart)] mr-1.5" />
       {{ restaurantName }}
     </span>
   </div>
@@ -25,45 +25,3 @@ defineProps({
   totalItems: Number
 })
 </script>
-
-<style scoped>
-.wrapper-header {
-  margin: 1rem 1.5rem;
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.modal-header h2 {
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin: 0;
-}
-
-.close-btn {
-  font-size: 1.5rem;
-  background: transparent;
-  cursor: pointer;
-  color: #555;
-  transition: color 0.2s;
-}
-
-.close-btn:hover {
-  color: #b94a48;
-}
-
-.restaurant-name {
-  font-weight: 100;
-  line-height: 20px;
-  color: rgb(101, 109, 121);
-}
-
-@media (max-width: 768px) {
-  .modal-header h2 {
-    font-size: 1.1rem;
-  }
-}
-</style>

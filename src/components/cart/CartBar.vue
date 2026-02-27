@@ -1,23 +1,22 @@
 <template>
-  <footer class="cart-bar-wrapper" v-if="cartStore.cartItems.length">
-    <div class="logo-wrapper">
+  <footer class="fixed bottom-2.5 right-2.5 flex items-center justify-center z-[100]" v-if="cartStore.cartItems.length">
+    <div
+      class="relative mr-2 z-[101] w-10 h-10 rounded-full overflow-hidden border-[3px] border-[var(--color-cart)] shadow cursor-pointer shrink-0"
+      @click="goToRestaurant"
+    >
       <img
         :src="cartStore.currentRestaurantInfo?.logo"
         alt="Logo do restaurante"
-        class="logo-cart"
-        @click="goToRestaurant"
-        style="cursor: pointer"
+        class="w-full h-full object-cover"
       />
     </div>
-    <div class="cart-bar">
-      <p>{{ dropLabel }}</p>
-      <AppButton @click="goToCart" text="Ver sacola" aria-label="Ver sacola com itens adicionados" />
+    <div class="bg-[var(--color-cart)] text-white py-2 px-4 flex items-center justify-between rounded-full max-w-[340px] w-full font-semibold shadow-lg max-[758px]:text-xs">
+      <p class="flex-1 mx-2 m-0 whitespace-nowrap">{{ dropLabel }}</p>
+      <AppButton @click="goToCart" variant="cart-inverse" text="Ver sacola" aria-label="Ver sacola com itens adicionados" />
     </div>
   </footer>
 
-  <CartModalManager
-    ref="modalManager"
-  />
+  <CartModalManager ref="modalManager" />
 </template>
 
 <script setup>
@@ -31,7 +30,7 @@ const cartStore = useCartStore()
 const modalManager = ref(null)
 const router = useRouter()
 
-onMounted(() => 
+onMounted(() =>
   document.documentElement.style.setProperty('--color-cart', cartStore.currentRestaurantInfo?.color)
 )
 
@@ -67,66 +66,3 @@ const dropLabel = computed(() => {
   return `${total} ${total === 1 ? 'Drop' : 'Drops'} na sua sacola`
 })
 </script>
-
-<style scoped>
-.cart-bar-wrapper {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 100;
-}
-
-.logo-wrapper {
-  position: relative;
-  margin-right: 7px;
-  z-index: 101;
-}
-
-.logo-cart {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 3px solid var(--color-cart);
-  object-fit: cover;
-  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-}
-
-.cart-bar {
-  background-color: var(--color-cart);
-  color: white;
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 9999px;
-  max-width: 340px;
-  width: 100%;
-  height: 30px;
-  font-weight: 600;
-  box-shadow: var(--shadow-lg);
-}
-
-.cart-bar p {
-  flex: 1;
-  margin: 0 1rem;
-}
-
-.cart-bar :deep(button) {
-  background-color: white !important;
-  color: var(--color-cart) !important;
-  font-weight: bold;
-  border-radius: 9999px;
-  padding: 0.25rem 1rem;
-  font-size: 0.875rem;
-  border: none;
-}
-
-@media (max-width: 758px) {
-  .cart-bar {
-    font-size: 12px;
-  }
-}
-</style>

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h3 class="section-title">
-      <Icon icon="ri:restaurant-line" class="restaurant-icon" /> RESTAURANTES
+    <h3 class="my-8 text-gray-600">
+      <Icon icon="ri:restaurant-line" class="text-primary" /> RESTAURANTES
     </h3>
 
-    <div class="restaurant-list">
+    <div class="grid gap-8 grid-cols-1 min-[900px]:grid-cols-2 min-[1450px]:grid-cols-3">
       <RestaurantListSkeleton v-if="shouldShowSkeleton" v-for="n in 3" :key="'skeleton-'+n" />
 
       <RestaurantList
@@ -19,21 +19,21 @@
       v-if="showRestaurantButton"
       text="Mostrar mais"
       @click="$emit('showMoreRestaurants')"
-      class="show-more-btn"
+      class="mt-4"
     />
 
     <p
       v-if="shouldShowAllLoaded"
-      class="end-list"
+      class="text-center my-8 text-muted"
     >
       Todos os restaurantes foram carregados
     </p>
 
     <div
       v-if="shouldShowEmptyState"
-      class="empty-state"
+      class="flex gap-4 [&>p]:m-0"
     >
-      <Icon icon="mdi:store-off-outline" class="empty-icon" />
+      <Icon icon="mdi:store-off-outline" />
       <p>Nenhum restaurante encontrado.</p>
     </div>
 
@@ -71,72 +71,23 @@ const props = defineProps({
 
 const { loading, items, allLoaded } = props.restaurantsFetch
 
-const shouldShowSkeleton = computed(() => 
+const shouldShowSkeleton = computed(() =>
   loading.value && items.value.length === 0
 )
 
-const shouldShowList = computed(() => 
+const shouldShowList = computed(() =>
   items.value.length > 0
 )
 
-const shouldShowLoadingMore = computed(() => 
+const shouldShowLoadingMore = computed(() =>
   loading.value && items.value.length > 0
 )
 
-const shouldShowEmptyState = computed(() => 
+const shouldShowEmptyState = computed(() =>
   !loading.value && items.value.length === 0
 )
 
-const shouldShowAllLoaded = computed(() => 
+const shouldShowAllLoaded = computed(() =>
   allLoaded.value && items.value.length > 0
 )
 </script>
-
-<style scoped>
-.section-title {
-  margin: 2rem 0 1rem;
-  color: rgb(75, 85, 99);
-}
-
-.restaurant-icon {
-  color: var(--color-primary);
-}
-
-.restaurant-list {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(1, 1fr);
-  will-change: transform, opacity;
-}
-
-.show-more-btn {
-  margin-top: 1rem;
-  border: none;
-  background-color: var(--color-primary);
-}
-
-.empty-state {
-  display: flex;
-  gap: 1rem;
-
-  p { margin: 0; }
-}
-
-.end-list {
-  text-align: center;
-  margin: 2rem 0;
-  color: var(--color-muted);
-}
-
-@media (min-width: 900px) {
-  .restaurant-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1450px) {
-  .restaurant-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-</style>

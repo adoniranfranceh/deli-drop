@@ -1,16 +1,16 @@
 <template>
-  <BaseModal @close="$emit('close')" v-if="hasItems" >
-    <div class="cart-modal">
+  <BaseModal @close="$emit('close')" v-if="hasItems">
+    <div class="overflow-auto">
       <CartHeader
         :restaurantName="restaurantName"
         :totalItems="totalItems"
         @close="$emit('close')"
       />
 
-      <hr />
+      <hr class="w-[calc(100%-1rem)] max-[1068px]:w-full" />
 
-      <div class="cart-info">
-        <div class="items">
+      <div class="h-full flex flex-col overflow-hidden max-[1068px]:overflow-visible">
+        <div class="overflow-y-auto max-[1068px]:overflow-y-visible">
           <CartItem
             v-for="item in cartItems"
             :key="item.cartItemId"
@@ -20,7 +20,7 @@
           />
         </div>
 
-        <hr />
+        <hr class="w-[calc(100%-1rem)] max-[1068px]:w-full" />
 
         <CartSummary
           :subtotal="subtotal"
@@ -87,37 +87,3 @@ function handleCheckout() {
 }
 </script>
 
-<style scoped>
-.cart-modal {
-  overflow: auto;
-}
-
-hr {
-  width: calc(100% - 1rem);
-}
-
-.cart-info {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.items {
-  overflow-y: auto;
-}
-
-@media (max-width: 1068px) {
-  .items {
-    overflow-y: unset;
-  }
-
-  .cart-info {
-    overflow: unset;
-  }
-
-  hr {
-    width: 100%;
-  }
-}
-</style>

@@ -1,10 +1,11 @@
 <template>
-  <nav class="floating-category-nav">
-    <div class="categories-scroll">
+  <nav class="sticky top-[100px] max-[768px]:top-0 z-[1] bg-white py-2 px-4 border-b-2 border-border overflow-x-auto">
+    <div class="categories-scroll flex gap-4 overflow-x-auto p-4">
       <button
         v-for="(category) in categories"
         :key="category.id"
-        :class="{ active: activeCategory === category.id }"
+        class="bg-transparent border-none py-2 px-4 font-semibold text-muted cursor-pointer whitespace-nowrap border-b-2 border-transparent transition-all duration-200"
+        :class="{ 'text-[var(--color-restaurant)]': activeCategory === category.id }"
         :data-id="category.id"
         @click="scrollToCategory(category.id)"
       >
@@ -77,44 +78,10 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.floating-category-nav {
-  position: sticky;
-  top: 100px;
-  z-index: 1;
-  background-color: white;
-  padding: 0.5rem 1rem;
-  border-bottom: 2px solid var(--color-border);
-  overflow-x: auto;
-}
-
 .categories-scroll {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  padding: 1rem;
   scrollbar-width: none;
 }
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-
-button {
-  background: transparent;
-  border: none;
-  padding: 0.5rem 1rem;
-  font-weight: 600;
-  color: #666;
-  cursor: pointer;
-  white-space: nowrap;
-  border-bottom: 2px solid transparent;
-  transition: 0.2s;
-}
-
-button.active {
-  color: var(--color-restaurant);
+.categories-scroll::-webkit-scrollbar {
+  display: none;
 }
 </style>

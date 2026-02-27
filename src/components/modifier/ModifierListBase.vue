@@ -83,22 +83,14 @@ defineProps({
 </script>
 
 <style scoped>
+@reference "../../style.css";
+
 .modifiers {
-  padding: 0;
-  list-style: none;
+  @apply p-0 list-none;
 }
 
 .modifiers-options {
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  padding: 1rem;
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  opacity: 1;
+  @apply border border-border rounded-lg p-4 mb-2 cursor-pointer transition-all duration-200 flex items-center justify-start opacity-100;
 }
 
 .modifiers-options.selected {
@@ -107,46 +99,27 @@ defineProps({
 }
 
 .modifiers-options.faded {
-  opacity: 0.4;
-  pointer-events: none;
+  @apply opacity-40 pointer-events-none;
 }
 
 .content-option {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  width: 100%;
+  @apply flex items-center justify-between cursor-pointer w-full;
 }
 
 .content-option input[type='checkbox'] {
-  position: absolute;
-  opacity: 0;
-  width: 1.25rem;
-  height: 1.25rem;
-  margin: 0;
-  cursor: pointer;
+  @apply absolute opacity-0 w-5 h-5 m-0 cursor-pointer;
 }
 
 .item-details {
-  display: flex;
-  align-items: center;
-  height: 50px;
+  @apply flex items-center h-[50px];
 }
 
 .custom-checkbox {
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%; 
-  border: 2px solid var(--color-border);
-  margin-right: 1rem;
-  flex-shrink: 0;
-  position: relative;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  @apply w-4 h-4 rounded-full border-2 border-border mr-4 shrink-0 relative transition-all duration-200;
 }
 
 .custom-checkbox.multiple-border-radius {
-  border-radius: 25%;
+  @apply rounded;
 }
 
 .content-option input[type='checkbox']:checked + .custom-checkbox {
@@ -157,58 +130,36 @@ defineProps({
 .content-option input[type='checkbox']:checked + .custom-checkbox::after {
   content: '';
   position: absolute;
-  top: 2px;
-  left: 6px;
+  top: 1px;
+  left: 4px;
   width: 4px;
   height: 8px;
   border: solid white;
-  border-width: 0 1.5px 1.5px 0;
+  border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
 
 .item-image {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.25rem;
-  margin-right: 1rem;
-  object-fit: cover;
+  @apply w-10 h-10 rounded mr-4 object-cover;
 }
 
-.item-name{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
+.item-name {
+  @apply flex flex-col justify-center;
 }
 
 .ingredients {
-  font-size: 0.875rem;
-  color: var(--color-muted);
+  @apply text-sm text-muted max-[758px]:text-[11px];
 }
 
 .item-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end
+  @apply flex flex-col justify-center items-end;
 }
 
 .free-modifier {
-  color: var(--color-success);
-  font-size: 0.85rem;
-  font-weight: 600;
+  @apply text-success text-sm font-semibold;
 }
 
 .item-price {
-  font-weight: 200;
-  font-size: 0.775rem;
-  color: var(--color-text-light);
-  text-decoration: line-through;
-}
-
-@media (max-width: 758px) {
-  .ingredients {
-    font-size: 11px;
-  }
+  @apply font-extralight text-xs text-text-light line-through;
 }
 </style>

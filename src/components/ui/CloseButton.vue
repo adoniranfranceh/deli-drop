@@ -2,12 +2,12 @@
   <div>
     <Icon
       icon="solar:close-circle-bold"
-      class="close-button desktop"
+      class="absolute top-3 right-3 w-[42px] h-[42px] bg-white/90 rounded-full text-[var(--color-product-modal)] flex items-center justify-center cursor-pointer border-none max-md:hidden"
       @click="$emit('close')"
     />
     <Icon
       icon="material-symbols-light:arrow-circle-left"
-      class="close-button mobile"
+      class="absolute top-3 left-3 w-[50px] h-[50px] bg-white/90 rounded-full text-[var(--color-product-modal)] flex items-center justify-center cursor-pointer border-none hidden max-md:block"
       @click="$emit('close')"
     />
   </div>
@@ -18,41 +18,3 @@ import { Icon } from '@iconify/vue'
 
 defineEmits(['close'])
 </script>
-
-<style scoped>
-.close-button {
-  position: absolute;
-  top: 12px;
-  width: 42px;
-  height: 42px;
-  background-color: rgb(255 255 255 / 0.9);
-  border-radius: 50%;
-  color: var(--color-product-modal);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  border: none;
-}
-
-.close-button.desktop {
-  right: 12px;
-}
-
-.close-button.mobile {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .close-button.desktop {
-    display: none;
-  }
-
-  .close-button.mobile {
-    display: block;
-    left: 12px;
-    width: 50px;
-    height: 50px;
-  }
-}
-</style>

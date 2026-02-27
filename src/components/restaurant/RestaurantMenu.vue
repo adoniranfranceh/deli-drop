@@ -1,31 +1,29 @@
 <template>
   <div>
     <CategoryNav v-if="categories" :categories="categories" />
-  
+
     <div
       v-for="(category, index) in categories"
       :key="category.id"
       :id="`category-${category.id}`"
     >
-      <h2>{{ category.name }}</h2>
+      <h2 class="scroll-mt-[210px]">{{ category.name }}</h2>
 
       <FeaturedProducts
         v-if="category.name.toLowerCase() === 'destaques'"
         :products="category.products"
         :showInRestaurant="true"
-        class="featured-products"
+        class="[&_.product-stamp]:bg-[var(--color-restaurant)] [&_.add-btn]:bg-[var(--color-restaurant)] [&_.product-card:hover_h3]:text-[var(--color-restaurant)]"
       />
 
       <div
         v-else
-        class="product-grid"
-        :class="{ 'last-grid': isLastGrid(index) }"
+        :class="isLastGrid(index) ? 'h-[calc(100vh-329px)] max-[768px]:h-[calc(100vh-150px)] overflow-y-auto' : ''"
       >
         <ProductGrid :products="category.products" />
       </div>
     </div>
-
-    </div>
+  </div>
 </template>
 
 <script setup>
@@ -49,26 +47,3 @@ const isLastGrid = (index) => {
   return index === lastIndex
 }
 </script>
-
-<style scoped >
-h2 {
-  scroll-margin-top: 210px;
-}
-
-.featured-products :deep(.product-stamp) {
-  background-color: var(--color-restaurant);
-}
-
-.featured-products :deep(.add-btn) {
-  background-color: var(--color-restaurant);
-}
-
-.featured-products :deep(.product-card:hover h3) {
-  color: var(--color-restaurant);
-}
-
-.last-grid {
-  height: calc(100vh - 329px);
-  overflow-y: auto;
-}
-</style>

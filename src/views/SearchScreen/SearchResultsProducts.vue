@@ -1,17 +1,16 @@
 <template>
   <div>
-    <h3 class="section-title">
-      <Icon icon="tabler:meat" class="restaurant-icon" /> COMIDAS
+    <h3 class="my-8 text-gray-600">
+      <Icon icon="tabler:meat" class="text-primary" /> COMIDAS
     </h3>
 
-    <div class="products-section">
+    <div>
       <FeaturedProductsSkeleton
         v-if="shouldShowSkeleton"
         :count="6"
       />
 
       <FeaturedProducts
-        class="featured-products"
         :products="productsFetch.items.value"
         :showCategory="true"
         v-if="shouldShowList"
@@ -22,14 +21,14 @@
       />
     </div>
 
-    <div v-if="shouldShowEmptyState" class="empty-state">
-      <Icon icon="mdi:food-off-outline" class="empty-icon" />
+    <div v-if="shouldShowEmptyState" class="flex gap-4 [&>p]:m-0">
+      <Icon icon="mdi:food-off-outline" />
       <p>Nenhum produto encontrado.</p>
     </div>
 
     <p
       v-if="shouldShowAllLoaded"
-      class="end-list"
+      class="text-center my-8 text-muted"
     >
       Todos os produtos foram carregados
     </p>
@@ -52,47 +51,23 @@ const props = defineProps({
 
 const { loading, items, allLoaded } = props.productsFetch
 
-const shouldShowSkeleton = computed(() => 
+const shouldShowSkeleton = computed(() =>
   loading.value && items.value.length === 0
 )
 
-const shouldShowList = computed(() => 
+const shouldShowList = computed(() =>
   items.value.length > 0
 )
 
-const shouldShowLoadingMore = computed(() => 
+const shouldShowLoadingMore = computed(() =>
   loading.value && items.value.length > 0
 )
 
-const shouldShowEmptyState = computed(() => 
+const shouldShowEmptyState = computed(() =>
   !loading.value && items.value.length === 0
 )
 
-const shouldShowAllLoaded = computed(() => 
+const shouldShowAllLoaded = computed(() =>
   allLoaded.value && items.value.length > 0
 )
 </script>
-
-<style scoped>
-.section-title {
-  margin: 2rem 0 1rem;
-  color: rgb(75, 85, 99);
-}
-
-.restaurant-icon {
-  color: var(--color-primary);
-}
-
-.empty-state {
-  display: flex;
-  gap: 1rem;
-
-  p { margin: 0; }
-}
-
-.end-list {
-  text-align: center;
-  margin: 2rem 0;
-  color: var(--color-muted);
-}
-</style>

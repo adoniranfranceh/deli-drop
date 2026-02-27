@@ -17,7 +17,9 @@ const props = defineProps({
 const componentMap = {
   checkbox: ModifierCheckbox,
   radio: ModifierRadio,
-  quantity: ModifierQuantity
+  quantity: ModifierQuantity,
+  multiple_choice: ModifierCheckbox,
+  single_choice: ModifierRadio
 }
 
 const localValue = ref([])

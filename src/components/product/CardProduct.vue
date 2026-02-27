@@ -1,27 +1,29 @@
 <template>
-  <div class="product-card" @click="$emit('selected-product', product)">
-    <div class="image-wrapper">
-      <img :src="product.image" :alt="product.name" class="product-image" />
-      <span class="product-stamp">
+  <div
+    class="bg-white rounded-2xl shadow-md overflow-hidden transition-all duration-200 border border-border flex flex-col justify-between cursor-pointer hover:scale-[1.02] hover:shadow-lg group"
+    @click="$emit('selected-product', product)"
+  >
+    <div class="relative">
+      <img :src="product.image" :alt="product.name" class="w-full h-40 object-cover" />
+      <span class="bg-primary absolute top-[10px] left-[10px] rounded-full text-xs font-semibold text-white py-1 px-5">
         {{ showCategory ? product?.category : 'Destaque' }}
       </span>
     </div>
 
-    <div class="product-info">
-      <div class="product-header">
-        <h3>{{ product.name }}</h3>
+    <div class="p-8 max-[758px]:p-4">
+      <div class="flex flex-col justify-center items-center">
+        <h3 class="m-0 text-xl text-text group-hover:text-primary">{{ product.name }}</h3>
       </div>
 
-      <div  class="product-description">
+      <div class="flex justify-center items-center text-center h-[100px]">
         <p>{{ product.description }}</p>
       </div>
 
       <InfoProduct v-if="!showCategory" :product="product" />
 
-      <div class="product-footer">
-        <strong class="product-price">{{ FloatToMoney(product.base_price) }}</strong>
+      <div class="flex justify-between items-center mt-4">
+        <strong class="text-[25px]">{{ FloatToMoney(product.base_price) }}</strong>
         <AppButton
-          class="add-btn"
           text="Adicionar"
           @click.stop="$emit('open-modal', product)"
         />
@@ -46,102 +48,3 @@ defineProps({
   },
 })
 </script>
-
-<style scoped>
-.product-card {
-  background: var(--color-white);
-  border-radius: 1rem;
-  box-shadow: var(--shadow-md);
-  overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.3s;
-  border: 1px solid var(--color-border);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.product-card:hover {
-  transform: scale(1.02);
-  box-shadow: var(--shadow-lg);
-}
-
-.product-card:hover h3 {
-  color: var(--color-primary);
-}
-
-.image-wrapper {
-  position: relative;
-}
-
-.product-stamp {
-  background: var(--color-primary);
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  border-radius: 9999px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--color-white);
-  padding: 4px 20px;
-}
-
-.product-image {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-}
-
-.product-info {
-  padding: 2rem;
-}
-
-.product-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.product-header h3 {
-  margin: 0;
-  font-size: 1.2rem;
-  color: var(--color-text);
-}
-
-.product-header p {
-  font-size: 1rem;
-  color: var(--color-muted);
-  font-weight: 600;
-  line-height: 1.6;
-}
-
-.product-description {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 100px;
-}
-
-.product-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.product-price {
-  font-size: 25px;
-}
-
-.add-btn {
-  background-color: var(--color-primary);
-}
-
-@media (max-width: 758px) {
-  .product-info {
-    padding: 1rem;
-  }
-}
-</style>

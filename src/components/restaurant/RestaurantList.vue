@@ -1,13 +1,16 @@
 <template>
   <router-link :to="`/restaurante/${restaurant.id}`">
-    <div class="restaurant-card" @click="$emit('selected-restaurant', restaurant)">
-      <img :src="restaurant.logo" :alt="restaurant.name" class="logo" />
+    <div
+      class="flex bg-white border border-border-light rounded-xl overflow-hidden p-3 gap-3 cursor-pointer shadow-md transition-shadow duration-200 h-[115px] max-[758px]:h-[125px] hover:shadow-lg"
+      @click="$emit('selected-restaurant', restaurant)"
+    >
+      <img :src="restaurant.logo" :alt="restaurant.name" class="w-20 h-20 object-cover rounded-lg" />
 
-      <div class="info">
-        <h4>{{ restaurant.name }}</h4>
-        <p class="description">{{ restaurant.description }}</p>
+      <div class="flex-1">
+        <h4 class="text-lg m-0 font-semibold">{{ restaurant.name }}</h4>
+        <p class="text-sm text-muted">{{ restaurant.description }}</p>
 
-        <div class="details">
+        <div class="flex items-center gap-3 text-sm mt-1 text-text-subtle">
           <RatingProduct :rating="restaurant.rating" />
           <DeliveryDuration :duration="restaurant.duration" v-if="restaurant.duration" />
           <LocationRestaurant location="3 km" />
@@ -26,60 +29,3 @@ defineProps({
   restaurant: Object
 })
 </script>
-
-<style scoped>
-.restaurant-card {
-  display: flex;
-  background: var(--color-white);
-  border: 1px solid #eee;
-  border-radius: 12px;
-  overflow: hidden;
-  padding: 0.75rem;
-  gap: 0.75rem;
-  cursor: pointer;
-  box-shadow: var(--shadow-md);
-  transition: box-shadow 0.2s;
-  height: 115px;
-}
-
-.restaurant-card:hover {
-  box-shadow: var(--shadow-lg);
-}
-
-.restaurant-card img.logo {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.restaurant-card .info {
-  flex: 1;
-}
-
-.restaurant-card .info h4 {
-  font-size: 1.1rem;
-  margin: 0;
-  font-weight: 600;
-}
-
-.restaurant-card .description {
-  font-size: 0.9rem;
-  color: var(--color-muted);
-}
-
-.restaurant-card .details {
-  display: flex;
-  align-items: center;
-  gap: 0.7rem;
-  font-size: 0.85rem;
-  margin-top: 0.3rem;
-  color: #555;
-}
-
-@media (max-width: 758px) {
-  .restaurant-card {
-    height: 125px;
-  }
-}
-</style>

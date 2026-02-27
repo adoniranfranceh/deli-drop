@@ -1,13 +1,14 @@
 <template>
-  <span>
-    <Icon icon="system-uicons:location" style="width: 20px; height: 20px;" />
-    {{ location}}
+  <span class="flex items-center">
+    <Icon icon="system-uicons:location" class="w-5 h-5" />
+    {{ location }}
   </span>
 </template>
 
 <script setup>
-  import { Icon } from '@iconify/vue';
-  defineProps({
-    location: String
-  })
+import { Icon } from '@iconify/vue';
+
+defineProps({
+  location: String
+})
 </script>

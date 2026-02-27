@@ -1,6 +1,6 @@
 <template>
-  <div class="search-content">
-    <SearchInput v-model="query" placeholder="..." /> 
+  <div class="m-20 max-[758px]:m-4 max-[758px]:pt-12">
+    <SearchInput v-model="query" placeholder="..." />
 
     <CategoryFilter
       :categories="categories"
@@ -21,7 +21,6 @@
       :productsFetch="productsFetch"
     />
   </div>
-
 </template>
 
 <script setup>
@@ -103,33 +102,3 @@ onMounted(async () => {
 })
 </script>
 
-<style scoped>
-.search-content {
-  margin: 5rem;
-}
-
-.featured-products {
-  margin: 0;
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.fade-enter-to, .fade-leave-from {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (max-width: 758px) {
-  .search-content {
-    margin: 1rem;
-    padding-top: 3rem;
-  }
-}
-</style>

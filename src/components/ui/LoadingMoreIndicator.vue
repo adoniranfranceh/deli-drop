@@ -1,6 +1,6 @@
 <template>
-  <div class="loading-more">
-    <Icon icon="svg-spinners:ring-resize" class="loading-icon" />
+  <div class="flex items-center justify-center gap-3 p-8 text-muted text-[0.95rem] animate-[fadeIn_0.3s_ease-in]">
+    <Icon icon="svg-spinners:ring-resize" class="text-2xl text-primary" />
     <span>{{ text }}</span>
   </div>
 </template>
@@ -15,32 +15,3 @@ defineProps({
   }
 })
 </script>
-
-<style scoped>
-.loading-more {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  padding: 2rem;
-  color: var(--color-muted);
-  font-size: 0.95rem;
-  animation: fadeIn 0.3s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.loading-icon {
-  font-size: 1.5rem;
-  color: var(--color-primary);
-}
-</style>

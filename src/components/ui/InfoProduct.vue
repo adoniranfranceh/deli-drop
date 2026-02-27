@@ -1,9 +1,9 @@
 <template>
-  <div class="wrapper-info">
-    <p class="product-rating">
+  <div class="flex [&>p]:font-medium [&>p]:mr-5 [&>p]:text-base [&>p]:text-muted [&>p]:leading-relaxed">
+    <p class="flex">
       <RatingProduct :rating="product.rating"/>
     </p>
-     <p><DeliveryDuration :duration="product.duration" /></p>
+    <p><DeliveryDuration :duration="product.duration" /></p>
     <p><ItemChip :item="product.category"/></p>
   </div>
 </template>
@@ -20,21 +20,3 @@ defineProps({
   }
 })
 </script>
-
-<style scoped>
-.wrapper-info {
-  display: flex;
-
-  p{
-    font-weight: 500;
-    margin-right: 20px;
-    font-size: 1rem;
-    color: var(--color-muted);
-    line-height: 1.6;
-  }
-}
-
-.product-rating {
-  display: flex;
-}
-</style>

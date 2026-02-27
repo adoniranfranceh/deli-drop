@@ -97,24 +97,24 @@ function getPriceLabel(item) {
 
 <template>
   <ModifierHeader v-bind="headerProps" />
-  <ul class="modifiers">
+  <ul class="p-0">
     <li
       v-for="item in modifier_groups.modifiers"
       :key="item.id"
-      class="modifiers-options"
+      class="grid border-b border-border pt-6 pr-4 pb-2 pl-2"
     >
-      <div class="content-option">
-        <div class="item-details">
-          <img :src="item.image" :alt="item.name" class="item-image" />
-          <div class="item-info">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center h-[50px]">
+          <img :src="item.image" :alt="item.name" class="w-10 h-[80%] rounded mr-2" />
+          <div class="flex flex-col justify-around h-full">
             {{ item.name }}
-            <div class="free-modifier">
-              {{ getPriceLabel(item) }} 
+            <div class="text-[var(--color-cart,var(--color-restaurant))]">
+              {{ getPriceLabel(item) }}
             </div>
           </div>
         </div>
 
-        <div class="quantity-controls">
+        <div class="flex items-center gap-2">
           <WrapperQuantity
             :modelValue="quantities[item.id]?.quantity ?? 0"
             @plus="() => incrementQuantity(item)"
@@ -130,91 +130,3 @@ function getPriceLabel(item) {
   </ul>
 </template>
 
-<style scoped>
-.header-modifier {
-  background: rgb(249, 250, 251);
-  padding: 1rem;
-}
-
-.modifier-chip {
-  background-color: var(--color-product-modal);
-  color: var(--color-white);
-}
-
-.header-title {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0;
-}
-
-.modifier-free {
-  margin-top: 0.5rem;
-  color: var(--color-success);
-  font-weight: 600;
-}
-
-
-.modifiers {
-  padding: 0;
-}
-
-.modifiers-options {
-  display: grid;
-  border-bottom: 1px solid var(--color-border);
-  padding: 1.5rem 1rem 0.5rem 0.5rem;
-}
-
-.content-option {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.item-details {
-  display: flex;
-  align-items: center;
-  height: 50px;
-}
-
-.item-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
-}
-
-.item-image {
-  width: 2.5rem;
-  height: 80%;
-  border-radius: 0.25rem;
-  margin-right: 0.5rem;
-}
-
-.free-modifier {
-  color: var(--color-cart, var(--color-restaurant));
-}
-
-.quantity-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.quantity-controls button {
-  background-color: #eee;
-  border: none;
-  padding: 0.4rem 0.6rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.quantity-controls button:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.chip-maxed {
-  background-color: #f87171;
-}
-</style>

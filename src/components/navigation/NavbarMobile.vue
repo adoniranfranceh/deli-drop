@@ -1,23 +1,34 @@
 <template>
-  <nav id="container-nav-mobile">
-    <div class="mobile-header">
-      <button @click="toggleMenu" class="hamburger-btn" aria-label="Abrir menu">☰</button>
-      <img alt="Deli Drop logo" src="@/assets/logo.png" class="logo" />
+  <nav class="container-nav-mobile">
+    <div class="flex justify-between items-center relative w-full px-4">
+      <button
+        @click="toggleMenu"
+        class="hamburger-btn"
+        aria-label="Abrir menu"
+      >☰</button>
+      <img alt="Deli Drop logo" src="@/assets/logo.png" class="h-14" />
     </div>
   </nav>
-  <div id="spacer"></div>
+  <div class="hidden max-[840px]:block max-[840px]:h-14"></div>
 
-  <div v-if="menuOpen" class="mobile-fullscreen-menu">
-    <div class="mobile-header-menu">
-      <img alt="Deli Drop logo" src="@/assets/logo.png" class="logo" />
-      <button @click="closeMenu" class="close-btn" aria-label="Fechar menu">✕</button>
+  <div
+    v-if="menuOpen"
+    class="fixed inset-0 bg-white z-[2000] flex flex-col animate-fadeIn"
+  >
+    <div class="flex justify-between items-center px-4 ml-12">
+      <img alt="Deli Drop logo" src="@/assets/logo.png" class="h-14" />
+      <button
+        @click="closeMenu"
+        class="close-btn"
+        aria-label="Fechar menu"
+      >✕</button>
     </div>
-    <ul class="mobile-menu">
-      <li><router-link @click="closeMenu" to="/" exact-active-class="active">Início</router-link></li>
-      <li><router-link @click="closeMenu" to="/about" exact-active-class="active">Sobre</router-link></li>
-      <li><router-link @click="closeMenu" to="/Quero ser Parceiro" exact-active-class="active">Quero ser Parceiro</router-link></li>
-      <li><router-link @click="closeMenu" to="/Quero ser Entregador" exact-active-class="active">Quero ser Entregador</router-link></li>
-      <li><router-link @click="closeMenu" to="/buscar" exact-active-class="active">Buscar</router-link></li>
+    <ul class="list-none flex flex-col gap-10 mt-8">
+      <li><router-link @click="closeMenu" to="/" class="mobile-link">Início</router-link></li>
+      <li><router-link @click="closeMenu" to="/about" class="mobile-link">Sobre</router-link></li>
+      <li><router-link @click="closeMenu" to="/Quero ser Parceiro" class="mobile-link">Quero ser Parceiro</router-link></li>
+      <li><router-link @click="closeMenu" to="/Quero ser Entregador" class="mobile-link">Quero ser Entregador</router-link></li>
+      <li><router-link @click="closeMenu" to="/buscar" class="mobile-link">Buscar</router-link></li>
     </ul>
   </div>
 </template>
@@ -31,103 +42,22 @@ const closeMenu = () => (menuOpen.value = false)
 </script>
 
 <style scoped>
-#container-nav-mobile {
-  display: none;
+@reference "../../style.css";
+
+.container-nav-mobile {
+  @apply hidden max-[840px]:flex max-[840px]:w-full max-[840px]:py-3 max-[840px]:sticky max-[840px]:bg-white max-[840px]:shadow-md max-[840px]:z-[1000];
 }
 
-@media (max-width: 840px) {
-  #container-nav-desktop {
-    display: none;
-  }
+.hamburger-btn,
+.close-btn {
+  @apply text-3xl bg-transparent border-none cursor-pointer text-primary p-0;
+}
 
-  #container-nav-mobile {
-    display: flex;
-    width: 100%;
-    padding: 0.75rem 0rem;
-    position: sticky;
-    background-color: #ffffff;
-    box-shadow: var(--shadow-md);
-    z-index: 1000;
-  }
+.mobile-link {
+  @apply ml-6 no-underline text-text text-2xl pr-24 hover:text-primary;
+}
 
-  #spacer {
-    height: 3.5rem;
-  }
-
-  .hamburger-btn {
-    font-size: 1.8rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--color-primary);
-  }
-
-  .mobile-fullscreen-menu {
-    position: fixed;
-    inset: 0;
-    background-color: var(--color-white);
-    z-index: 2000;
-    display: flex;
-    flex-direction: column;
-    animation: fadeIn 0.3s ease-in-out;
-  }
-
-  .mobile-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-
-  .mobile-header-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 3rem;
-  }
-
-  .close-btn {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: var(--color-primary);
-  }
-
-  .mobile-menu {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    margin-top: 2rem;
-  }
-
-  .mobile-menu a {
-    margin-left: 1.5rem;
-    text-decoration: none;
-    color: var(--color-text);
-    font-size: 1.5rem;
-    padding-right: 6rem;
-  }
-
-  .mobile-menu a:hover,
-  .mobile-menu a.active {
-    color: var(--color-primary);
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .logo {
-    height: 3.5rem;
-  }
+.mobile-link.router-link-exact-active {
+  @apply text-primary;
 }
 </style>

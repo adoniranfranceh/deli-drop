@@ -1,14 +1,14 @@
 <template>
-  <h3>
-    <Icon class="graph-arrow-icon" icon="streamline:graph-arrow-increase" />
+  <h3 class="flex text-gray-600">
+    <Icon class="text-primary mr-2 w-6 h-6" icon="streamline:graph-arrow-increase" />
     BUSCAS POPULARES
   </h3>
-  <div class="popular-searches">
-    <ItemChip 
+  <div class="my-4 flex flex-wrap gap-2 justify-start">
+    <ItemChip
       v-for="term in terms"
       :key="term"
       @click="$emit('update:query', term)"
-      class="tag"
+      class="cursor-pointer !bg-border-light !py-1 !px-3 !rounded-full !text-sm"
       :item="term"
     />
   </div>
@@ -22,33 +22,3 @@ defineProps({
   terms: Array
 })
 </script>
-
-<style scoped>
-h3 {
-  display: flex;
-  color: rgb(75, 85, 99);
-}
-
-.graph-arrow-icon {
-  color: var(--color-primary);
-  margin-right: 0.5rem;
-  width: 23px;
-  height: 23px;
-}
-
-.popular-searches {
-  margin: 1rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: flex-start;
-}
-
-.popular-searches .tag {
-  cursor: pointer;
-  background: #eee;
-  padding: 0.3rem 0.7rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-}
-</style>

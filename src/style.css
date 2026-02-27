@@ -1,4 +1,126 @@
-@import '@/theme.css';
+@import "tailwindcss";
+@import './theme.css';
+
+/* ============================================
+   TEMA CUSTOMIZADO - Tailwind v4
+   ============================================ */
+
+@theme {
+  /* Cores do design system */
+  --color-primary: #E53935;
+  --color-primary-hover: #c62828;
+  --color-secondary: #FFCA28;
+  --color-muted: #666666;
+  --color-text: #333333;
+  --color-text-light: #999999;
+  --color-accent: #29a19c;
+  --color-accent-light: #70d6d6;
+  --color-error: #d32f2f;
+  --color-success: #2e7d32;
+  --color-warning: #f57c00;
+  --color-border: #e0e0e0;
+  --color-border-light: #eeeeee;
+  --color-text-subtle: #555555;
+  --color-text-dark: #222222;
+  --color-text-secondary: #777777;
+  --color-icon-muted: #888888;
+  --color-chip: #f1f1f1;
+  --color-chip-hover: #e0e0e0;
+  --color-surface: #f9fafb;
+  --color-input-border: #cccccc;
+  --color-close-hover: #b94a48;
+  --color-soft: #fff6f5;
+  --color-highlight: #fff8e1;
+  --color-background: #fefefe;
+
+  /* Cores dinâmicas (definidas via JS em runtime) */
+  --color-restaurant: var(--color-restaurant, #E53935);
+  --color-cart: var(--color-cart, #E53935);
+  --color-product-modal: var(--color-product-modal, #E53935);
+
+  /* Animações */
+  --animate-slideUp: slideUp 0.3s ease-out;
+  --animate-fadeIn: fadeIn 0.3s ease-out;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
+
+  /* Fontes */
+  --font-sans: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* ============================================
+   CLASSES UTILITÁRIAS CUSTOMIZADAS
+   ============================================ */
+
+@utility card-base {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+@utility card-hover {
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+@utility flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@utility flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@utility flex-col-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@utility badge-primary {
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 1.25rem;
+}
+
+/* ============================================
+   ANIMAÇÕES
+   ============================================ */
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ============================================
+   ESTILOS GLOBAIS
+   ============================================ */
 
 body {
   margin: 0;
@@ -32,17 +154,19 @@ hr {
   box-sizing: border-box;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: var(--font-weight-medium);
-   font-family: inherit;
-  background-color: var(--color-black);
-  color: var(--color-white);
-  cursor: pointer;
-  transition: border-color 0.25s;
+@layer base {
+  button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: var(--font-weight-medium);
+    font-family: inherit;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
 }
 
 input,
@@ -51,13 +175,15 @@ select {
   font-size: 16px;
 }
 
-button:hover {
-  border-color: var(--color-link);
-}
+@layer base {
+  button:hover {
+    border-color: var(--color-link);
+  }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
 }
 
 .card {
@@ -123,18 +249,20 @@ body.modal-open {
   }
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --color-text: #213547;
-    --bg-color: var(--color-white);
-  }
+@layer base {
+  @media (prefers-color-scheme: light) {
+    :root {
+      --color-text: #213547;
+      --bg-color: var(--color-white);
+    }
 
-  a:hover {
-    color: var(--color-link-hover);
-  }
+    a:hover {
+      color: var(--color-link-hover);
+    }
 
-  button {
-    background-color: #f9f9f9;
-    color: var(--color-black);
+    button {
+      background-color: #f9f9f9;
+      color: var(--color-black);
+    }
   }
 }

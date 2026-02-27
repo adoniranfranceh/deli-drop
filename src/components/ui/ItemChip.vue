@@ -1,31 +1,14 @@
 <template>
-  <span class="chip">
+  <span class="bg-chip font-semibold text-text py-1.5 px-3 m-0 rounded-full text-sm transition-colors duration-200 shrink-0 hover:bg-chip-hover">
     {{ item }}
   </span>
 </template>
 
-<style scoped>
-.chip {
-  background-color: #f1f1f1;
-  font-weight: 600;
-  color: #333;
-  padding: 0.4rem 0.75rem;
-  margin: 0;
-  border-radius: 9999px;
-  font-size: 0.9rem;
-  transition: background-color 0.2s;
-}
-
-.chip:hover {
-  background-color: #e0e0e0;
-}
-</style>
-
 <script setup>
-  defineProps({
-    item: {
-      type: String,
-      required: true
-    }
-  })
+defineProps({
+  item: {
+    type: String,
+    required: true
+  }
+})
 </script>

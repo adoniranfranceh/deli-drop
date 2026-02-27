@@ -1,14 +1,14 @@
 <template>
-  <div class="restaurant-stories">
+  <div class="flex overflow-x-auto scrollbar-none scroll-smooth gap-4 py-4 mb-8 max-[758px]:my-8">
     <div
       v-for="restaurant in restaurantsFetch.items.value"
       :key="restaurant.id"
-      class="story"
+      class="flex-none text-center"
     >
-    <router-link :to="`/restaurante/${restaurant.id}`">
-      <img :src="restaurant.logo" :alt="restaurant.name" />
-      <span>{{ restaurant.name }}</span>
-    </router-link>
+      <router-link :to="`/restaurante/${restaurant.id}`">
+        <img :src="restaurant.logo" :alt="restaurant.name" class="border-2 border-primary w-[70px] h-[70px] rounded-full object-cover shadow-sm" />
+        <span class="block mt-2 text-sm text-text whitespace-nowrap">{{ restaurant.name }}</span>
+      </router-link>
     </div>
   </div>
 </template>
@@ -23,44 +23,3 @@ onMounted(async () => {
 
 const restaurantsFetch = usePaginatedFetch('/restaurants')
 </script>
-
-<style scoped>
-.restaurant-stories {
-  display: flex;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  scroll-behavior: smooth;
-  gap: 1rem;
-  padding: 1rem 0;
-  margin-bottom: 2rem;
-}
-
-.story {
-  flex: 0 0 auto;
-  text-align: center;
-}
-
-.story img {
-  border: 2px solid var(--primary-color);
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-.story span {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: var(--color-text);
-  white-space: nowrap;
-}
-
-@media (max-width: 758px) {
-  .restaurant-stories {
-    margin: 2rem 0;
-  }
-}
-</style>
